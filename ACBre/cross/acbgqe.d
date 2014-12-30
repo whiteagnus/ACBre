@@ -1,5 +1,5 @@
 INTERJECT_COPY_TRANS2 C#Q01001 4 ACC#Q010014
-== ACBreJ IF ~InParty("ACBre")See("ACBRE")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
+== ACBreJ IF ~InParty("ACBre")InMyArea("ACBRE")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
 ~Pfui Deibel! Ich bin in so manchem Stollen herumgekrochen und habe manche Widerlichkeit gesehen, <CHARNAME>. Aber *das* setzt allem die Krone auf.~
 END
 
