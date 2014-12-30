@@ -19,12 +19,10 @@ INTERJECT_COPY_TRANS2 VA#KERGO 0 ACVA#KERGO0
 ~Beruhigt Euch, Breagar. Ich wette, der Kapität wird sich nach dieser Drohung sicherlich bemühen, alles zum Besten zu gestalten.~
 END
 
-INTERJECT_COPY_TRANS2 VA#KERGO 5 ACVA#KERGO5
+INTERJECT VA#KERGO 5 ACVA#KERGO5
 == ACBreJ IF ~InParty("ACBre")See("ACBRE")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
 ~Und ich warne Euch, Kapitän...~
-==VA#KERGO IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
-~Ja ja, keine krummen Dinger. Ich weiß schon. (seufzt)~
-END
+== VA#KERGO ~Ja ja, keine krummen Dinger. Ich weiß schon. (seufzt)~ DO ~SetGlobal("VAJobPos","GLOBAL",2)SetGlobal("VAJobNeg","GLOBAL",3)SetGlobalTimer("VA#USTRAIN_ENCOUNTER","GLOBAL",THREE_DAYS)StartCutSceneMode()StartCutScene("va#10sc")~ EXIT
 
 INTERJECT_COPY_TRANS VA#TIAN 3 ACVA#TIAN3
 == ACBreJ IF ~InParty("ACBre")See("ACBRE")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
