@@ -3,7 +3,7 @@ INTERJECT_COPY_TRANS2 C#Q01001 4 ACC#Q010014
 ~Pfui Deibel! Ich bin in so manchem Stollen herumgekrochen und habe manche Widerlichkeit gesehen, <CHARNAME>. Aber *das* setzt allem die Krone auf.~
 END
 
-INTERJECT_COPY_TRANS2 C#Q01001 41 ACC#Q0100141
+INTERJECT_COPY_TRANS2 C#Q01001 42 ACC#Q0100141
 == ACBreJ IF ~InParty("ACBre")See("ACBRE")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
 ~Und starrt Löcher in die Luft, wie es nur ein närrischer <PRO_RACE> kann. Pah.~
 END
