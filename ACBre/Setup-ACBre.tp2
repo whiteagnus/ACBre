@@ -5,6 +5,16 @@ VERSION ~6.09~
 
 AUTO_TRA "ACBre/TRA/%s"//%"
 
+ALWAYS
+
+INCLUDE ~ACBre/lib/g3_tutu_cpmvars.tpa~
+INCLUDE ~ACBre/lib/g3_bgt_cpmvars.tpa~
+INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
+INCLUDE ~ACBre/lib/eet_cpmvars.tpa~
+INCLUDE ~ACBre/lib/ac_quest_cpmvars.tpa~
+
+END
+
 LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
 
 
