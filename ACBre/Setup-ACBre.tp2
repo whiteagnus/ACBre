@@ -45,6 +45,13 @@ APPEND ~STATE.IDS~
 	~0x80101FEF CD_STATE_NOTVALID~
 UNLESS ~CD_STATE_NOTVALID~
 
+APPEND ~shoutids.ids~ ~99 HELPME~ UNLESS ~^99~
+
+//Fix for ToB Shoutaction (appears on Tutu)
+COPY_EXISTING ~action.ids~ ~override~
+ REPLACE_TEXTUALLY ~^106 Shout(.*$~ ~106 Shout(I:ID*SHOUTIDS)~
+BUT_ONLY_IF_IT_CHANGES
+
 END
 
 LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/autotra/german/setup-ACBre.tra~
