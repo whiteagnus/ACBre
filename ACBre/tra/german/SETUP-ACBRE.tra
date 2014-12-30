@@ -860,6 +860,8 @@ Die Elfe Elasia kann jetzt ihren Weg forsetzen, nachdem Bork tot ist.~
 @10047 = ~Breagar in Saradush
 
 Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars bedürfen. Wir sollten uns einmal umschauen.~
+@10048 = ~ ~
+@10049 = ~ ~
 
 //ungelöste Aufgaben:	AddJournalEntry(@10037,QUEST)
 //erledigte Aufgaben:	AddJournalEntry(@10036,QUEST_DONE)
