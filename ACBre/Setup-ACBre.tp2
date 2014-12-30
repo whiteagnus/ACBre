@@ -13,9 +13,37 @@ INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
 INCLUDE ~ACBre/lib/eet_cpmvars.tpa~
 INCLUDE ~ACBre/lib/ac_quest_cpmvars.tpa~
 
+/* Handling of correctly formatted tra-files!! ---------------------- */
+
+/*
+* Copies tra files into the autotra-folder (to leave the originals untouched)
+*/
+	DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+		COPY ~ACBre/tra/german~ ~ACBre/tra/autotra/%LANGUAGE%~
+		COPY ~ACBre/tra/%LANGUAGE%~ ~ACBre/tra/autotra/%LANGUAGE%~
+	END
+
+	LAF autotra_workaround END
+
+	ACTION_DEFINE_ARRAY tra#reload BEGIN setup-ACBre END
+	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
+
+	LAF HANDLE_CHARSETS
+		INT_VAR
+			infer_charset = 1
+		STR_VAR
+			tra_path = EVAL ~ACBre/tra/autotra~
+			noconvert_array = tra#noconvert
+			reload_array = tra#reload
+			iconv_path = ~ACBre/tools/iconv~
+	END
+		
+		LOAD_TRA ~ACBre/tra/autotra/german/Setup.tra~	
+		LOAD_TRA ~ACBre/tra/autotra/%LANGUAGE%/Setup.tra~
+
 END
 
-LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
+LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/autotra/german/setup-ACBre.tra~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
