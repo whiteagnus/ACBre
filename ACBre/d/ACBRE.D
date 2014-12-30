@@ -1,0 +1,307 @@
+BEGIN ACBRE
+IF ~Global("ACBREINPARTY","GLOBAL",1)See(player1)~ THEN BEGIN 0.a
+SAY @0
+IF ~~ THEN DO ~SetGlobal("ACBREINPARTY","GLOBAL",2)JoinParty()~ EXIT
+END
+
+IF ~Global("ACBREINPARTY","GLOBAL",1)!See(player1)~ THEN BEGIN 0.b
+SAY @1
+IF ~~ THEN DO ~SetGlobal("ACBREINPARTY","GLOBAL",2)JoinParty()~ EXIT
+END
+
+IF ~!Global("ENDOFBG1","GLOBAL",2)NumTimesTalkedTo(1)~ THEN BEGIN 1
+SAY @2   
+++ @3 + 2
+++ @4 + 3
+++ @5 + 4
+IF ~HasItem("ACBOOK",LastTalkedToBy())~ THEN REPLY @6 DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",4)ActionOverride(PLAYER1,DestroyItem("ACBOOK"))~ GOTO 14
+++ @7 + 5
+END
+
+IF ~~ THEN BEGIN 2
+SAY @8
+++ @4 + 3
+++ @9 + 4
+++ @7 + 5
+END
+
+IF ~~ THEN BEGIN 3
+SAY @10 = @11 = @12 = @13
+++ @14 + 7
+++ @15 + 8
+++ @16 + 9
+END
+
+IF ~~ THEN BEGIN 4
+SAY @17 = @18 = @11 = @12 = @13
+++ @14 + 7
+++ @15 + 8
+++ @16 + 9
+END
+
+IF ~~ THEN BEGIN 5
+SAY @19   
+++ @20 + 4
+++ @21 + 6
+END
+
+IF ~~ THEN BEGIN 6
+SAY @22
+++ @23 + 6a
+++ @24 + 3
+++ @25 + 10
+END
+
+IF ~~ THEN BEGIN 6a
+SAY @26   
+++ @27 + 6b
+++ @24 + 3
+++ @25 + 10
+END
+
+IF ~~ THEN BEGIN 6c
+SAY @28 = @18 = @11 = @12 = @13
+++ @14 + 7
+++ @15 + 8
+++ @16 + 9
+END
+
+IF ~~ THEN BEGIN 7
+SAY @29
+++ @30 + 11
+++ @31 + 8
+++ @32 + 9
+END
+
+IF ~~ THEN BEGIN 8
+SAY @33
+IF ~~ THEN DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",1)~ UNSOLVED_JOURNAL @10000 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+SAY @34
+IF ~~ THEN DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",1)~ UNSOLVED_JOURNAL @10000 EXIT
+END
+
+IF ~~ THEN BEGIN 10
+SAY @35   
+IF ~~ THEN DO ~EscapeAreaDestroy(10)~ EXIT
+END
+
+IF ~~ THEN BEGIN 11
+SAY @36   
+IF ~~ THEN DO ~EscapeAreaDestroy(10)~ EXIT
+END
+
+IF ~!Global("ENDOFBG1","GLOBAL",2)NumTimesTalkedToGT(1)GlobalLT("ACBREBOOKQUEST","GLOBAL",3)~ THEN BEGIN 12
+SAY @37   
+IF ~HasItem("ACBOOK",LastTalkedToBy())~ THEN REPLY @38 DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",4)ActionOverride(PLAYER1,DestroyItem("ACBOOK"))~ GOTO 14
+++ @39 + 13
+END
+
+IF ~!Global("ENDOFBG1","GLOBAL",2)NumTimesTalkedToGT(0)Global("ACBREBOOKQUEST","GLOBAL",3)~ THEN BEGIN 15
+SAY @40 = @41
+IF ~~ THEN DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",4)~ GOTO 16
+END
+
+IF ~!Global("ENDOFBG1","GLOBAL",2)NumTimesTalkedTo(1)Global("ACBREBOOKQUEST","GLOBAL",3)~ THEN BEGIN 15a
+SAY @42 = @43
+IF ~~ THEN DO ~SetGlobal("ACBREBOOKQUEST","GLOBAL",4)~ GOTO 16
+END
+
+IF ~~ THEN BEGIN 13
+SAY @44
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 14
+SAY @45   
+IF ~~ THEN GOTO 16
+END
+
+IF ~~ THEN BEGIN 16
+SAY @46   
+++ @47 DO ~EraseJournalEntry(@10001)EraseJournalEntry(@10002)~ SOLVED_JOURNAL @10003 + 17
+++ @48 DO ~EraseJournalEntry(@10001)EraseJournalEntry(@10002)~ SOLVED_JOURNAL @10003 + 18
+++ @49 DO ~EraseJournalEntry(@10001)EraseJournalEntry(@10002)~ SOLVED_JOURNAL @10004 + 19
+END
+
+IF ~~ THEN BEGIN 17
+SAY @50  = @51
+IF ~~ THEN GOTO 20
+END
+
+IF ~~ THEN BEGIN 18
+SAY @52   
+IF ~~ THEN GOTO 20
+END
+
+IF ~~ THEN BEGIN 19
+SAY @53 = @54
+IF ~~ THEN DO ~SetGlobal("ACBREEXISTS","GLOBAL",2)GiveGoldForce(10)AddexperienceParty(50)EscapeAreaDestroy(10)~ EXIT
+END
+
+IF ~~ THEN BEGIN 20
+SAY @55
+IF ~!Race(LastTalkedToBy(),ELF)!Race(LastTalkedToBy(),HALF_ELF)~ THEN REPLY @56 + 21a
+IF ~OR(2)Race(LastTalkedToBy(),ELF)Race(LastTalkedToBy(),HALF_ELF)~ THEN REPLY @56 + 21b
+IF ~Race(LastTalkedToBy(),DWARF)~ THEN REPLY @57 + 22a
+IF ~!Race(LastTalkedToBy(),DWARF)~ THEN REPLY @57 + 22b
+IF ~~ THEN REPLY @58 + 23
+END
+
+IF ~~ THEN BEGIN 21a
+SAY @59
+IF ~~ THEN GOTO 21c
+END
+
+IF ~~ THEN BEGIN 21b
+SAY @60 
+IF ~~ THEN GOTO 21c
+END
+
+IF ~~ THEN BEGIN 22a
+SAY @61 = @62
+IF ~~ THEN GOTO 24
+END
+
+IF ~~ THEN BEGIN 22b
+SAY @63 = @62
+IF ~~ THEN GOTO 24
+END
+
+IF ~~ THEN BEGIN 23
+SAY @64 = @65
+IF ~~ THEN GOTO 24
+END
+
+IF ~~ THEN BEGIN 24
+SAY @66  = @67 
+IF ~~ THEN DO ~GiveGoldForce(10)AddexperienceParty(50)EscapeAreaMove("AC9999",333,333,0)~ EXIT
+END
+
+IF ~Global("ENDOFBG1","GLOBAL",2)!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN BG2.START.1
+SAY @68
+IF ~~ THEN DO ~SetNumTimesTalkedTo(0)~ EXIT
+END
+
+IF ~Global("ENDOFBG1","GLOBAL",2)Global("ACBREINPARTY","GLOBAL",0)InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN BG2.START.2
+SAY @69 
+++ @70 + BG2.1
+++ @71 + BG2.2
+++ @72 + BG2.3
+END
+
+IF ~~ THEN BEGIN BG2.1
+SAY @73
+++ @74 + BG2.4
+++ @75 + BG2.2
+++ @76 + BG2.3
+END
+
+IF ~~ THEN BEGIN BG2.2
+SAY @77 = @78 = @79
+IF ~~ THEN GOTO BG2.5
+END
+
+IF ~~ THEN BEGIN BG2.3
+SAY @80 = @81
+++ @82 + BG2.3a
+++ @83 + BG2.3b
+++ @84 + BG2.3c
+++ @85 + BG2.4
+END
+
+IF ~~ THEN BEGIN BG2.3a
+SAY @86
+++ @87 + BG2.3b
+++ @84 + BG2.3c
+++ @85 + BG2.4
+END
+
+IF ~~ THEN BEGIN BG2.3b
+SAY @88
+++ @82 + BG2.3a
+++ @84 + BG2.3c
+++ @85 + BG2.4
+END
+
+IF ~~ THEN BEGIN BG2.3c
+SAY @89
+++ @82 + BG2.3a
+++ @87 + BG2.3b
+++ @85 + BG2.4
+END
+
+IF ~~ THEN BEGIN BG2.4
+SAY @90
+IF ~~ THEN GOTO BG2.5
+END
+
+IF ~~ THEN BEGIN BG2.6
+SAY @91
+IF ~~ THEN DO ~MakeGlobal()SetGlobal("ACBREINPARTY","GLOBAL",2)JoinParty()~ EXIT
+END
+
+IF ~~ THEN BEGIN BG2.7
+SAY @92 = @93
+IF ~~ THEN DO ~MakeGlobal()EscapeAreaMove("AR0334",648,229,2)~ EXIT
+END
+
+CHAIN
+IF ~!Global("ENDOFBG1","GLOBAL",2)NumTimesTalkedTo(0)~ THEN ACBRE BREANDWIN
+@94   
+==INNKE2 @95
+==ACBRE @96   
+==INNKE2 @97
+==ACBRE @98
+END
+IF ~~ THEN DO ~SetGlobal("ACBREEXISTS","GLOBAL",1)MakeGlobal()MoveToPointNoInterrupt([261.289])Face(1)~ EXIT
+
+CHAIN
+IF ~~ THEN ACBRE 6b
+@99
+==INNKE2 @100
+==ACBRE @101
+==INNKE2 @102
+==ACBRE @103
+END
+++ @104 EXTERN INNKE2 ACBRE1
+++ @105 + 6c
+++ @106 + 10
+
+CHAIN
+IF ~~ THEN ACBRE 21c
+@107
+==INNKE2 @108
+==ACBRE @109   
+==INNKE2 @110
+==ACBRE @111
+END
+++ @112 + 23
+
+INTERJECT_COPY_TRANS FIREB1 0 ACFIREB1
+==ACBRE IF ~Global("ACBREBOOKQUEST","GLOBAL",1)See("ACBre")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
+@113
+==FIREB1 IF ~Global("ACBREBOOKQUEST","GLOBAL",1)See("ACBre")!StateCheck("ACBre",CD_STATE_NOTVALID)~ THEN
+@114
+END
+
+CHAIN
+IF ~~ THEN ACBRE BG2.5
+@115 DO ~AddJournalEntry(@10026,QUEST)~
+==BIMOEN2 IF ~InParty("IMOEN2")See("IMOEN2")!StateCheck("IMOEN2",CD_STATE_NOTVALID)~ THEN @116
+==BJAHEIR IF ~InParty("Jaheira")See("Jaheira")!StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @117
+==BMINSC IF ~InParty("MINSC")See("MINSC")!StateCheck("MINSC",CD_STATE_NOTVALID)~ THEN @118
+==ACBRE @119 = @120
+END
+++ @121 + BG2.6
+++ @122 + BG2.7
+
+APPEND INNKE2
+IF ~~ THEN BEGIN ACBRE1
+SAY @123
+++ @105 EXTERN ACBRE 6c
+++ @106 EXTERN ACBRE 10
+END
+END

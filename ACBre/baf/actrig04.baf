@@ -1,0 +1,12 @@
+IF
+	IsOverMe(PLAYER1)
+	IsOverMe("ACBRE")
+	Global("ACTOWERCLEAN","GLOBAL",2)
+	Global("ACCELLARCLEAN","GLOBAL",2)
+	GlobalLT("ARAC06PREP","GLOBAL",3)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("ACCUT_16")
+END

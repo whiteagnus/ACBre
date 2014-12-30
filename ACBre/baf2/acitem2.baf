@@ -1,0 +1,94 @@
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("COMPON01")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACCOMPON01","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACCOMPON01","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("COMPON08")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACCOMPON08","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACCOMPON08","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("COMPON09")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACCOMPON09","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACCOMPON09","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("COMPON19")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACCOMPON19","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACCOMPON19","LOCALS",1)
+		IncrementGlobal("ACDRAGONSCALES","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("HGHEART")
+	PartyHasItem("HGHEART2")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACHGHEART","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACHGHEART","LOCALS",1)
+		Continue()
+END
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+IF
+	InParty(Myself) 
+	See(Player1)
+OR(7)
+	Global("ACCOMPON01","LOCALS",1)
+	Global("ACCOMPON08","LOCALS",1)
+	Global("ACCOMPON09","LOCALS",1)
+	Global("ACHGHEART","LOCALS",1)
+	Global("ACDRAGONSCALES","LOCALS",1)
+	Global("ACDRAGONSCALES","LOCALS",3)
+	Global("ACDRAGONSCALES","LOCALS",5)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END

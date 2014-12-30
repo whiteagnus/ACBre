@@ -1,0 +1,1074 @@
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ACCEM1")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACACCEM1","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACACCEM1","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0204")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR0204","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0204","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0300")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR0300","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0300","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0307")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR0307","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0307","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0308")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR0308","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0308","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0334")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACBREKNOWSCROMWELL","GLOBAL",0)
+	Global("ACAR0334","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0334","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty("NALIA")
+	InParty(Myself) 
+	See("NALIA")
+	AreaCheck("AR0400")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("NAILA",CD_STATE_NOTVALID)
+	Global("ACAR0400","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0400","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(PLAYER1)
+	AreaCheck("AR0404")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	Global("ACAR0404","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0404","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(PLAYER1)
+	AreaCheck("AR0411")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR0411","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0411","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(PLAYER1)
+	AreaCheck("AR0502")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR0502","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0502","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(PLAYER1)
+	AreaCheck("AR0414")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	Global("ACAR0414","LOCALS",0)
+	Global("ACAR0411","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0414","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	!Global("ACBREFRIEND","GLOBAL",3)
+	AreaCheck("AR0516")
+	Global("ACAR0516","LOCALS",0)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACAR0156TIMER","LOCALS",120)
+		SetGlobal("ACAR0516","LOCALS",1)
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(Player1)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	AreaCheck("AR0516")
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACAR0156TIMER","LOCALS")
+	Global("ACAR0516","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0516","LOCALS",2)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ARW000")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACARW000","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARW000","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ARU008")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACARU008","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARU008","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0600")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR0600","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0600","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0702")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR0702","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0702","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0800")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR0800","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0800","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR0809")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR0809","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0809","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See("VICONIA")
+OR(2)
+	AreaCheck("AR0901")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	AreaCheck("AR0902")
+	InParty("VICONIA")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("VICONIA",CD_STATE_NOTVALID)
+	Global("ACAR0900","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR0900","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1102")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR1102","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1102","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1201")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR1201","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1201","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1401")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR1401","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1401","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1500")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR1500","LOCALS",0)
+	Global("BridgeWarning","AR1500",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1500","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	AreaCheck("AR1512")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR1512","LOCALS",0)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACAR1512TIMER","LOCALS",240)
+		SetGlobal("ACAR1512","LOCALS",1)
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR1512")
+	AreaCheck("AR1513")
+	AreaCheck("AR1514")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACAR1512TIMER","LOCALS")
+	Global("ACAR1512","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1512","LOCALS",2)
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1600")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR1600","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1600","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR1900")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR1900","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR1900","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR2000")
+	CombatCounter(0)
+	!See([ENEMY])
+	OR(2)
+	Global("ACAUDQUEST","GLOBAL",11)
+	Global("ACAUDQUEST","GLOBAL",12)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR2000","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR2000","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR2100")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR2100","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR2100","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR2100")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("PLAYERLOOKSLIKEDROW","GLOBAL",1)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACPLLD","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACPLLD","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR2300")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR2300","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR2300","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR2800")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR2800","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR2800","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	AreaCheck("AR3200")
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR3200","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR3200","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	AreaCheck("AR3400")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACAR3400","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR3400","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR4100")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR4100","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR4100","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR4400")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR4400","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR4400","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR4403")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR4403","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR4403","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR6508")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR6508","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR6508","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself) 
+	AreaCheck("AR6515")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR6515","LOCALS",0)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACAR6515TIMER","LOCALS",60)
+		SetGlobal("ACAR6515","LOCALS",1)
+		Continue()
+END
+
+
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACAR6515TIMER","LOCALS")
+	Global("ACAR6515","LOCALS",1)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR6515","LOCALS",2)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR6529")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR6529","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR6529","LOCALS",1)
+		Continue()
+END
+		
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("ACIRON")
+	AreaCheck("AR6700")
+	CombatCounter(0)
+	!See([ENEMY])
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR6700","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR6700","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR6800")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR6800","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR6800","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7000")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7000","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7000","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7100")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7100","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7100","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7223")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7223","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7223","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	!Global("ENDOFBG1","GLOBAL",0)
+	AreaCheck("AR7223")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7223","LOCALS",2)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7223","LOCALS",3)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7616")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7616","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7616","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7800")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7800","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7800","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR7900")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("CHAPTER","GLOBAL",6)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR7900","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR7900","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR8100")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR8100","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR8100","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR8700")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR8700","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR8700","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR8600")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR8600","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR8600","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR8601")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR8601","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR8601","LOCALS",1)
+		Continue()
+END
+
+IF
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	InParty(Myself)
+	OR(2) 
+	AreaCheck("AR9200")
+	AreaCheck("AR9500")
+	Global("ACAR9200","LOCALS",0)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACAR9200TIMER","LOCALS",60)
+		SetGlobal("ACAR9200","LOCALS",1)
+END
+
+IF
+	InParty(Myself)
+	OR(2)
+	AreaCheck("AR9200")
+	AreaCheck("AR9500")
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACAR9200TIMER","LOCALS")
+	Global("ACAR9200","LOCALS",1)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR9200","LOCALS",2)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR9900")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACAR9900","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR9900","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ARD000")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACARD000","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARD000","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ARD002")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	Global("ACARD002","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARD002","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	AreaCheck("ARD011")
+	Global("ACARD011","LOCALS",0)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACARD011TIMER","LOCALS",30)
+		SetGlobal("ACARD011","LOCALS",1)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	AreaCheck("ARD011")
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACARD011TIMER","LOCALS")
+	Global("ACARD011","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARD011","LOCALS",2)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("ARAC00")
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACARAC00","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACARAC00","LOCALS",1)
+		Continue()
+END
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	!Global("ACBREFRIEND","GLOBAL",3)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)	
+OR(54)
+	Global("ACACCEM1","LOCALS",1)
+	Global("ACAR0204","LOCALS",1)
+	Global("ACAR0300","LOCALS",1)
+	Global("ACAR0307","LOCALS",1)
+	Global("ACAR0308","LOCALS",1)
+	Global("ACAR0334","LOCALS",1)
+	Global("ACAR0400","LOCALS",1)
+	Global("ACAR0404","LOCALS",1)
+	Global("ACAR0411","LOCALS",1)
+	Global("ACAR0414","LOCALS",1)
+	Global("ACAR0516","LOCALS",2)
+	Global("ACAR0600","LOCALS",1)
+	Global("ACAR0702","LOCALS",1)
+	Global("ACAR0800","LOCALS",1)
+	Global("ACAR0809","LOCALS",1)
+	Global("ACAR1102","LOCALS",1)
+	Global("ACAR1500","LOCALS",1)
+	Global("ACAR1512","LOCALS",2)
+	Global("ACAR1600","LOCALS",1)
+	Global("ACAR1900","LOCALS",1)
+	Global("ACAR2100","LOCALS",1)
+	Global("ACAR2300","LOCALS",1)
+	Global("ACAR2800","LOCALS",1)
+	Global("ACAR3200","LOCALS",1)
+	Global("ACAR3400","LOCALS",1)
+	Global("ACARW000","LOCALS",1)
+	Global("ACARU008","LOCALS",1)
+	Global("ACAR4100","LOCALS",1)
+	Global("ACAR4400","LOCALS",1)
+	Global("ACAR4403","LOCALS",1)
+	Global("ACAR6515","LOCALS",2)
+	Global("ACAR6529","LOCALS",1)
+	Global("ACAR6700","LOCALS",1)
+	Global("ACAR6800","LOCALS",1)
+	Global("ACAR7000","LOCALS",1)
+	Global("ACAR7100","LOCALS",1)
+	Global("ACAR7223","LOCALS",1)
+	Global("ACAR7223","LOCALS",3)
+	Global("ACAR7616","LOCALS",1)
+	Global("ACAR7800","LOCALS",1)
+	Global("ACAR7900","LOCALS",1)
+	Global("ACAR8100","LOCALS",1)
+	Global("ACAR8700","LOCALS",1)
+	Global("ACAR8600","LOCALS",1)
+	Global("ACAR8601","LOCALS",1)
+	Global("ACAR9200","LOCALS",2)
+	Global("ACAR6508","LOCALS",1)
+	Global("ACAR2000","LOCALS",1)
+	Global("ACARD000","LOCALS",1)
+	Global("ACARD002","LOCALS",1)
+	Global("ACARD011","LOCALS",2)
+	Global("ACAR9900","LOCALS",1)
+	Global("ACARAC00","LOCALS",1)
+	Global("ACPLLD","LOCALS",1)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END

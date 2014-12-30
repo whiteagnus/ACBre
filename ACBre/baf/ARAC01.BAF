@@ -1,0 +1,9 @@
+IF
+	Global("ACAR01LOCKED","ARAC01",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAR01LOCKED","ARAC01",1)
+		TriggerActivation("Nodoor",TRUE)
+		TriggerActivation("Doordown",FALSE)
+		Continue()
+END

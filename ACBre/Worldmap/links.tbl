@@ -1,0 +1,13 @@
+
+
+SRC_AREA  SRC_NWSE  TARGET_ARE  ENTRY_NAME  TRV_TIME  DEF_ENTRY  ENC1     ENC2     ENC3     ENC4     ENC5     ENC_PROB
+
+AR0020    E         ARAC00      Entrance1    12       1          N        N        N        N        N        0
+ARAC00    N         AR0020      ExitNE       12       1          N        N        N        N        N        0
+ARAC00    E         AR0020      ExitNE       12       1          N        N        N        N        N        0
+ARAC00    S         AR0020      ExitNE       12       1          N        N        N        N        N        0
+ARAC00    W         AR0020      ExitNE       12       1          N        N        N        N        N        0
+ARAC00    N         AR2000      ExitNW       8        1          N        N        N        N        N        0
+ARAC00    E         AR2000      ExitNW       8        1          N        N        N        N        N        0
+ARAC00    S         AR2000      ExitNW       8        1          N        N        N        N        N        0
+ARAR00    W         AR2000      ExitNW       8        1          N        N        N        N        N        0

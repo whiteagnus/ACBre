@@ -1,0 +1,763 @@
+IF
+	Global("ACBREBIO","GLOBAL",3)
+	GlobalLT("ACAUDQUEST","GLOBAL",13)
+THEN
+	RESPONSE #100
+		AttackReevaluate("ACREG",30)
+END
+
+IF
+	InParty(myself)
+	Global("ACBREBROKE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		LeaveParty()
+		EscapeAreaDestroy(90)
+END
+
+IF
+	InParty(Myself)
+	Global("ACBRELEVELED","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBRELEVELED","GLOBAL",1)
+		CreateCreatureOffScreen("ACVIRGI",0)
+END
+
+IF
+	Global("ACBREINPARTY","GLOBAL",1)
+	See(player1)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(player1)
+END
+
+IF
+	OR(3)
+	HasItem("ACAXE",myself)
+	HasItem("ACAXE2",myself)
+	HasItem("ACAXE3",myself)
+	!Global("ACBREMYAXE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREMYAXE","GLOBAL",1)
+		SetGlobal("ACBRENOTYOURAXE","GLOBAL",2)
+END
+
+IF
+	PartyHasItem("ACAXE")
+	!HasItem("ACAXE",myself)
+	!Global("ACBRENOTYOURAXE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBRENOTYOURAXE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	PartyHasItem("ACAXE2")
+	!HasItem("ACAXE2",myself)
+	!Global("ACBRENOTYOURAXE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBRENOTYOURAXE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	PartyHasItem("ACAXE3")
+	!HasItem("ACAXE3",myself)
+	!Global("ACBRENOTYOURAXE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBRENOTYOURAXE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	See(Player1)
+	Global("ACBRENOTYOURAXE","GLOBAL",1)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACAXE")
+	!PartyHasItem("ACAXE2")
+	!PartyHasItem("ACAXE3")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACBREMYAXE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBREMYAXE","GLOBAL",1)
+		SetGlobalTimer("ACBREMYAXETIMER","GLOBAL",ONE_HOUR)
+END
+
+IF
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACAXE")
+	!PartyHasItem("ACAXE2")
+	!PartyHasItem("ACAXE3")
+	GlobalTimerExpired("ACBREMYAXETIMER","GLOBAL")
+OR(3)
+	Global("ACBREMYAXE","GLOBAL",2)
+	Global("ACBREMYAXE","GLOBAL",4)
+	Global("ACBREMYAXE","GLOBAL",6)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+OR(2)
+	ReputationLT(PLAYER1,4)
+	GlobalTimerExpired("ACBREREPTIMER","GLOBAL")
+	!Global("ACBREREPUTATION","LOCALS",1)
+	!Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREREPUTATION","LOCALS",1)
+		SetGlobal("ACBREBOUTREP","LOCALS",1)
+		Continue()
+END
+
+IF
+	ReputationLT(PLAYER1,9)
+	ReputationGT(PLAYER1,4)
+	Global("ACBREREPUTATION","LOCALS",1)
+	!Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREREPUTATION","LOCALS",2)
+		SetGlobal("ACBREBOUTREP","LOCALS",1)
+		Continue()
+END
+
+IF
+	ReputationGT(PLAYER1,8)
+	ReputationLT(PLAYER1,13)
+	!Global("ACBREREPUTATION","LOCALS",3)
+	!Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREREPUTATION","LOCALS",3)
+		SetGlobal("ACBREBOUTREP","LOCALS",2)
+		Continue()
+END
+
+IF
+	ReputationGT(PLAYER1,12)
+	ReputationLT(PLAYER1,17)
+	!Global("ACBREREPUTATION","LOCALS",4)
+	!Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREREPUTATION","LOCALS",4)
+		SetGlobal("ACBREBOUTREP","LOCALS",1)
+		Continue()
+END
+
+IF
+	ReputationGT(PLAYER1,16)
+	!Global("ACBREREPUTATION","LOCALS",5)
+	!Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREREPUTATION","LOCALS",5)
+		SetGlobal("ACBREBOUTREP","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACBREBOUTREP","LOCALS",1)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	NumTimesTalkedTo(0)
+	See(player1)
+	AreaCheck("AR6516")
+THEN
+	RESPONSE #100
+		StartDialogNoSet(player1)
+END
+
+IF
+	Global("ENDOFBG1","GLOBAL",2)
+	NumTimesTalkedTo(0)
+	See(player1)
+	AreaCheck("AR0602")
+THEN
+	RESPONSE #100
+		StartDialogNoSet(player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	PartyHasItem("ACIRON")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARWANTSHISIRON","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREAGARWANTSHISIRON","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	Global("ACBREAGARWANTSHISIRON","LOCALS",1)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACIRON")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARWANTSHISIRON","LOCALS",2)
+	Global("ACBREIRONCOMPLAINER","LOCALS",0)
+	Global("ACSTORY","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREIRONCOMPLAINER","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+OR(3)
+	Global("ACBREIRONCOMPLAINER","LOCALS",1)
+	Global("ACBREIRONCOMPLAINER","LOCALS",3)
+	Global("ACBREIRONCOMPLAINER","LOCALS",5)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!GlobalTimerNotExpired("ACBREIRONCOMPLAINER","LOCALS")
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	PartyHasItem("ACIRON")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARWANTSHISIRON","LOCALS",2)
+	!Global("ACBREIRONCOMPLAINER","LOCALS",0)
+	Global("ACSTORY","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREIRONCOMPLAINER","LOCALS",0)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACIRON")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARWANTSHISIRON","LOCALS",2)
+	OR(2)
+	Global("ACBREIRONCOMPLAINER","LOCALS",2)
+	Global("ACBREIRONCOMPLAINER","LOCALS",4)
+	Global("ACSTORY","GLOBAL",1)
+	GlobalTimerExpired("ACIRONCOMPLAINTIMER","LOCALS")
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBREIRONCOMPLAINER","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACIRON")
+	Global("ACSTORY","GLOBAL",1)
+	!AreaCheck("AR4404")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",0)
+	Global("ACBREAGARWANTSHISIRON","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREAGARFORGOTHISIRON","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	Global("ACBREAGARWANTSHISIRON","LOCALS",0)
+OR(3)
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",1)
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",3)
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",5)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	!GlobalTimerNotExpired("ACBREAGARFORGOTHISIRONTIMER","LOCALS")
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACIRON")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACBREAGARWANTSHISIRON","LOCALS",0)
+	OR(2)
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",2)
+	Global("ACBREAGARFORGOTHISIRON","LOCALS",4)
+	Global("ACSTORY","GLOBAL",1)
+	GlobalTimerExpired("ACBREAGARFORGOTHISIRONTIMER","LOCALS")
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBREAGARFORGOTHISIRON","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	PartyHasItem("ACIRON")
+	AreaType(OUTDOOR)
+OR(4)
+	AreaCheck("AR6700")
+	AreaCheck("AR8900")
+	AreaCheck("AR9000")
+	GlobalTimerExpired("ACBREWANTSTOFORGE","LOCALS")
+	Global("ACBREAGARWANTSHISIRON","LOCALS",2)
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACSTORY","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBREAGARWANTSHISIRON","LOCALS",3)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	Global("ACBREAGARWANTSHISIRON","LOCALS",3)
+	Global("ACSTORY","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(myself)
+	GlobalGT("CHAPTER","GLOBAL",5)
+	AreaType(OUTDOOR)
+	Global("ACSILVERAPPEARS","GLOBAL",0)
+	ReputationGT(PLAYER1,16)		
+THEN
+	RESPONSE #100
+		SetGlobal("ACSILVERAPPEARS","GLOBAL",1)
+		RealSetGlobalTimer("ACSILVERAPPEARSTIMER","GLOBAL",30)
+END
+
+IF
+	AreaType(OUTDOOR)
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("ACSILVERAPPEARSTIMER","GLOBAL")
+	Global("ACSILVERAPPEARS","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACSILVERAPPEARS","GLOBAL",2)
+END
+
+IF
+	AreaType(OUTDOOR)
+	InParty(Myself) 
+	See(Player1)
+	Global("ACSILVERAPPEARS","GLOBAL",2)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		StartDialogNoSet(Player1)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	GlobalTimerExpired("ACGIANTQUESTREMINDER","GLOBAL")
+	Global("ACSILVERAPPEARS","GLOBAL",4)
+OR(2)
+	Global("ACGIANTQUESTREMIND","LOCALS",0)
+	Global("ACGIANTQUESTREMIND","LOCALS",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACGIANTQUESTREMIND","LOCALS",1)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+OR(2)
+	Global("ACGIANTQUESTREMIND","LOCALS",1)
+	Global("ACGIANTQUESTREMIND","LOCALS",3)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	AreaCheck("AR4300")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck("PLAYER1",CD_STATE_NOTVALID)
+	Global("ACSILVERAPPEARS","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("ACSILVERAPPEARS","GLOBAL",5)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	PartyHasItem("ACHAND2")
+	PartyHasItem("ACBOWL")
+	PartyHasItem("ACAXE")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck("PLAYER1",CD_STATE_NOTVALID)
+	Global("ACSILVERAPPEARS","GLOBAL",6)
+THEN
+	RESPONSE #100
+		SetGlobal("ACSILVERAPPEARS","GLOBAL",7)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	OR(2)
+	Global("ACSILVERAPPEARS","GLOBAL",5)
+	Global("ACSILVERAPPEARS","GLOBAL",7)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	See(Player1)
+	AreaType(OUTDOOR)
+	CombatCounter(0)
+	!See([ENEMY])
+	GlobalTimerExpired("ACREVIQUESTTIMER","GLOBAL")
+	Global("ACREVIQUEST","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ACREVIQUEST","GLOBAL",2)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	See(Player1)
+	Global("ACREVIQUEST","GLOBAL",2)
+	!InMyArea("ACRALPH")
+THEN
+	RESPONSE #100
+		CreateCreatureOffScreen("ACRALPH",0)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	See(Player1)
+	Global("ACREVIQUEST","GLOBAL",2)
+	InMyArea("ACRALPH")
+THEN
+	RESPONSE #100
+		StartDialogNoSet(PLAYER1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	See("ACGROTHI")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("ACGROTHIQUEST","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACGROTHIQUEST","GLOBAL",1)
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	See("ACGROTHI")
+	Global("ACGROTHIQUEST","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogNoSet("ACGROTHI")
+END
+
+IF
+	Global("ACAR6515","LOCALS",3)
+	Global("CHAPTER","GLOBAL",8)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACAR6515","LOCALS",1)
+		SetGlobal("ACBREBOUTREP","LOCALS",1)
+		Continue()
+END
+
+IF
+	InParty(Myself) 
+	See(Player1)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	Global("ACAR6515","LOCALS",4)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+///////////////////////////////////////////////////////
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	GlobalGT("CHAPTER","GLOBAL",1)
+	InParty(Myself)
+	InParty("Imoen2")
+	Global("ACBreImmyActive","GLOBAL",0)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",900)
+		SetGlobal("ACBreImmyActive","GLOBAL",1)
+		SetGlobal("ACBreImmyTalk","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	Global("ACBreImmyActive","GLOBAL",1)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(8)
+	Global("ACBreImmyTalk","GLOBAL",1)
+	Global("ACBreImmyTalk","GLOBAL",3)
+	Global("ACBreImmyTalk","GLOBAL",5)
+	Global("ACBreImmyTalk","GLOBAL",7)
+	Global("ACBreImmyTalk","GLOBAL",9)
+	Global("ACBreImmyTalk","GLOBAL",11)
+	Global("ACBreImmyTalk","GLOBAL",13)
+	Global("ACBreImmyTalk","GLOBAL",15)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBreImmyTalk","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(4)
+	Global("ACBreImmyTalk","GLOBAL",2)
+	Global("ACBreImmyTalk","GLOBAL",8)
+	Global("ACBreImmyTalk","GLOBAL",12)
+	Global("ACBreImmyTalk","GLOBAL",14)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		StartDialogNoSet("Imoen2")
+END
+
+IF
+	!Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(4)
+	Global("ACBreImmyTalk","GLOBAL",4)
+	Global("ACBreImmyTalk","GLOBAL",6)
+	Global("ACBreImmyTalk","GLOBAL",10)
+	Global("ACBreImmyTalk","GLOBAL",16)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		ActionOverride("IMOEN2",StartDialogNoSet("ACBRE")
+END
+
+///////////////////////////////////////////
+
+IF
+	GlobalGT("CHAPTER","GLOBAL",1)
+	Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	InParty("Imoen2")
+OR(2)
+	Global("ACBreImmyActive","GLOBAL",0)
+	Global("ACBreImmyActive","GLOBAL",2)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",5)
+		SetGlobal("ACBreImmyActive","GLOBAL",1)
+		SetGlobal("ACBreImmyTalk","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("ENDOFBG1","GLOBAL",2)
+	GlobalGT("ACBreBio","GLOBAL",0)
+	Global("ACBreImmyTalk","GLOBAL",11)
+	InParty(Myself)
+	InParty("Imoen2")
+	Global("ACBreImmyActive","GLOBAL",3)
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)
+		SetGlobal("ACBreImmyActive","GLOBAL",1)
+		Continue()
+END
+
+IF
+	GlobalGT("CHAPTER","GLOBAL",1)
+	Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself)
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	Global("ACBreImmyActive","GLOBAL",1)
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(6)
+	Global("ACBreImmyTalk","GLOBAL",1)
+	Global("ACBreImmyTalk","GLOBAL",3)
+	Global("ACBreImmyTalk","GLOBAL",5)
+	Global("ACBreImmyTalk","GLOBAL",7)
+	Global("ACBreImmyTalk","GLOBAL",9)
+	Global("ACBreImmyTalk","GLOBAL",11)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBreImmyTalk","GLOBAL",1)
+		Continue()
+END
+
+IF
+	GlobalGT("CHAPTER","GLOBAL",1)
+	Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(2)
+	Global("ACBreImmyTalk","GLOBAL",2)
+	Global("ACBreImmyTalk","GLOBAL",8)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		StartDialogNoSet("Imoen2")
+END
+
+IF
+	GlobalGT("CHAPTER","GLOBAL",1)
+	Global("ENDOFBG1","GLOBAL",2)
+	InParty(Myself) 
+	InParty("Imoen2")
+	See("Imoen2")
+	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBre",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	OR(4)
+	Global("ACBreImmyTalk","GLOBAL",4)
+	Global("ACBreImmyTalk","GLOBAL",6)
+	Global("ACBreImmyTalk","GLOBAL",10)
+	Global("ACBreImmyTalk","GLOBAL",12)
+THEN
+	RESPONSE #100
+		PlaySong(999991)
+		ActionOverride("IMOEN2",StartDialogNoSet("ACBRE")
+END
