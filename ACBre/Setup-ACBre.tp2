@@ -78,6 +78,12 @@ ACTION_IF FILE_EXISTS ~ACBre/sounds/%LANGUAGE%/ACBRE_00.ogg~ THEN BEGIN
    END
 END
 
+LAF HANDLE_TILESETS
+  STR_VAR
+    tiz_path = ~ACBre/tiz~
+    tizunpack_path = ~ACBre/tools/tisunpack~
+END
+
 
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ACVIRGI.CRE~
@@ -1964,9 +1970,6 @@ REPLACE_TEXTUALLY 999990 ~%ACBREM1%~
 REPLACE_TEXTUALLY 999991 ~%ACBREM2%~
 
 // INCLUDE ~ACBRE/setup-transition.tph~
-
-AT_NOW ~ACBre/ACBreUnpack.bat~
-AT_UNINSTALL ~ACBre/ACBreUninstall.bat~
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
