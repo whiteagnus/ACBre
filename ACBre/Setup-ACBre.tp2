@@ -3,7 +3,7 @@ AUTHOR ~geheimer.herrscher@gmx.de~
 
 VERSION ~6.09~
 
-AUTO_TRA ~ACBre/TRA/%s~
+AUTO_TRA "ACBre/TRA/%s"//%"
 
 LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
 
