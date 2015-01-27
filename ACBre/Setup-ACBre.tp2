@@ -40,7 +40,7 @@ ACTION_IF !FILE_EXISTS ~ACBre/reinstall.mrk~ BEGIN
 			iconv_path = ~ACBre/tools/iconv~
 	END
 		
-		LOAD_TRA ~ACBre/tra/autotra/german/setup-ACBre.tra~	
+		//LOAD_TRA ~ACBre/tra/autotra/german/setup-ACBre.tra~	
 		LOAD_TRA ~ACBre/tra/autotra/%LANGUAGE%/setup-ACBre.tra~
 		LOAD_TRA ~ACBre/tra/autotra/%LANGUAGE%/ACStates.tra~
 		
