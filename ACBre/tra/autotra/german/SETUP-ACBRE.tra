@@ -860,10 +860,43 @@ Die Elfe Elasia kann jetzt ihren Weg forsetzen, nachdem Bork tot ist.~
 @10047 = ~Breagar in Saradush
 
 Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars bedürfen. Wir sollten uns einmal umschauen.~
-@10048 = ~ ~
-@10049 = ~ ~
 
 //ungelöste Aufgaben:	AddJournalEntry(@10037,QUEST)
 //erledigte Aufgaben:	AddJournalEntry(@10036,QUEST_DONE)
 //Tagebucheinträge:	AddJournalEntry(%Text%,INFO)
 //					EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)
+
+//BG:EE Compatibility
+
+//Strings from BG2
+@50001 = ~Ihr werdet leiden... Oh ja, das werdet Ihr.~ [HVILLM04] //#61778
+@50002 = ~~ [HVILLM06] //#61780
+@50003 = ~~ [HVILLM07] //#61781
+@50004 = ~~ [MTOWN05] //#12566
+@50005 = ~Mögen die Götter Euch gnädig gesonnen sein.~ [GPRIM03] //#61726
+@50006 = ~~ [GPRIM06] //#61730
+@50007 = ~~ [GPRIM07] //#61731
+@50008 = ~Leichnam~ //#8457
+@50009 = ~Hmmm, ja?~ [GNOMEM03] //#61703
+@50010 = ~Zurück, oder Ihr könnt Euch von Euren Kniescheiben verabschieden!~ [GNOMEM05] //#61705
+@50011 = ~~ [GNOMEM06] //#61706
+@50012 = ~~ [GNOMEM07] //#61707
+@50013 = ~Aller Ruhm gebührt der Dunklen Mutter!~ [DRPRIS04] //#53379
+@50014 = ~Lolth sei gepriesen! Wir verdanken ihr jeden Sieg!~ [DRPRIS01] //#53358
+@50015 = ~~ [DRPRIS06] //#53387
+@50016 = ~~ [DRPRIS05] //#53383
+@50017 = ~Betrachter~ //#2662
+@50018 = ~Drow~ //#50900
+@50019 = ~Schatten~
+
+//Journal Titles
+@60001 = ~Finde das Buch des Zwergen~
+@60002 = ~Breagar ist auf der Suche nach Eisen~
+@60003 = ~Breagars Unfall in der Donnerhammerschmiede~
+@60004 = ~Ein Riese in den Wolkenspitzen~
+@60005 = ~Düstere Prophezeiungen~
+@60006 = ~Revianel ist verschwunden~
+@60007 = ~Grothir sucht Verträge~
+@60008 = ~Berronars Axt wurde gestohlen~
+@60009 = ~Bork und Ellie~
+@60010 = ~Breagar in Saradush~
