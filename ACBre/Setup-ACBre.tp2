@@ -984,22 +984,14 @@ LPF fj_are_structure
     fj_bcs_override	  = ACGROTHI
 END
 BUT_ONLY
-    
-ACTION_IF GAME_IS ~tutu_totsc~ BEGIN
-	OUTER_SET thunderhammersmithy_loc_x = 848
-	OUTER_SET thunderhammersmithy_loc_y = 510
-END ELSE BEGIN
-	OUTER_SET thunderhammersmithy_loc_x = 624
-	OUTER_SET thunderhammersmithy_loc_y = 462
-END
-    
+       
 COPY_EXISTING ~%Beregost_ThunderhammerSmithy%.are~ ~OVERRIDE~
 LPF fj_are_structure
     INT_VAR
-    fj_loc_x          = %thunderhammersmithy_loc_x%
-    fj_loc_y          = %thunderhammersmithy_loc_y%
-    fj_dest_x         = %thunderhammersmithy_loc_x%
-    fj_dest_y         = %thunderhammersmithy_loc_y%
+    fj_loc_x          = 624
+    fj_loc_y          = 426
+    fj_dest_x         = 624
+    fj_dest_y         = 426
     fj_orientation    = 8
     STR_VAR
     fj_structure_type = actor
