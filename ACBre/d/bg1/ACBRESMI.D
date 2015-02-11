@@ -409,18 +409,18 @@ END
 CHAIN
 IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(0)~ THEN ACBRESMI START
 @120
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @121  = @122  = @123
-==%tutu_var%TAEROM IF ~IsActive("TAEROM")See("TAEROM")~ THEN @124
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @125
-==%tutu_var%TAEROM IF ~IsActive("TAEROM")See("TAEROM")~ THEN @126
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @127
-==%tutu_var%TAEROM IF ~IsActive("TAEROM")See("TAEROM")~ THEN @128
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @129
-==%tutu_var%TAEROM IF ~IsActive("TAEROM")See("TAEROM")~ THEN @130
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @131
-==%tutu_var%TAEROM IF ~IsActive("TAEROM")See("TAEROM")~ THEN @132
-==ACBRESMI IF ~IsActive("TAEROM")See("TAEROM")~ THEN @133
-==ACBRESMI IF ~!IsActive("TAEROM")!See("TAEROM")~ THEN @134
+==ACBRESMI IF ~InMyArea("TAEROM")~ THEN @121  = @122  = @123
+==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @124
+==ACBRESMI IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @125
+==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @126
+==ACBRESMI IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @127
+==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @128
+==ACBRESMI IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @129
+==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @130
+==ACBRESMI IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @131
+==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @132
+==ACBRESMI IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @133
+==ACBRESMI IF ~!IsActive("TAEROM")!InMyArea("TAEROM")~ THEN @134
 END
 IF ~~ THEN DO ~SetGlobal("ACBRETAEROM","GLOBAL",3)MoveToPointNoInterrupt([851.508])Face(10)~ EXIT
 
