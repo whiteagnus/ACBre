@@ -1,5 +1,5 @@
 IF
-	GlobalLT("CHAPTER","GLOBAL",9)
+	GlobalLT("CHAPTER","GLOBAL",%bg2_chapter_9%)
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
@@ -21,7 +21,7 @@ THEN
 END
 
 IF
-	GlobalGT("CHAPTER","GLOBAL",8)
+	GlobalGT("CHAPTER","GLOBAL",%bg2_chapter_8%)
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)

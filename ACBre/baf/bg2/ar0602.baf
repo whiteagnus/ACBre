@@ -32,7 +32,7 @@ THEN
 		SetGlobal("ACBREEXISTS","GLOBAL",1)
 		SetGlobal("ACBREMYAXE","GLOBAL",7)
 		CreateCreature("ACBRE07",[464.1957],13)
-		CreateCreature("ACBRESMI",[454.1957],13)
+		CreateCreature("ACBRESMI",[454.1957],13) //MoveBetweenAreas("AC9999",[222.222],0)
 		ActionOverride("ACBRE",SetNumTimesTalkedTo(0))
 		ActionOverride("ACBRE",SetDialog("ACBRE"))
 		Continue()

@@ -1,11 +1,18 @@
 APPEND ACBRE
 
-IF ~%BGT_VAR2%!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN BG2.START.1
+IF ~%BGT_VAR2%
+OR(3) 
+!InParty(Player1) 
+!See(Player1) 
+StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN BG2.START.1
 SAY @68
 IF ~~ THEN DO ~SetNumTimesTalkedTo(0)~ EXIT
 END
 
-IF ~%BGT_VAR2%Global("ACBREINPARTY","GLOBAL",0)InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN BG2.START.2
+IF ~%BGT_VAR2%Global("ACBREINPARTY","GLOBAL",0)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN BG2.START.2
 SAY @69 
 ++ @70 + BG2.1
 ++ @71 + BG2.2

@@ -1,8 +1,8 @@
                                    *  Ascalons Breagar  *
-                              Eine Modifikation für BGT-WeiDU
+                       Eine Modifikation für BGT, EET, BG:EE, Tutu, und BGII
                             Ascalon (geheimer.herrscher@gmx.de)
 
-                                      Version: 6.09
+                                  Version: 7.00 (gepackt von White Agnus und jastey)
 
 ***************************************************************************************************************
 
@@ -27,9 +27,10 @@ XII. Letzte Worte
 
 I. Beschreibung:
 
-Diese Modifikation fügt Breager vom Clan Bardormar der "Baldur's Gate Trilogy" hinzu. Breagar ist ein rechtschaffen-guter Zwergenkämpfer und hat sein eigenes Kit: "Zwergenschmied". Er bringt einige Gespräche, Kreaturen, Items und Questen mit sich, die sich über den Baldur's Gate I und II Teil der Trilogie erstrecken. 
+Diese Modifikation fügt Breager vom Clan Bardormar als aufnehmbaren NPC hinzu. Breagar ist ein rechtschaffen-guter Zwergenkämpfer und hat sein eigenes Kit: "Zwergenschmied". Er bringt einige Gespräche, Kreaturen, Items und Questen mit sich, die sich über den Baldur's Gate I und II Teil der Trilogie erstrecken. 
 
 Breagar ist komplett durch Baldur's Gate, Schatten von Amn und Thron des Bhaals spielbar und bringt drei verschiedene Enden mit sich, je nach Spielweise.
+Bei der Installation in Tutu, BG:EE oder BGII wird nur der entsprechende Teil der Mod installiert.
 
 
 ***************************************************************************************************************
@@ -45,7 +46,6 @@ II. Installation:
 
 III. Hinweise (wichtig!)
 
-- Baldurs Gate Trilogy muss installiert und auf der neusten Version sein! Breagar ist ein REINER BGT-CHARAKTER und funktioniert nicht mit TUTU oder einer einfachen SoA-Installation. Wenn ihr versucht, Breagar mit diesen Programmen zu benutzen, ruiniert ihr euch unter Umständen die komplette Installation!
 
 - Die Version 6 ist nicht abwärtskompatibel mit vorherigen Versionen von Breagar. Inhalte wurden teilweise komplett neu überarbeitet und Variablen neu gesetzt. Es ist nicht möglich, ein bereits begonnenes Spiel der Version 5.2 oder niedriger mit Breagar in der Gruppe einfach zu updaten!
 
@@ -134,6 +134,60 @@ VIII. Versions-History:
 6.05 - 6.08	- Fixes von gemeldeten Bugs, Korrektur einiger kleiner Ungereimtheiten, Vorbereitung auf Kompatibilität mit Quespack.
 6.08		- Fix des unseligen TOD-Bugs
 6.08		- Fix verschiedner Dialogbugs
+7.00            - bugfixes and added compatibility with Tutu, BG:EE, BGII, BGII:EE, and EET!
+- by White Agnus and jastey:
+White Agnus' changes (he did a lot more than jastey although it doesn't look like it!):
+-Tutu, BG:EE, BGII, BGII:EE, and EET compatibility added [complete recode for compatibility with the different engines]
+-(bug) ToD cutscene hang fix
+-(bug) BWPFixpack patches
+-(compatibility) bgqe v9: correction of Breagar's interjection point
+-(internal) internal restructuring and update [TP2 moved inside mod folder; libs/iconv/autotra folders added; ALWAYS blocks / libs added; change to HANDLE_CHARSET, HANDLE_AUDIO, HANDLE_TILESET]
+jastey's changes:
+-(install bug) 'Virginie the Wonderbunny' will be installed correctly
+-(bug) Breagar and the ore: fixed several dialogue triggers, Breagar should now react correctly to the PC having the ore / wanting to sell the ore and also his quest should trigger correctly if he wasn't in the party when collecting the ore etc [habe das "Global("ACBREINPARTY","GLOBAL",3)" aus dem Dialogtrigger entfernt in acbresmi.d; Vereinheitlichung der Questvariablen "IRONDEALING" auf "GLOBAL", war vorher ein Mix aus "GLOBAL" und "LOCALS", so dass die Trigger nicht richtig funktionierten]
+-(bug) Breagar's BG1 quests won't happen simultaneously: kidnapping of priestess should only happen after Breagar's smithy-quest is fully completed (including meeting the Silver Dwarv) [in acbre.baf die Questvariable ~Global("ACSTORY","GLOBAL",3)~ in den Spawnblock, der ~SetGlobal("ACSILVERAPPEARS","GLOBAL",1)~ setzt eingefügt]
+-(bug) for the ceremony, the dialogue for mixing the ingredients should trigger correctly when all ingredients are placed inside [fixed with correcting the install of 'Virginie' that didn't get a dlg assigned]
+-(bug) all BWPFixpack fixes are outdated and no longer necessary: micbaldur's ACPOTN48.ITM dialogue fix, micbaldur's script typo fixes, micbaldur's ACGAL.CRE cutscene death fix were integrated, all other issues solved, too
+-(bug) Mendas interjection problem fixed, Mendas shouldn't remain inside his house after Breagar's interjection if he was about to organize a boat
+-(bug) area with petrified Revianel and the Lich will no longer crash if switched to sitemap [ACCEM3.wed file was patched wrongly]
+-(bug) priest Tobin will not spawn before priestess is kidnapped [SetGlobal("ACREVIQUEST","GLOBAL",5) removed from acrievi.d]
+-(bug) Breagar's interjection before last fight against Irenicus in hell fixed [added missing state triggers and changed I_C_T2 to I_C_T]
+-(bug BGII(:EE)) defined %IMOEN_DV% and %IMOEN_BANTER% so it installs correctly for BGII (although it's only for the BG1 part)
+-(bug BGII(:EE)) fixed doubled Breagar in ID (BGII:EE) [moved "acbresmi.baf" into folder ACBre/baf so it gets installed for BGII, too (needed for cutscene Breagar "ACBRESMI.cre")]
+-(bug BGII(:EE)) fixed stutter bug in BGII/BGII:EE after cutscene in ID (changed OUTER_SPRINT ~BGT_VAR~ to ~False()~ for ~tob bg2ee~
+-(bug, EET) all interjections should work now [eet-specific BG1-dlgs should be considered (in BG1-files, only): 
+--changed %tutu_var%EDWIN -> %tutu_var%EDWIN%eet_var% 
+--changed %tutu_scriptbg%NEB -> %tutu_scriptbg%NEB%eet_var%
+--changed %tutu_scriptbg%QUAYLE -> %tutu_scriptbg%QUAYLE%eet_var%
+--changed %tutu_scriptbg%SENDAI -> %tutu_scriptbg%SENDAI%eet_var%
+--changed %tutu_scriptbg%VICONI _> %tutu_scriptbg%VICONI%eet_var%]
+-(bug, EET) fixed chapter triggers in cutscenes [added EET journal system]
+-(improvement) all quest characters / Breagar will react to the PC / Breagar being in the group and standing nearby instead of having to talk to them with the PC / Breagar directly. No more 'he doesn't talk to me' bug reports. [Change of ~Name("ACBRE",LastTalkedToBy()) into ~InParty("ACBRE") 
+See("ACBRE") 
+!StateCheck("ACBRE",CD_STATE_NOTVALID)~ and of ~!Name("ACBRE",LastTalkedToBy())~ 
+in ~OR(3)
+!InParty("ACBRE") 
+!See("ACBRE") 
+StateCheck("ACBRE",CD_STATE_NOTVALID)~ and the same for ~!InPartySlot(LastTalkedToBy(),0)~ / ~~InPartySlot(LastTalkedToBy(),0)~ for "Player1"]
+-(improvement) the cutscene in the Thunderhammer smithy will now be centred above the action so it's better to watch [MoveViewPoint([815.490],INSTANT) in der accut_03.baf eingefügt]
+-(improvement) For his BGII quest, the second text fragment can now be collected out of Pimlicos house without Korgan having to join the party: the door to Pimlico's house will be unlocked if Breagar is in the party [Ausführen von "Unlock("Door0905")" über die ACBre.baf]
+-(improvement) the hooded dwrf should now spawn near the group and no longer get stuck behind walls or closed doors
+-(improvement, EET) in ToB, the existing Breagar from SoA will be spawned if called by the fate spirit (for continued game and Breagar was not in party upon transition to ToB)
+-(portrait, BG(II):EE, EET) changed default (Nix's) portrait choice to a "Head only" portrait for BG(II):EE+EET's "small" portrait
+-(crossmod) with Amber should trigger correctly [AreaCheck("M#ARE01") corrected to AreaCheck("M#AR01") in acamber.baf]
+-(crossmod) Breagar's dialogue about the cutscene events in the Promenade should really only happen after the cutscene and not 'in any other area than Irenicus Dungeon'
+-(install) upon deinstalling main component, the crossmod and PID will be deinstalled automatically [changed to REQUIRE_COMPONENT ~Setup-ACBre.tp2~ 0]
+-(install) in setup.tra: Error Message @2 changed to not BGT-specific [~Ihr habt kein Spiel installiert, für das die Mod kompatibel ist. Installation wird abgebrochen.~]
+-(internal) changed path to LANGUAGE to get rid of the doubled setup.tra. 
+-(internal) removed lines of STATE_WHICH_SAYS in ACStates.tra and changed them to OUTER_SPRINTs because they are fixed and known in BGT and EET (also, removed the ACStates.tra)
+-(internal) changed path to current eet cmpvars.tpa in EET folder
+-(internal) added OUTER_SPRINT "eet_var" "" for all games other than eet
+-(internal) changed copy-to location for the install.mrk [inside the backup folder for easy 'cleanup' of mod folder]
+-(internal, EET) replaced GlobalGT("CHAPTER","GLOBAL",1) in acbre.baf for BGII with an OUTER_SPRINT to make it compatible with EET
+-(internal) changed "myself" to "Myself" in scripts although I guess this wasn't necessary
+-(internal) changed the three states with the same name "7223" into "7223_01", "7223_02", "7223_03" in acarea.d although it doesn't seem to be necessary to call them differently for the states to be compiled properly (?)
+-updated readme 
+-update to WeiDU v242
 
 ***************************************************************************************************************
 

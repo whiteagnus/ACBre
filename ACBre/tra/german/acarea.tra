@@ -45,7 +45,7 @@
 @44   = ~Das Unterreich. Ihr habt uns tatsächlich in das Unterreich geführt, <CHARNAME>. Buzzurk.~
 @45   = ~Eigentlich sollte ich Euch mit den bloßen Händen erwürgen, aber irgendetwas sagt mir dass diese Reise überraschende Wendungen nehmen könnte.~
 @46   = ~Wider besseren Wissens werde ich Euch vertrauen, <PRO_RACE>.~
-@47   = ~(Breagar sieht Euch nachdenklich an, die Axt in der Hand)~
+@47   = ~(Breagar sieht Euch nachdenklich an, die Axt in der Hand.)~
 @48   = ~Breagar? Ist alles in Ordnung?~
 @49   = ~Was wird das, wenn das fertig ist?~
 @50   = ~Wollt Ihr irgendetwas?~
@@ -68,7 +68,7 @@
 @67   = ~Ganz egal, wie es ausgeht. Ich bin froh und stolz, hier bei Euch sein zu können.~ [ACBRE_76]
 @68   = ~Bei Clangedins Axt! Das war ein Kampf, der den Schlachten der alten Tage in nichts nachsteht!~ [ACBRE_77]
 @69   = ~Ihr habt Euch wacker geschlagen <CHARNAME> und den Sieg verdient.~
-@70   = ~Ihr habt Euch wacker geschlagen <CHARNAME> und den Sieg verdient. Unsere Reise soll hier ihr Ende nehmen, mein Eid ist erfüllt. Ich wünsche Euch noch alles gute im Leben!~
+@70   = ~Ihr habt Euch wacker geschlagen <CHARNAME> und den Sieg verdient. Unsere Reise soll hier ihr Ende nehmen, mein Eid ist erfüllt. Ich wünsche Euch noch alles Gute im Leben!~
 @71   = ~Nun, dann wären wir in der großen Stadt. Hoffen wir, dass uns hier endlich ein paar Antworten erwarten.~
 @72   = ~Beeindruckend. Bei meinem letzten Besuch hat man mich nicht hier eingelassen. Und dabei wollte ich unbedingt einen Blick auf die Architektur werfen. Jetzt weiß ich, dass ihr Ruf ihr zu Recht vorauseilt.~
 @73   = ~Hinter dieser Brücke liegt Baldur's Tor, <CHARNAME>. Glaubt Ihr, dass Ihr dort Antworten auf Euer SChicksal bekommen werdet?~
@@ -113,7 +113,7 @@
 @112  = ~Wenn dies der Weg ist, dann werde ich ihn gehen. Egal wohin.~
 @113  = ~Buzzurk. Irgendetwas hat diese Stätte entweiht, <CHARNAME>.~
 @114  = ~Etwas.... oder jemand.~
-@115  = ~Die Ruhe der Toten ist heilig, vielleicht das heiligste für mein Volk. Und sie zu brechen bedeutet die tiefste Schande.~
+@115  = ~Die Ruhe der Toten ist heilig, vielleicht das Heiligste für mein Volk. Und sie zu brechen bedeutet die tiefste Schande.~
 @116  = ~Was auch immer dafür verantwortlich ist, es muss vernichtet werden.~
 @117  = ~Jetzt ist mir klar, was mich die ganze Zeit an dieser verdammten Stadt gestört hat, <CHARNAME>.~
 @118  = ~Wieso müssen Menschen immer wieder ihre Städte so nah am Meer bauen. Brrr.~
@@ -128,7 +128,7 @@
 @127  = ~Jetzt ist es...~
 @128  = ~Buzzurk. Das gefällt mir nicht, <CHARNAME>. Leute, die sich solche Keller bauen, haben Böses im Sinn.~
 @129  = ~Graben nicht die Zwerge noch tiefer?~
-@130  = ~Ihr wollt doch nicht wirklich eine Zwergenhalle mit diesem.... diesem.... Loch hier vergleichen! Meiner Treu, Wenn mir nicht klar wäre, dass ein närrischer Baumkuschler es eben nicht besser weiß, würde ich euch an den Ohren durch die nächste Clanshalle schleifen!~
+@130  = ~Ihr wollt doch nicht wirklich eine Zwergenhalle mit diesem.... diesem.... Loch hier vergleichen! Meiner Treu, Wenn mir nicht klar wäre, dass ein närrischer Baumkuschler es eben nicht besser weiß, würde ich Euch an den Ohren durch die nächste Clanshalle schleifen!~
 @131  = ~Schon gut, schon gut. Da seien die Götter vor! Ich brauche meine Ohren noch!~
 @132  = ~Dann gebt gut auf sie acht, Druide.~
 @133  = ~Ich weiß nicht, ob ich mich hier wohl fühlen soll, <CHARNAME>.~
@@ -144,13 +144,13 @@
 @143  = ~Möge sein Hammer niemals brechen, einen solchen Meister gibt es selten.~
 @144  = ~Betrachtet Euch als mein Gast, Breagar aus dem Clan Bardormar.~
 @145  = ~Ich danke Euch, Meister Cromwell.~
-@146  = ~Und wen habt Ihr mir mitgebracht? Ach, ich seh schon, irgendein <RACE> kommt da in meine Schmiede marschiert. Besuch verirrt sich nur selten hierher, bei der ganzen Hitze und so... was kann ich für Euch tun, <GIRLBOY>?~
+@146  = ~Und wen habt Ihr mir mitgebracht? Ach, ich seh schon, irgendein <PRO_RACE> kommt da in meine Schmiede marschiert. Besuch verirrt sich nur selten hierher, bei der ganzen Hitze und so... was kann ich für Euch tun, <PRO_GIRLBOY>?~
 @147  = ~Wer seid Ihr?~
 @148  = ~Was habt Ihr hier zu verkaufen?~
 @149  = ~Nun, Ihr könntet zum Beispiel mal damit aufhören, mich dauernd "<GIRLBOY>" zu nennen.~
 @150  = ~Nein danke. Bin schon wieder weg.~
-@151  = ~Ich werde nie verstehen wie ihr Menschen euch mit einer solchen Begeisterung im eigenen Dreck suhlen könnt.~
-@152  = ~Ich glaube nicht dass irgendjemand freiwillig unter diesen Umständen lebt, mein Freund.~
+@151  = ~Ich werde nie verstehen wie Ihr Menschen Euch mit einer solchen Begeisterung im eigenen Dreck suhlen könnt.~
+@152  = ~Ich glaube nicht, dass irgendjemand freiwillig unter diesen Umständen lebt, mein Freund.~
 @153  = ~Mädchen, wieso ändert dann niemand etwas daran?~
 @154  = ~Weil man manchmal zu schwach ist um etwas zu ändern.~
 @155  = ~Eine typisch menschliche Ausrede.~
@@ -163,9 +163,9 @@
 @162  = ~Dann lasst uns mal einen Schritt zulegen.~
 @163  = ~Lasst uns mal einen Schritt zulegen und den Herrn dieses... Machwerkes aufspüren.~
 @164  = ~Aber Ihr fühlt Euch natürlich wie zu Hause, nicht wahr, <CHARNAME>? Mögen die Götter mich erleuchten und mir erklären, was mich dereinst geritten hat, mit so einem närrischen <PRO_RACE> zu reisen.~
-@165  = ~He <CHARNAME>. Erinnert Ihr Euch, dass ich gerade eben noch sagte, Ihr hättet den Ort gefunden, den ich am meisten verabscheue?~
+@165  = ~He, <CHARNAME>. Erinnert Ihr Euch, dass ich gerade eben noch sagte, Ihr hättet den Ort gefunden, den ich am meisten verabscheue?~
 @166  = ~Ich glaube, Ihr habt Euch tatsächlich selbst übertroffen, buzzurk!~
-@167  = ~Oh... und ich dachte, Zwerge... zwerge würden es lieben, unter der Erde zu sein.~
+@167  = ~Oh... und ich dachte, Zwerge... Zwerge würden es lieben, unter der Erde zu sein.~
 @168  = ~In einer steinernen Halle, geschaffen in harter Arbeit von fleißigen und fähigen Zwergenhänden, ja! Nicht in... in... wo auch immer wir sind.~
 @169  = ~Der Gestank des Todes liegt in diesem Raum. Schaut, dass wir so schnell es geht weiterkommen.~
 @170  = ~Nicht zu eilig, <CHARNAME>. Schon so manchen hat es mehr als nur einen Fuß gekostet, durch einen unbekannten Raum zu rennen.~
@@ -199,9 +199,9 @@
 @198  = ~Pah. Gleichgewicht.~
 @199  = ~Hört mal zu, ja? Mich interessiert Euer Geseier vom Gleichgewicht nicht! Buzzurk, ich würde mit Freuden jeden Baum in diesem vermaledeiten Wald fällen und verfeuern, wenn ich wüsste, dass ich über der Glut ein anständiges Schmuckstück schmieden könnte!~
 @200  = ~Lasst mich also in Ruhe mit Eurem Gequatsche von der Natur! Ich bin hier um irgendeinem durchgedrehten Gunvosbellin die Axt ins Maul zu stopfen wenn er brave Bürger belästigt, das ist alles!~
-@201  = ~Glaubt mir, je eher Ihr aufgebt, desto besser. Eher wachsen Stachenbeeren an einer Eiche als dass ein Zwerg die Natur zu schätzen lernt.~
+@201  = ~Glaubt mir, je eher Ihr aufgebt, desto besser. Eher wachsen Stachelbeeren an einer Eiche als dass ein Zwerg die Natur zu schätzen lernt.~
 @202  = ~Ich... ich sollte Euch wirklich erschlagen, <CHARNAME>.~
-@203  = ~Ich sollte euch ganz einfach töten. Einfach dafür, dass Ihr ein närrischer <PRO_RACE> seid, der vielleicht *endlich* begriffen hat, was ich ihm nun schon so lange über Schiffe und Boote predige.~
+@203  = ~Ich sollte Euch ganz einfach töten. Einfach dafür, dass Ihr ein närrischer <PRO_RACE> seid, der vielleicht *endlich* begriffen hat, was ich ihm nun schon so lange über Schiffe und Boote predige.~
 @204  = ~Allerdings... allerdings muss das warten, denn ich bin gerade über alle Maßen entsetzt.~
 @205  = ~Minsk und Boo können Euch nachfühlen, Breagar. Aber seid versichert, dass Minsk Kraft keinen Deut nachgelassen hat, wenn es um Stiefeltritte geht!~
 @206  = ~Ihr habt doch nun schon genug mitgemacht, dass Euch das bisschen hier nicht aus den Stiefeln schlagen wird, oder? Kommt schon...~
@@ -239,8 +239,8 @@
 @238  = ~Nein, beileibe nicht. Aber mit etwas Glück stolpert Ihr geradewegs in die Fallschlimgen hinein und wir wissen nicht nur, wo die Falle liegt sondern sind Euch auch noch gleich los.~
 @239  = ~Ihr... Ihr mieser, kleiner aufgeblähter, stinkender... Zwerg! Euch sollte man kopfüber in die Spinnengruben hängen, um Euch wenigstens ein kleines bisschen Verstand in den hohlen Schädel zu flößen!~
 @240  = ~Nun seid hübsch brav und kehrt zurück an Euren Platz, Drow, bevor ich Euch dorthin prügeln muss.~
-@241  = ~(Viconia wendet sich ab und murmelt ein paar Worte in Ihrer Sprache - was sie bedeuten, kann man sich ungefähr denken)~
-@242  = ~Immer schön ein Fuß vor dem anderen, <CHARNAME>. Und wenn Ihr einen Fallenfinder bei Euch habt, dann lasst ihn nur nach vorne.~
+@241  = ~(Viconia wendet sich ab und murmelt ein paar Worte in Ihrer Sprache - was sie bedeuten, kann man sich ungefähr denken.)~
+@242  = ~Immer schön ein Fuß vor den anderen, <CHARNAME>. Und wenn Ihr einen Fallenfinder bei Euch habt, dann lasst ihn nur nach vorne.~
 @243  = ~Ah, der Arm! Bentley mag ein verrückter Gnomenspinner sein, aber sein Bier hat's in sich. Was sagt Ihr, <CHARNAME>? Genehmigen wir uns einen Humpen?~
 @244  = ~Breagar, meint Ihr nicht, dass wir besseres zu tun haben?~
 @245  = ~Mit leerem Bauch ist nicht gut wandern, Paladin! Das solltet auch Ihr gelernt haben.~
@@ -320,5 +320,5 @@
 @319  = ~Ihr strahlt eine gewisse... herbe Männlichkeit aus, die man selten unter Elfen oder Menschen findet. Vielleicht gestatte ich Euch irgendwann einmal, mein Lager zu teilen.~
 @320  = ~Das könnt Ihr vergessen, Viconia! Eher sorge ich mit ein paar gezielten Hammerschlägen dafür, dass sich dieses Thema ein für alle mal für mich erledigt hat!~
 @321  = ~Mit dieser Einstellung ist es ja kein Wunder, dass Ihr nicht bei Eurem Schatz landen konntet.~
-@322  = ~Spuckt nur keine allzu großen Töne, Zwerg! Glaubt Ihr wirklich, dass Euer pummeliges Frauchen daheim Euch die selben Freuden bieten könnte wie eine gebildete und geübte Drow?~
+@322  = ~Spuckt nur keine allzu großen Töne, Zwerg! Glaubt Ihr wirklich, dass Euer pummeliges Frauchen daheim Euch dieselben Freuden bieten könnte wie eine gebildete und geübte Drow?~
 @323  = ~Ihr wagt es über Audhild zu reden? Ich sage Euch, Ihr haltet sofort Euer Schandmaul oder ich werde es Euch stopfen! Ihr seid es nicht Wert, auch nur einen Gedanken an sie zu verschwenden!~

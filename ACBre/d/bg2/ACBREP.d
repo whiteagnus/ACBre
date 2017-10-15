@@ -1,11 +1,18 @@
 APPEND ACBREP
 
-IF ~Global("ACAUDWAITS","GLOBAL",5)!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN AR2010.1
+IF ~Global("ACAUDWAITS","GLOBAL",5)
+OR(3) 
+!InParty(Player1) 
+!See(Player1) 
+StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN AR2010.1
 SAY @30
 IF ~~ THEN EXIT
 END
 
-IF ~Global("ACAUDWAITS","GLOBAL",5)InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN AR2010.2
+IF ~Global("ACAUDWAITS","GLOBAL",5) 
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN AR2010.2
 SAY @31
 ++ @32 + AR2010.3
 ++ @33 + AR2010.4

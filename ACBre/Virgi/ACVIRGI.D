@@ -64,5 +64,5 @@ END
 
 IF ~~ THEN BEGIN 31
 SAY @4017
-IF ~~ THEN DO ~ActionOverride(LastTalkedToBy(),CreateItem("ACPOTN48",0,0,0)DestroySelf()~ EXIT
+IF ~~ THEN DO ~GiveItemCreate("ACPOTN48",LastTalkedToBy,0,0,0) DestroySelf()~ EXIT
 END

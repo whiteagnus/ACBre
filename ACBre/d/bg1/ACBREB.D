@@ -71,49 +71,49 @@ INTERJECT_COPY_TRANS %tutu_var%BASSIL 2 ACBASSIL2
 @53
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 1 ACBGSENDAI1
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 1 ACBGSENDAI1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @54
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @55
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 3 ACBGSENDAI3
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 3 ACBGSENDAI3
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @56
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 2 ACBGSENDAI2
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 2 ACBGSENDAI2
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @58
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @59
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 1 ACBGVICONI1
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 1 ACBGVICONI1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @60
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @61
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 3 ACBGVICONI3
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 3 ACBGVICONI3
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @62
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @63
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 9 ACBGVICONI9
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 9 ACBGVICONI9
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @64 DO ~SetGlobal("ACBREVICBANTER","LOCALS",1)~
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @65
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @66
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @67
 END
 
@@ -310,7 +310,10 @@ IF ~~ THEN ACBREB ACMENDA1.6
 @178 = @179
 ==%tutu_var%MENDA1 @180
 END
+COPY_TRANS %tutu_var%MENDA1 13
+/*
 IF ~~ THEN DO ~SetGlobal("ReadyToSail","GLOBAL",1)ActionOverride("MENDA1",EscapeAreaDestroy(90))~ EXIT
+*/
 
 INTERJECT %tutu_var%MULAHE 3 ACMULAHE3
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -695,17 +698,17 @@ END
 ++ @366 EXTERN %tutu_var%TEYNGA 1
 ++ @367 EXTERN %tutu_var%TEYNGA 3
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE 1 ACBGQUAYLE1
+INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE%eet_var% 1 ACBGQUAYLE1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @368
-==%tutu_scriptbg%QUAYLE IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%QUAYLE%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @369
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE 2 ACBGQUAYLE2
+INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE%eet_var% 2 ACBGQUAYLE2
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @368
-==%tutu_scriptbg%QUAYLE IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%QUAYLE%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @369
 END
 
@@ -848,69 +851,71 @@ INTERJECT_COPY_TRANS %tutu_var%FFHUNT 0 ACFFHUNT0
 @401
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 8 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 8 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 15 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 15 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 8 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 8 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_0% ACEDWIN74
+/* BGTEDWINState0 is defined in the normal cmpvars.tpas */
+
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %BGTEDWINState0% ACEDWIN74
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_1% ACEDWIN75
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %EDWIN_STATE_1% ACEDWIN75
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_2% ACEDWIN76
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %EDWIN_STATE_2% ACEDWIN76
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
@@ -1416,7 +1421,7 @@ CombatCounter(0)
 !StateCheck(MYSELF,CD_STATE_NOTVALID)
 !StateCheck("VICONIA",CD_STATE_NOTVALID)~ THEN ACBREB BreVic4
 @864 DO ~SetGlobal("ACBREVIC","LOCALS",4)~
-==%VICONIA_JOINED%@865
+==%VICONIA_JOINED% @865
 ==ACBREJ @866
 ==%VICONIA_JOINED% @867 = @868
 ==ACBREJ @869

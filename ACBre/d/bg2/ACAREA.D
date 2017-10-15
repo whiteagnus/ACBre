@@ -1,3 +1,5 @@
+/* BGII part!! */
+
 APPEND ACBREJ
 
 IF ~Global("ACAR0204","LOCALS",1)~ THEN BEGIN AR0204
@@ -5,10 +7,27 @@ SAY @0
 IF ~~ THEN DO ~SetGlobal("ACAR0204","LOCALS",2)~ EXIT
 END
 
+/*  
+note from jastey: this will not show if Jaheira or Minsc or Yoshimo are in the party, because SetGlobal("PostCutSpeak","AR0700",2) is done in their dialogues. If none of them is, it will trigger next time Breagar is talked to, because this dialogue is not triggered...? 
+Better make this independent of the game variable:
+change trigger to 
+~!Global("ACBREFRIEND","GLOBAL",3)%BGT_VAR2%
+GlobalGT("PostCutSpeak","AR0700",0)
+~Global("ACBREPostCutSpeak","GLOBAL",0)
+
+and the transaction to 
+~SetGlobal("ACBREPostCutSpeak","GLOBAL",1)~
+
+and let Breagar trigger the dialogue from his script.
+*/
+
 IF WEIGHT #6 ~!Global("ACBREFRIEND","GLOBAL",3)%BGT_VAR2%Global("PostCutSpeak","AR0700",1)~ THEN BEGIN 0700
 SAY @1 = @2
 IF ~~ THEN DO ~SetGlobal("PostCutSpeak","AR0700",2)~ EXIT
 END
+
+
+
 
 IF ~~ THEN BEGIN ACAR0300.1
 SAY @3 = @4 = @5 = @6

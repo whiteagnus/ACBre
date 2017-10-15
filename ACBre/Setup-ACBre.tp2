@@ -1,7 +1,33 @@
+/*
+
+
+CHanges zur v 20170921: 
+-@2 in ACACQ.TRA englisch angepasst
+-(internal) Spawn of hooded Dwarf changed from Offscreen before Breagar talks to Object after he spoke.
+-(internal) Spawn of Ralph for kidnapped priest quest also changed from Offscreen before Breagar talks to Object after he spoke. 
+-Breagars Einmischdialog in Jet'Layas Aufnahmedialog (DSotSC) hoffentlich gefixt
+-Breagars Kommentare zum Ruf nun auch im (nur) BGII(:EE) Spiel (anstatt stutterbug)
+-removed all quest NPC portraits with unclear copyright status
+
+
+
+------
+
+Hinweis zur englischen Übersetzung:
+
+-nächste zu korrigierende Datei im Ordner "english" nach alphabetischer Reihenfolge: acaud001.tra
+
+*/
+
+
+
+
+
+
 BACKUP ~ACBre/backup~
 AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
 //MODDER
-VERSION ~7.00b_20150127~
+VERSION ~7.00~ //20171003
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -10,10 +36,28 @@ ALWAYS
 INCLUDE ~ACBre/lib/g3_tutu_cpmvars.tpa~
 INCLUDE ~ACBre/lib/g3_bgt_cpmvars.tpa~
 INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
-INCLUDE ~ACBre/lib/eet_cpmvars.tpa~
+
+/* Declaration of EET Platform Variables */
+ACTION_IF GAME_IS "eet" BEGIN
+  INCLUDE ~EET/other/cpmvars/eet_cpmvars.tpa~
+END
+
 INCLUDE "ACBre/lib/fl#add_kit_ee.tpa"
 
-ACTION_IF !FILE_EXISTS ~ACBre/reinstall.mrk~ BEGIN
+/* continuous chapter for EET */
+
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+ACTION_IF !FILE_EXISTS ~ACBre/Backup/reinstall.mrk~ BEGIN
 
 /* Handling of correctly formatted tra-files!! ---------------------- */
 
@@ -60,19 +104,19 @@ BUT_ONLY_IF_IT_CHANGES
 
 INCLUDE ~ACBre/lib/ac_bre_cpmvars.tpa~
 
-COPY ~ACBre/component.xxx~ ~ACBre/reinstall.mrk~
+COPY ~ACBre/component.xxx~ ~ACBre/Backup/reinstall.mrk~
 
 END
 END
 
-LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/autotra/german/setup-ACBre.tra~
+LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////																			////////////
-////////////									BEGIN PART 1							////////////
-////////////																			////////////
+////////////										////////////
+////////////		BEGIN PART 1							////////////
+////////////										////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
          
@@ -83,15 +127,45 @@ REQUIRE_PREDICATE GAME_IS ~bgt bgee tob bg2ee tutu_totsc eet~ @2
 //For all engines
 
 //ACVIRGI
+ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~ACVIRGI.DLG~ THEN BEGIN
+    PRINT @206
+    COMPILE ~ACBre/Virgi/ACVIRGI2.D~
+  END ELSE BEGIN 
+    COMPILE ~ACBre/Virgi/ACVIRGI.D~
+  END
+END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~ACVIRGI.CRE~ THEN BEGIN
+  PRINT @207
+  COPY ~ACBre/cre/ACVIRGI.CRE~ ~OVERRIDE/ACVIRGI.CRE~
+  SAY NAME1 ~~
+  SAY NAME2 ~~
+  WRITE_ASCII 0x280 ~ACVIRGI~
+  WRITE_ASCII 0x2cc ~ACVIRGI~
+  WRITE_ASCII 0x248 ~ACVIRGI~
+END ELSE BEGIN 
+  COPY_EXISTING ~ACVIRGI.CRE~ ~OVERRIDE/ACVIRGI.CRE~
+  SAY NAME1 ~~
+  SAY NAME2 ~~
+  WRITE_ASCII 0x280 ~ACVIRGI~
+  WRITE_ASCII 0x2cc ~ACVIRGI~
+  WRITE_ASCII 0x248 ~ACVIRGI~
+END
+
+EXTEND_BOTTOM ~ACVIRGI.bcs~ ~ACBre/Virgi/ACVIRGI.BAF~
+
+
+/*
+//ACVIRGI
 ACTION_IF FILE_EXISTS_IN_GAME ~ACVIRGI.CRE~
 THEN BEGIN
-PRINT ~Bringe Virginie, dem unsichtbaren Wunderbunny, ein paar neue Tricks bei~
+PRINT @206
 ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
 COMPILE ~ACBre/Virgi/ACVIRGI2.D~
 END
 EXTEND_BOTTOM ~ACVIRGI.bcs~ ~ACBre/Virgi/ACVIRGI.BAF~
 END ELSE BEGIN 
-PRINT ~Installiere Virginie, das unsichtbare Wunderbunny~
+PRINT @207
 COPY ~ACBre/cre/ACVIRGI.CRE~ ~OVERRIDE/ACVIRGI.CRE~
 SAY NAME1 ~~
 SAY NAME2 ~~
@@ -103,6 +177,7 @@ COMPILE ~ACBre/Virgi/ACVIRGI.D~
 END
 COMPILE ~ACBre/Virgi/ACVIRGI.BAF~
 END
+*/
 
 PRINT @3
 
@@ -164,9 +239,9 @@ END
 PRINT @16
 END
 
-//bams and portraits
+//bams and portraits 
 COPY ~ACBre/bam~ ~override~
-COPY ~ACBre/Portraits~ ~override~
+COPY ~ACBre/Portraits/ACAUDS.bmp~ ~override~
 
 //Audio Files
 ACTION_IF FILE_EXISTS ~ACBre/sounds/%LANGUAGE%/ACBRE_00.ogg~ THEN BEGIN
@@ -888,10 +963,13 @@ WRITE_EVALUATED_ASCII 0x154 ~%Beregost%~
 WRITE_EVALUATED_ASCII 0x15c ~%Exit3301%~
 WRITE_EVALUATED_ASCII 0x1e0 ~%Exit3300%~
 END
-PATCH_IF ("ACCEM3" STRING_EQUAL_CASE  "%SOURCE_RES%" = 1) BEGIN
+
+COPY_EXISTING ~ACCEM3.are~ ~OVERRIDE~
+//PATCH_IF ("ACCEM3" STRING_EQUAL_CASE  "%SOURCE_RES%" = 1) BEGIN
 WRITE_EVALUATED_ASCII 0x107c ~%tutu_scriptbg%skelwa~ #8
 WRITE_EVALUATED_ASCII 0x118c ~%tutu_scriptbg%skelwa~ #8
-END
+//END
+
 
 
 //Ambient for Area
@@ -1042,9 +1120,18 @@ EXTEND_TOP ~AR0905.bcs~ ~ACBre/baf/bg2/AR0905.baf~
 EXTEND_TOP ~AR2000.bcs~ ~ACBre/baf/bg2/AR2000.baf~
 EXTEND_TOP ~AR2010.bcs~ ~ACBre/baf/bg2/AR2010.baf~
 EXTEND_TOP ~AR4000.bcs~ ~ACBre/baf/bg2/AR4000.baf~
-EXTEND_TOP ~AR4500.bcs~ ~ACBre/baf/bg2/AR4500.baf~
 EXTEND_TOP ~AR0602.bcs~ ~ACBre/baf/bg2/AR0602.baf~
 EXTEND_TOP ~AR6200.bcs~ ~ACBre/baf/bg2/AR6200.baf~
+
+ACTION_IF GAME_IS ~bgt tob bg2ee~ THEN BEGIN
+  EXTEND_TOP ~AR4500.bcs~ ~ACBre/baf/bg2/AR4500.baf~
+END
+
+ACTION_IF GAME_IS ~eet~ THEN BEGIN
+  EXTEND_TOP ~AR4500.bcs~ ~ACBre/baf/bg2/AR4500_eet.baf~
+END
+
+
 
 //Patch Existing Creatures
 COPY_EXISTING ~BMTHIEF.CRE~ ~OVERRIDE~
@@ -1181,16 +1268,17 @@ REPLACE_TEXTUALLY 999991 ~%ACBREM2%~
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////																			////////////
-////////////									BEGIN PART 2							////////////
-////////////																			////////////
+////////////											//////////
+////////////						BEGIN PART 2				////////////
+////////////											////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BEGIN @197 DESIGNATED 2
 
 REQUIRE_PREDICATE GAME_IS ~bgt eet tob bg2ee bgee tutu_totsc~ @2
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~acbre.cre~ @198
+//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~acbre.cre~ @198
+REQUIRE_COMPONENT ~Setup-ACBre.tp2~ 0 @198
 
 ACTION_IF FILE_EXISTS_IN_GAME ~JETLA.DLG~
 THEN BEGIN

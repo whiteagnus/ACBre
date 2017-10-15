@@ -1,7 +1,7 @@
 @1    = ~Breagar: Inhalte~
-@2    = ~Ihr habt BGT nicht installiert. Installation wird abgebrochen.~
+@2    = ~Ihr habt kein Spiel installiert, für das die Mod kompatibel ist. Installation wird abgebrochen.~
 @3    = ~Setup von Breagars Gesprächsgeschwindigkeit~
-@4    = ~Bitte auswählen:
+@4    = ~Bitte auswaehlen:
 [1] 30 Minuten Realzeit zwischen den einzelnen Gespraechen (empfohlen)
 [2] 45 Minuten Realzeit zwischen den einzelnen Gespraechen
 [3] 1 Stunde Realzeit zwischen den einzelnen Gespraechen
@@ -9,14 +9,14 @@
 [5] 1 Stunde 30 Minuten Realzeit zwischen den einzelnen Gespraechen
 ~
 @5    = ~placeholder_value~
-@6    = ~Bitte wählt 1, 2, 3, 4 oder 5 und bestätigt mit Enter.~
+@6    = ~Bitte waehlt 1, 2, 3, 4 oder 5 und bestaetigt mit Enter.~
 @7    = ~30 Minuten Realzeit zwischen den Gespraechen~
 @8    = ~45 Minuten Realzeit zwischen den Gespraechen~
 @9    = ~1 Stunde Realzeit zwischen den Gespraechen~
 @10   = ~15 Minuten Realzeit zwischen den Gespraechen~
 @11   = ~1 Stunde 30 Minuten Realzeit zwischen den Gespraechen~
 @12   = ~Ein Portrait fuer Breagar~
-@13   = ~Bitte wählt ein Portrait:
+@13   = ~Bitte waehlt ein Portrait:
 
 [1] Original Art by Nix
 [2] Alternatives Portraits aus v4.X~
@@ -674,6 +674,8 @@ Und als Moradins Hammer mit der Wucht von tausend Lawinen auf den schurkischen R
 @203  = ~Installiere Crossmodinhalt für: BGQE~
 @204  = ~Installiere Crossmodinhalt für: ToD~
 @205  = ~Installiere Crossmodinhalt für: AsQ~
+@206  = ~Bringe Virginie, dem unsichtbaren Wunderbunny, ein paar neue Tricks bei~
+@207  = ~Installiere Virginie, das unsichtbare Wunderbunny~
 
 @4000    = ~Alle Zutaten sind bereit. Ihr wisst, dass Ihr nur einen Versuch habt und solltet Ihr zwischendurch abbrechen ist der Trank verloren. Wollt Ihr beginnen?~
 @4001    = ~Ja, ich bin bereit.~
@@ -864,7 +866,7 @@ Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars 
 //ungelöste Aufgaben:	AddJournalEntry(@10037,QUEST)
 //erledigte Aufgaben:	AddJournalEntry(@10036,QUEST_DONE)
 //Tagebucheinträge:	AddJournalEntry(%Text%,INFO)
-//					EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)
+//EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)
 
 //BG:EE Compatibility
 

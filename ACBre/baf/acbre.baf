@@ -7,7 +7,7 @@ THEN
 END
 
 IF
-	InParty(myself)
+	InParty(Myself)
 	Global("ACBREBROKE","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -34,9 +34,9 @@ END
 
 IF
 	OR(3)
-	HasItem("ACAXE",myself)
-	HasItem("ACAXE2",myself)
-	HasItem("ACAXE3",myself)
+	HasItem("ACAXE",Myself)
+	HasItem("ACAXE2",Myself)
+	HasItem("ACAXE3",Myself)
 	!Global("ACBREMYAXE","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -46,7 +46,7 @@ END
 
 IF
 	PartyHasItem("ACAXE")
-	!HasItem("ACAXE",myself)
+	!HasItem("ACAXE",Myself)
 	!Global("ACBRENOTYOURAXE","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -56,7 +56,7 @@ END
 
 IF
 	PartyHasItem("ACAXE2")
-	!HasItem("ACAXE2",myself)
+	!HasItem("ACAXE2",Myself)
 	!Global("ACBRENOTYOURAXE","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -66,7 +66,7 @@ END
 
 IF
 	PartyHasItem("ACAXE3")
-	!HasItem("ACAXE3",myself)
+	!HasItem("ACAXE3",Myself)
 	!Global("ACBRENOTYOURAXE","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -393,10 +393,11 @@ END
 
 IF
 	%BGT_VAR%
-	InParty(myself)
+	InParty(Myself)
 	GlobalGT("CHAPTER","GLOBAL",%tutu_chapter_4%)
 	AreaType(OUTDOOR)
 	Global("ACSILVERAPPEARS","GLOBAL",0)
+	Global("ACSTORY","GLOBAL",3) //Breagar armquest abgeschlossen
 	ReputationGT(PLAYER1,16)		
 THEN
 	RESPONSE #100
@@ -512,6 +513,7 @@ THEN
 		SetGlobal("ACREVIQUEST","GLOBAL",2)
 END
 
+/*
 IF
 	%BGT_VAR%
 	InParty(Myself) 
@@ -522,13 +524,14 @@ THEN
 	RESPONSE #100
 		CreateCreatureOffScreen("ACRALPH",0)
 END
+*/
 
 IF
 	%BGT_VAR%
 	InParty(Myself) 
 	See(Player1)
 	Global("ACREVIQUEST","GLOBAL",2)
-	InMyArea("ACRALPH")
+//	InMyArea("ACRALPH")
 THEN
 	RESPONSE #100
 		StartDialogNoSet(PLAYER1)
@@ -665,11 +668,13 @@ END
 
 ///////////////////////////////////////////
 
+
+/* these are for BGII part */
 IF
-	GlobalGT("CHAPTER","GLOBAL",1)
+	%GlobalGT_CHAPTER_1%
 	%BGT_VAR2%
 	InParty(Myself)
-	InParty("%IMOEN_DV%")
+	InParty("Imoen2")
 OR(2)
 	Global("ACBreImmyActive","GLOBAL",0)
 	Global("ACBreImmyActive","GLOBAL",2)
@@ -686,7 +691,7 @@ IF
 	GlobalGT("ACBreBio","GLOBAL",0)
 	Global("ACBreImmyTalk","GLOBAL",11)
 	InParty(Myself)
-	InParty("%IMOEN_DV%")
+	InParty("Imoen2") 
 	Global("ACBreImmyActive","GLOBAL",3)
 THEN
 	RESPONSE #100
@@ -696,17 +701,17 @@ THEN
 END
 
 IF
-	GlobalGT("CHAPTER","GLOBAL",1)
+	%GlobalGT_CHAPTER_1%
 	%BGT_VAR2%
 	InParty(Myself)
-	InParty("%IMOEN_DV%")
-	See("%IMOEN_DV%")
+	InParty("Imoen2")
+	See("Imoen2")
 	RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")
 	Global("ACBreImmyActive","GLOBAL",1)
 	CombatCounter(0)
 	!See([ENEMY])
 	!StateCheck("ACBre",CD_STATE_NOTVALID)
-	!StateCheck("%IMOEN_DV%",CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
 	OR(6)
 	Global("ACBreImmyTalk","GLOBAL",1)
 	Global("ACBreImmyTalk","GLOBAL",3)
@@ -721,7 +726,7 @@ THEN
 END
 
 IF
-	GlobalGT("CHAPTER","GLOBAL",1)
+	%GlobalGT_CHAPTER_1%
 	%BGT_VAR2%
 	InParty(Myself) 
 	InParty("%IMOEN_DV%")
@@ -737,11 +742,11 @@ IF
 THEN
 	RESPONSE #100
 		PlaySong(999991)
-		StartDialogNoSet("%IMOEN_DV%")
+		StartDialogNoSet("Imoen2")
 END
 
 IF
-	GlobalGT("CHAPTER","GLOBAL",1)
+	%GlobalGT_CHAPTER_1%
 	%BGT_VAR2%
 	InParty(Myself) 
 	InParty("%IMOEN_DV%")
@@ -759,13 +764,13 @@ IF
 THEN
 	RESPONSE #100
 		PlaySong(999991)
-		ActionOverride("%IMOEN_DV%",StartDialogNoSet("ACBRE")
+		ActionOverride("Imoen2",StartDialogNoSet("ACBRE")
 END
 
 IF
 	%BGT_VAR2%
 	InParty(Myself) 
-	GlobalGT("CHAPTER","GLOBAL",1)
+	%GlobalGT_CHAPTER_1%
 	Global("ACAUDQUEST","GLOBAL",0)
 THEN
 	RESPONSE #100
@@ -1020,7 +1025,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ACAUDINTM","GLOBAL",2)
-		CreateCreatureOffScreen("ACAUD001",0)
 END
 
 IF
@@ -1040,7 +1044,7 @@ IF
 	Global("ACAUDWAITS","GLOBAL",5)
 	Global("ACBREINPARTY","GLOBAL",3)
 	%BGT_VAR2%
-	!InParty(myself)
+	!InParty(Myself)
 	AreaCheck("AR2010")
 	!See(PLAYER1)
 THEN
@@ -1052,7 +1056,7 @@ IF
 	GlobalTimerExpired("ACBRELAWTIMER","GLOBAL")
 	Global("ACAUDWAITS","GLOBAL",5)
 	Global("ACBREINPARTY","GLOBAL",3)
-	!InParty(myself)
+	!InParty(Myself)
 	AreaCheck("AR2010")
 	%BGT_VAR2%
 	See(PLAYER1)
@@ -1219,6 +1223,7 @@ THEN
 	RESPONSE #100
 		StartDialogNoSet(PLAYER1)
 END
+
 IF 
 	InParty(Myself)
 	PartyHasItem("ACHAND1")
@@ -1303,12 +1308,15 @@ THEN
 		SetGlobal("ACBREBANTER4","LOCALS",2)
 END
 
+
 IF 
 	InParty(Myself)
 	!AreaCheck("AR0601")
 	!AreaCheck("AR0602")
 	!AreaCheck("AR0603")
 	%BGT_VAR2%
+	GlobalTimerExpired("CutScene01Timer","AR0700")
+	Global("CutScene01","AR0700",5) //[Irenicus and Imoen taken by CW]
 	Global("ACBREBANTER5","LOCALS",0)
 THEN
 	RESPONSE #100
@@ -1333,7 +1341,7 @@ OR(9)
 	Global("ACBREBANTER3","LOCALS",1)
 	Global("ACBREBANTER3","LOCALS",2)
 	Global("ACBREBANTER4","LOCALS",2)
-	Global("ACBREBANTER5","LOCALS",1)
+	Global("ACBREBANTER5","LOCALS",1) 
 //	Global("ACBREBANTER5","LOCALS",2)
 THEN
 	RESPONSE #100
@@ -1473,7 +1481,7 @@ IF
 	!Global("ACBREFRIEND","GLOBAL",3)
 	!See([ENEMY])
 	!StateCheck("ACBre",CD_STATE_NOTVALID)
-	!StateCheck("NAILA",CD_STATE_NOTVALID)
+	!StateCheck("NALIA",CD_STATE_NOTVALID)
 	Global("ACAR0400","LOCALS",0)
 THEN
 	RESPONSE #100
@@ -1905,7 +1913,6 @@ IF
 	%BGT_VAR2%
 	InParty(Myself) 
 	AreaCheck("AR2800")
-	%BGT_VAR2%
 	CombatCounter(0)
 	!Global("ACBREFRIEND","GLOBAL",3)
 	!See([ENEMY])
@@ -2929,6 +2936,18 @@ THEN
 	RESPONSE #100
 		SetGlobal("ACSW1H17","LOCALS",1)
 		Continue()
+END
+
+/* Open up Pimlico's door if Breagar is in the party */
+
+IF
+	InParty(Myself)
+	AreaCheck("AR0900")
+	Global("AR0905UnlockDoor","LOCALS",0)
+THEN
+	RESPONSE #100
+		Unlock("Door0905")
+		SetGlobal("AR0905UnlockDoor","LOCALS",1)
 END
 
 IF

@@ -17,7 +17,7 @@
 @16   = ~Ich will immer noch in die Minen von Nashkell.~
 @17   = ~Könntet Ihr mir noch einmal sagen, was hier los ist?~
 @18   = ~Schickt <CHARNAME> zu mir, wenn <PRO_HESHE> etwas von mir will.~
-@19   = ~Hallo <CHARNAME>. Was macht das Abenteurergeschäft?~
+@19   = ~Hallo, <CHARNAME>. Was macht das Abenteurergeschäft?~
 @20   = ~Läuft gut, was macht das Schmiedegeschäft?~
 @21   = ~Könnt Ihr mir etwas schmieden?~
 @22   = ~Wollte nur nachschauen, wie es Euch geht. Ich hoffe, ich störe nicht.~
@@ -43,7 +43,7 @@
 @42   = ~Ihr lasst Euch von einem Magier und einem Halbling unter die Erde führen? Na, Prost Mahlzeit.~
 @43   = ~Ihr lasst Euch von einem Halbling unter die Erde führen? Na, Prost Mahlzeit.~
 @44   = ~Ihr lasst Euch von einem Magier unter die Erde führen? Na, Prost Mahlzeit.~
-@45   = ~Hrmpf. Klug ist das nicht, närrischer <PRO_RACE>. Wenn Ihr Euch anders entscheidet, ihr könnt mich hier finden.~
+@45   = ~Hrmpf. Klug ist das nicht, närrischer <PRO_RACE>. Wenn Ihr Euch anders entscheidet, Ihr könnt mich hier finden.~
 @46   = ~Ach... falls es Euch doch noch nach Nashkell verschlagen sollte, dann haltet die Augen nach einem guten Stück Eisen offen. Ich zahle gut.~
 @47   = ~Pah. Ein gutes Zwergenwerk braucht Monate, wenn nicht Jahre! Und vor allem besseres Material, als diese Bruchbude hergibt.~
 @48   = ~Aber... Ich schätze, ich kann mir Euren Kram mal anschauen und etwas verstärken, so dass Euch das Zeug nicht gleich unter den Fingern zerbricht.~
@@ -123,7 +123,7 @@
 @122  = ~RANZIGE ELFENSCHEISSE! AN DIE WAND MIT DIR! SO!~ [ACBRE_56]
 @123  = ~ARGASHMEGORLIMBUZZURKARASH!~ [ACBRE_57]
 @124  = ~Breagar! Ihr verscheucht mir noch die Kunden!~
-@125  = ~Pah, wer sich von eurem Kram hier nicht abschrecken lässt, den werden auch ein paar deutliche Worte nicht davonjagen! Schaut Euch das an, DAS nennt Ihr Handwerk? Dass ich nicht lache! Ha!~
+@125  = ~Pah, wer sich von Eurem Kram hier nicht abschrecken lässt, den werden auch ein paar deutliche Worte nicht davonjagen! Schaut Euch das an, DAS nennt Ihr Handwerk? Dass ich nicht lache! Ha!~
 @126  = ~Jetzt ist es aber genug! Hört zu, ich bin Euch dankbar, dass Ihr mir etwas zur Hand geht, aber irgendwann muss auch mal gut sein!~
 @127  = ~Und woher wollt *Ihr* wissen wann genug ist? Ich habe ja noch nicht mal richtig angefangen, Buzzurk!~
 @128  = ~Wie wäre es, wenn Ihr Euch wieder Eurer Arbeit zuwendet? Das sollte Eure Aufmerksamkeit genug in Anspruch nehmen.~

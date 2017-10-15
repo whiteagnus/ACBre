@@ -35,7 +35,7 @@
 @34   = ~Nein, Breagar. (seufz) Sie kam gerade zufällig des Weges und hatte Lust, einem Zwerg die Hand abzuschlagen.~
 @35   = ~Ihr könnt Euren Sarkasmus ruhig für Euch behalten, <CHARNAME>.~
 @36   = ~Ich danke Euch.~
-@37   = ~(Breagar schaut einen Moment ins Leere, bevor er sehr langsam und gewählt weiterspricht)~
+@37   = ~(Breagar schaut einen Moment ins Leere, bevor er sehr langsam und gewählt weiterspricht.)~
 @38   = ~<CHARNAME>, ich habe eine Bitte an Euch. Ihr habt mein Leben gerettet und deswegen möchte ich meine Axt in Eure Dienste stellen. Ich werde Euch auf der Suche nach dem Mörder Eures Vaters begleiten, so lange es nötig ist.~
 @39   = ~Ich danke Euch, Breagar. Ich freue mich, dass Ihr mit mir reisen wollt.~
 @40   = ~Ein Einarmiger Zwerg? Bei mir? Vergesst es. Sucht Euch eine andere Beschäftigung.~
@@ -141,10 +141,10 @@
 @140  = ~Ihr! Seid still oder ich strecke Euch nieder, auf der Stelle!~
 @141  = ~Jaaaah jaaaaah.~
 @142  = ~Wisst Ihr, was das ist?~
-@143  = ~Ich habe eine Vermutung. Wenn ich recht habe, dann steht uns etwas großes bevor.~
+@143  = ~Ich habe eine Vermutung. Wenn ich recht habe, dann steht uns etwas Großes bevor.~
 @144  = ~Was ist? Sind wir in Gefahr?~
 @145  = ~Ich kann nichts spüren.~
 @146  = ~Habt Ihr Halluzinationen?~
-@147  = ~Ich danke Euch <CHARNAME>. Wünscht mir Glück auf meiner Reise.~
+@147  = ~Ich danke Euch, <CHARNAME>. Wünscht mir Glück auf meiner Reise.~
 @148  = ~Ihr werdet nicht alleine gehen müssen. Breagar. Ich werde Euch begleiten und Eure heilige Queste unterstützen.~
 @149  = ~Nun dann. Auf ins Abenteuer!~
