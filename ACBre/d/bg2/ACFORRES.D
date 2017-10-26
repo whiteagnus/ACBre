@@ -27,12 +27,17 @@ END
 BEGIN ACFORRES
 IF ~~ THEN BEGIN 3
 SAY @5
-IF ~~ THEN DO ~SetGlobal("ACFORRESDEAD","GLOBAL",1)DestroyItem("MINHP1")SetGlobal("ACFORRESDEAD","GLOBAL",1)Enemy()~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACFORRESDEAD","GLOBAL",1)DestroyItem("MINHP1")Enemy()~ EXIT
+END
+
+IF ~Global("ACAUDQUEST","GLOBAL",11)~ THEN BEGIN end
+SAY @1
+IF ~~ THEN EXIT
 END
 
 CHAIN
 IF ~Global("ACAUDQUEST","GLOBAL",10)~ THEN ACFORRES 1
-@6 DO ~EraseJournalEntry(10037)~
+@6 DO ~EraseJournalEntry(@10037)~
 ==ACBREJ @7
 ==ACFORRES @8
 ==ACBREJ @9
@@ -89,5 +94,5 @@ CHAIN
 IF ~~ THEN ACFORRES 7
 @42 = @43
 ==ACBREJ @44
-==ACFORRES @45 DO ~SetGlobal("ACAUDQUEST","GLOBAL",11)GiveItem("ACPLOT1A",LastTalkedToBy())GiveItem("ACPLOT1B",LastTalkedToBy())GiveItem("ACPLOT1C",LastTalkedToBy())~ 
+==ACFORRES @45 DO ~SetGlobal("ACAUDQUEST","GLOBAL",11)GiveItem("ACPLOT1A",LastTalkedToBy())GiveItem("ACPLOT1B",LastTalkedToBy())GiveItem("ACPLOT1C",LastTalkedToBy()) DestroyItem("MINHP1") ChangeEnemyAlly(Myself,NEUTRAL)~ 
 EXIT

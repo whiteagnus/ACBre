@@ -1,14 +1,31 @@
 /*
 
+Breagar Unfinished Business 
 
-CHanges zur v 20170921: 
--@2 in ACACQ.TRA englisch angepasst
--(internal) Spawn of hooded Dwarf changed from Offscreen before Breagar talks to Object after he spoke.
--(internal) Spawn of Ralph for kidnapped priest quest also changed from Offscreen before Breagar talks to Object after he spoke. 
--Breagars Einmischdialog in Jet'Layas Aufnahmedialog (DSotSC) hoffentlich gefixt
--Breagars Kommentare zum Ruf nun auch im (nur) BGII(:EE) Spiel (anstatt stutterbug)
--removed all quest NPC portraits with unclear copyright status
+1. Schmieden in BGII: Verbesserungen seines Arms. Es existieren itm Dateien (nicht auf Funktionsfähigkeit geprüft)
 
+-Bei Cromwell wäre es sicher besser, aber da die Zellen ja verschwinden, sobald man ID verlässt ...
+Soweit ich weiss, sollte man mit den Zellen Breagars Golemarm verbessern können - das steht zumindest in der Item-Beschreibung ACHAND4:
+
+Breagars Silberne Hand
+
+Durch Berronars mächtige Magie wurde der silberne Arm des Wächtergolems mit Breagars Armstumpf verbunden. Breagar kann die Hand verwenden, als ob es seine eigene wäre. Der Segen der Zwergengöttin verstärkt das Metall genug, dass Breagar damit Waffen blocken und sogar magischen Angriffen ein wenig trotzen kann. Leider sind die Finger der neuen Hand zu dick, als dass er einen Ring über sie streifen könnte.
+
+Dank der Energiezellen aus Irencus' Kerker ist der silberne Arm jetzt um einiges stärker.
+
+EIGENSCHAFTEN:
+
+Stärkebonus: +1
+RK-Bonus: -2
+RW-Bonus: +2
+
+
+2. Befreie den Turm von Anstinus in TdB (?)
+
+-ARAC06-12 areas für eine Rückkehr zum Turm in TdB (unvollständig mit cres besetzt / Reste vom ersten Quest noch enthalten)
+-Dialog für Silberne Dame, um die Gruppe zurück zu schicken
+-Dialog von Forres / Reggik / anderer Clansführer
+-teilweide cre dateien vorbereitet (Drow und Duergar etc.)
 
 
 ------
@@ -27,7 +44,7 @@ Hinweis zur englischen Übersetzung:
 BACKUP ~ACBre/backup~
 AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
 //MODDER
-VERSION ~7.00~ //20171003
+VERSION ~7.00_20171026~
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -123,6 +140,7 @@ LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
 BEGIN @1 DESIGNATED 0
 
 REQUIRE_PREDICATE GAME_IS ~bgt bgee tob bg2ee tutu_totsc eet~ @2
+FORBID_COMPONENT ~setup-bp-bgt-worldmap.tp2~ ~0~ @208
 
 //For all engines
 
@@ -1101,8 +1119,8 @@ COPY ~ACBre/areas/bg2~ ~OVERRIDE~
 
 //Set Strings for Areas
 COPY_EXISTING ~ARAC00.ARE~ ~OVERRIDE~
-			  ~ARAC07.ARE~ ~override~
-SAY 0x1040 @193
+	      ~ARAC07.ARE~ ~override~
+SAY 0x1260 @193
 
 COPY_EXISTING ~ARAC01.ARE~ ~OVERRIDE~
 SAY 0xda8 @194
@@ -1111,8 +1129,23 @@ COPY_EXISTING ~ARAC02.ARE~ ~OVERRIDE~
 SAY 0x1680 @195
 SAY 0x1060 @196
 
-COPY_EXISTING ~ARAC09.ARE~ ~override~
-SAY 0x1680 @195
+COPY_EXISTING ~ARAC09.ARE~ ~OVERRIDE~
+SAY 0x1060 @196
+
+COPY_EXISTING ~ARAC03.ARE~ ~OVERRIDE~
+	      ~ARAC10.ARE~ ~OVERRIDE~
+SAY 0x6d0 @196
+SAY 0x91c @196
+
+COPY_EXISTING ~ARAC04.ARE~ ~OVERRIDE~
+	      ~ARAC11.ARE~ ~OVERRIDE~
+SAY 0x7e0 @196
+SAY 0x8a4 @196
+
+COPY_EXISTING ~ARAC05.ARE~ ~OVERRIDE~
+	      ~ARAC12.ARE~ ~OVERRIDE~
+SAY 0x354 @196
+
 
 //Extend existing Scripts for BG2
 EXTEND_TOP ~AR0300.bcs~ ~ACBre/baf/bg2/AR0300.baf~

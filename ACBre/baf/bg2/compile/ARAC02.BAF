@@ -15,7 +15,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ACAR02LOCKED","GLOBAL",1)
-		TriggerActivation("Info Point 5",TRUE)
+		TriggerActivation("Infod01",TRUE)
 		TriggerActivation("DoorD001",FALSE)
 		Continue()
 END
@@ -30,7 +30,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("ACAR02LOCKED","GLOBAL",2)
 		DisplayStringHead(PLAYER1,@5010)
-		TriggerActivation("Info Point 5",FALSE)
+		TriggerActivation("Infod01",FALSE)
 		TriggerActivation("DoorD001",TRUE)
 		Continue()
 END

@@ -23,7 +23,7 @@ END
 
 IF ~Dead("ACELASIA")~ THEN BEGIN 0b
 SAY @10
-IF ~~ THEN DO ~EraseJournalEntry(10038)EraseJournalEntry(10039)EraseJournalEntry(10040)EraseJournalEntry(10041)EraseJournalEntry(10045)AddJournalEntry(@10042,QUEST_DONE)Enemy()~ EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@10038)EraseJournalEntry(@10039)EraseJournalEntry(@10040)EraseJournalEntry(@10041)EraseJournalEntry(@10045)AddJournalEntry(@10042,QUEST_DONE)Enemy()~ EXIT
 END
 
 IF ~~ THEN BEGIN 1

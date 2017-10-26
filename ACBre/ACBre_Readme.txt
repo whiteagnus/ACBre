@@ -152,6 +152,12 @@ jastey's changes:
 -(bug) area with petrified Revianel and the Lich will no longer crash if switched to sitemap [ACCEM3.wed file was patched wrongly]
 -(bug) priest Tobin will not spawn before priestess is kidnapped [SetGlobal("ACREVIQUEST","GLOBAL",5) removed from acrievi.d]
 -(bug) Breagar's interjection before last fight against Irenicus in hell fixed [added missing state triggers and changed I_C_T2 to I_C_T]
+-(bug) Breagar shouldn't stutter if he wants to comment on reputation in BGII
+-(bug) strref in brewing potion in Astinus' Tower corrected
+-(bug) corrected removal of journal entries in several files
+-(bug) ARAC02.baf: fixed activation of info point above stairs with force field (wrong trigger name)
+-(bug) all areas in Anstinus' Tower: text of info points corrected
+-(bug) Forres is no longer invincible if attacked.
 -(bug BGII(:EE)) defined %IMOEN_DV% and %IMOEN_BANTER% so it installs correctly for BGII (although it's only for the BG1 part)
 -(bug BGII(:EE)) fixed doubled Breagar in ID (BGII:EE) [moved "acbresmi.baf" into folder ACBre/baf so it gets installed for BGII, too (needed for cutscene Breagar "ACBRESMI.cre")]
 -(bug BGII(:EE)) fixed stutter bug in BGII/BGII:EE after cutscene in ID (changed OUTER_SPRINT ~BGT_VAR~ to ~False()~ for ~tob bg2ee~
@@ -171,13 +177,19 @@ in ~OR(3)
 StateCheck("ACBRE",CD_STATE_NOTVALID)~ and the same for ~!InPartySlot(LastTalkedToBy(),0)~ / ~~InPartySlot(LastTalkedToBy(),0)~ for "Player1"]
 -(improvement) the cutscene in the Thunderhammer smithy will now be centred above the action so it's better to watch [MoveViewPoint([815.490],INSTANT) in der accut_03.baf eingefügt]
 -(improvement) For his BGII quest, the second text fragment can now be collected out of Pimlicos house without Korgan having to join the party: the door to Pimlico's house will be unlocked if Breagar is in the party [Ausführen von "Unlock("Door0905")" über die ACBre.baf]
--(improvement) the hooded dwrf should now spawn near the group and no longer get stuck behind walls or closed doors
+-(improvement) the hooded dwarf should now spawn near the group and no longer get stuck behind walls or closed doors
+-(improvement) Ralph should now spawn near the group and no longer get stuck behind walls or closed doors
+-(improvement) Forres and his Duergar. If for some reason Forres turned hostile before his dialogue, all durgar will become neutral for peaceful resolution. 
+-(improvement) acforres.d added new dialogue state after peaceful resolution
 -(improvement, EET) in ToB, the existing Breagar from SoA will be spawned if called by the fate spirit (for continued game and Breagar was not in party upon transition to ToB)
 -(portrait, BG(II):EE, EET) changed default (Nix's) portrait choice to a "Head only" portrait for BG(II):EE+EET's "small" portrait
+-(portraits) removed all quest NPC portraits with unclear copyright status
 -(crossmod) with Amber should trigger correctly [AreaCheck("M#ARE01") corrected to AreaCheck("M#AR01") in acamber.baf]
 -(crossmod) Breagar's dialogue about the cutscene events in the Promenade should really only happen after the cutscene and not 'in any other area than Irenicus Dungeon'
+-(crossmod) DSotSC: Breagar's Einmischdialog in Jet'Layas Aufnahmedialog (DSotSC) hoffentlich gefixt
 -(install) upon deinstalling main component, the crossmod and PID will be deinstalled automatically [changed to REQUIRE_COMPONENT ~Setup-ACBre.tp2~ 0]
 -(install) in setup.tra: Error Message @2 changed to not BGT-specific [~Ihr habt kein Spiel installiert, für das die Mod kompatibel ist. Installation wird abgebrochen.~]
+-(install) added check for BP-BGT Worldmap because Breagar needs to be installed first
 -(internal) changed path to LANGUAGE to get rid of the doubled setup.tra. 
 -(internal) removed lines of STATE_WHICH_SAYS in ACStates.tra and changed them to OUTER_SPRINTs because they are fixed and known in BGT and EET (also, removed the ACStates.tra)
 -(internal) changed path to current eet cmpvars.tpa in EET folder

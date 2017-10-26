@@ -676,6 +676,7 @@ Und als Moradins Hammer mit der Wucht von tausend Lawinen auf den schurkischen R
 @205  = ~Installiere Crossmodinhalt für: AsQ~
 @206  = ~Bringe Virginie, dem unsichtbaren Wunderbunny, ein paar neue Tricks bei~
 @207  = ~Installiere Virginie, das unsichtbare Wunderbunny~
+@208  = ~Die Mod muss vor BP-BGT Worldmap installiert werden.~ /* ~This mod should be installed BEFORE BP-BGT Worldmap~ */
 
 @4000    = ~Alle Zutaten sind bereit. Ihr wisst, dass Ihr nur einen Versuch habt und solltet Ihr zwischendurch abbrechen ist der Trank verloren. Wollt Ihr beginnen?~
 @4001    = ~Ja, ich bin bereit.~
@@ -691,8 +692,8 @@ Und als Moradins Hammer mit der Wucht von tausend Lawinen auf den schurkischen R
 @4011   = ~(Die Körner versinken mit einem leisen Zischen)~
 @4012   = ~(Die Blätter kräuseln sich in dem Gebräu)~
 @4013   = ~(Die andere Hälfte des Feuerkrautes in den Trank geben)~
-@4014   = ~Vorsichtig schüttelt Ihr den Trank. Die Blätter zerfallen in ihre Fasern)~
-@4015   = ~Die übrigen Blätter werfen Blasen und ein übelriechendes Gas entweicht)~
+@4014   = ~(Vorsichtig schüttelt Ihr den Trank. Die Blätter zerfallen in ihre Fasern)~
+@4015   = ~(Die übrigen Blätter werfen Blasen und ein übelriechendes Gas entweicht)~
 @4016   = ~(Etwas nervös, aber doch entschlossen schüttelt Ihr den Trank. Die letzten Blätter lösen sich auf)~
 @4017   = ~(Der Smaragd versinkt im schäumenden Trank, der schon bald eine blassgrüne Farbe annimmt)~
 
@@ -866,7 +867,7 @@ Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars 
 //ungelöste Aufgaben:	AddJournalEntry(@10037,QUEST)
 //erledigte Aufgaben:	AddJournalEntry(@10036,QUEST_DONE)
 //Tagebucheinträge:	AddJournalEntry(%Text%,INFO)
-//EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)
+//EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)EraseJournalEntry(@10035)
 
 //BG:EE Compatibility
 
