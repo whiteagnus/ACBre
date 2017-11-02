@@ -1,5 +1,17 @@
 /*
 
+
+
+
+
+----
+Known issues:
+
+Klasse ist Fighter, er hat auch Feuerresistenz von 5%+1%/Stufe und erhöhtes Lore, soweit meine ich passt das zu seinem Schmiededingsbums. Aber wie gesagt konnte ich auf Stufe 3 keinen Punkt mehr in Äxte setzen und er hat mit der Axt+1 (und auch mit den Wurfäxten) nur 1 Angriff/Runde (also in der Anzeige). Gefühlt auch im Spiel, weil er kämpft grottig, wenn man seine Bilanz mit dem anderen Kämpfer-Zwerg in der Gruppe vergleicht.
+
+----
+
+
 Breagar Unfinished Business 
 
 1. Schmieden in BGII: Verbesserungen seines Arms. Es existieren itm Dateien (nicht auf Funktionsfähigkeit geprüft)
@@ -28,6 +40,7 @@ RW-Bonus: +2
 -teilweide cre dateien vorbereitet (Drow und Duergar etc.)
 
 
+
 ------
 
 Hinweis zur englischen Übersetzung:
@@ -44,7 +57,7 @@ Hinweis zur englischen Übersetzung:
 BACKUP ~ACBre/backup~
 AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
 //MODDER
-VERSION ~7.00_20171026~
+VERSION ~7.00_20171102~
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -53,10 +66,36 @@ ALWAYS
 INCLUDE ~ACBre/lib/g3_tutu_cpmvars.tpa~
 INCLUDE ~ACBre/lib/g3_bgt_cpmvars.tpa~
 INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
+INCLUDE ~NTotSC/lib/read_journal_strref.tpa~
+
+
 
 /* Declaration of EET Platform Variables */
 ACTION_IF GAME_IS "eet" BEGIN
   INCLUDE ~EET/other/cpmvars/eet_cpmvars.tpa~
+
+  OUTER_SPRINT ~EET_MULAHE_3_1~ ~SetGlobal("CDMulahey","BG5405",6) SetGlobal("TalkedToMulahey","GLOBAL",1)~
+  OUTER_SPRINT ~EET_MULAHE_0_1~ ~SetGlobal("CDMulahey","BG5405",3)~
+  OUTER_SPRINT ~EET_ILYICH_0~ ~ActionOverride("DuegarClanChief",SetGlobal("duergarleader","LOCALS",9))~
+  OUTER_SPRINT ~journalentry_JARED_0~ ~227184~
+  OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(231460)~
+END 
+
+ACTION_IF GAME_IS "bgee" BEGIN
+  OUTER_SPRINT ~EET_MULAHE_3_1~ ~SetGlobal("CDMulahey","AR5405",6)
+SetGlobal("TalkedToMulahey","GLOBAL",1)~
+  OUTER_SPRINT ~EET_MULAHE_0_1~ ~SetGlobal("CDMulahey","AR5405",3)~
+  OUTER_SPRINT ~EET_ILYICH_0~ ~ActionOverride("DuegarClanChief",SetGlobal("duergarleader","LOCALS",9))~
+  OUTER_SPRINT ~journalentry_JARED_0~ ~27184~
+  OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(31460)~
+END
+
+ACTION_IF NOT GAME_IS "bgee eet" BEGIN
+  OUTER_SPRINT ~EET_MULAHE_3_1~ ~~
+  OUTER_SPRINT ~EET_MULAHE_0_1~ ~~
+  OUTER_SPRINT ~EET_ILYICH_0~ ~~
+  OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~~
+//  OUTER_SPRINT ~journalentry_JARED_0~ --> journal entry str-refs will be defined below dynamically
 END
 
 INCLUDE "ACBre/lib/fl#add_kit_ee.tpa"
@@ -127,6 +166,8 @@ END
 END
 
 LANGUAGE ~Deutsch~ ~german~ ~ACBre/TRA/german/setup-ACBre.tra~
+
+LANGUAGE ~Partly English (but most still in German)~ ~english~ ~ACBre/TRA/english/setup-ACBre.tra~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -928,6 +969,27 @@ COPY ~ACBre/SPL~ ~override~
 //Compiling Scripts
 COMPILE ~ACBre/baf~
 EVALUATE_BUFFER
+
+
+
+//////
+// Get journal entry from JARED.dlg (we need this for BGT/Tutu for ACBREB.d)
+//////
+ACTION_IF GAME_IS ~BGT tutu_totsc~ THEN BEGIN
+COPY_EXISTING ~%tutu_var%JARED.dlg~ ~override~
+  // get journal entry from first response associated with dialogue state 11
+  LPF READ_JOURNAL_STRREF
+  INT_VAR
+    state = 0
+  RET
+    strref
+END
+
+    SET journalentry_JARED_0 = strref 
+END
+
+
+
 
 //Compiling Dialogues
 ACTION_IF GAME_IS ~bgee tutu_totsc~ THEN BEGIN

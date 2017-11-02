@@ -328,7 +328,7 @@
 @327  = ~Dann werdet Ihr diesem Sarevok den Weg in die Hölle freimachen, Abschaum!~
 @328  = ~Ihr werdet vor uns dort sein!~
 @329  = ~Pah. Kein Wunder, dass Menschen niemals ein angemessenes Verhältnis zu Gold bekommen, wenn sie es leichtfertig jedem dahergelaufenen Gernebart in die Hand drücken.~
-@330  = ~*Seufz*~
+@330  = ~(seufzt)~
 @331  = ~Ihr seid einer dieser Eisenschänder? Und gebt das auch noch zu? Oh <CHARNAME>, lasst mich nur drei Minuten mit ihm alleine. Bitte!~
 @332  = ~Oh... bitte nicht, <PRO_LADYLORD>!~
 @333  = ~Das könnt Ihr natürlich gerne versuchen, aber seid nicht allzu enttäuscht, wenn es nicht klappt!~
@@ -350,7 +350,7 @@
 @349  = ~Ihr werdet leiden, und nichts anderes!~
 @350  = ~Wenn ich es nicht besser wüsste, dann würde ich sagen, dass Ihr die Verrückten anzieht wie das Licht die Motten, <CHARNAME>.~
 @351  = ~Verrückt? Ich glaube, Ihr irrt Euch! Boo ist der vernünftigste Hamster der ganzen Welt!~
-@352  = ~*Seufz* Das wird eine lange Reise...~
+@352  = ~(seufzt) Das wird eine lange Reise...~
 @353  = ~Vorwärts! Stiefeltritte für das Böse!~
 @354  = ~Interessant, dass Ihr fragt...~
 @355  = ~Ach kommt schon, <CHARNAME>. Schaut mich nicht so an.~
@@ -453,7 +453,7 @@
 @452  = ~*Kicher* Aber es sieht so lustig aus! Natürlich verzeihe ich Euch, Breagar. Unter einer Bedingung.~
 @453  = ~Und die wäre?~
 @454  = ~Dass Ihr wieder vernünftig mit mir redet.~
-@455  = ~*Seufz* Ich were mir Mühe geben.~
+@455  = ~(seufzt) Ich were mir Mühe geben.~
 @456  = ~Juhuuuu!~
 @457  = ~Imoen?~
 @458  = ~Äääääääh...~
@@ -494,7 +494,7 @@
 @493  = ~Kann ich Euch etwas fragen, Breagar?~
 @494  = ~Hätte es irgendeine Auswirkung, wenn ich Nein sagen würde?~
 @495  = ~Es geht um dieses Gerücht über Zwerge...~
-@496  = ~*Seufz* Um welches Gerücht?~
+@496  = ~(seufzt) Um welches Gerücht?~
 @497  = ~Nun ja, es ist Euch vielleicht peinlich, aber...~
 @498  = ~Schlüpfen Zwerge wirklich aus Steinen?~
 @499  = ~Was? Buzzurk, wer verbreitet denn so einen Unsinn?~
@@ -566,7 +566,7 @@
 @565  = ~<CHARNAME>, ich kann Zwergisch!~
 @566  = ~Jetzt werdet nicht übermütig, Mädchen. Ihr habt gerade erst an der Oberfläche gekratzt.~
 @567  = ~Egal, weiter! Was ist die nächste Sache?~
-@568  = ~*Seufz* Also schön. Wenn Ihr etwas bekräftigen wollt...~
+@568  = ~(seufzt) Also schön. Wenn Ihr etwas bekräftigen wollt...~
 @569  = ~Breagar ah, bak aurdrukar... ähm... auraurn, bak aun?~
 @570  = ~Was ist denn das für eine bescheuerte Frage?~
 @571  = ~Ich wollte nur fragen, ob Ihr in der nächsten Taverne Wasser oder Bier trinken wollt.~
@@ -757,7 +757,7 @@
 @756  = ~Hrmpf. Nun gut.~
 @757  = ~Wie ist das?~
 @758  = ~*Das* soll ein Lachen sein? Breagar, mein Guter, daran müssen wir noch arbeiten. Ihr seht aus, als hättet Ihr auf einen Stinkkäfer gebissen.~
-@759  = ~*Seufz*~
+@759  = ~(seufzt)~
 @760  = ~Minsk? Könnt Ihr mir das hier wohl erklären?~
 @761  = ~Minsk ist nicht allzu gut im Erklären, aber wenn Breagar möchte, dann wird Boo versuchen...~
 @762  = ~Ihr werdet das schon schaffen. Was ist *das* hier?~
@@ -882,7 +882,7 @@
 @881  = ~Es gibt Berufe, die öfter von Frauen ausgeübt werden und solche, in denen fast nur Männer arbeiten. Aber die wenigsten Arbeiten erfordern, dass man dafür den kleinen Unterschied bemühen muss.~
 @882  = ~Eure Frauen müssen sich glücklich schätzen. In meinem Volk hat man eine ganz bestimmte Meinung, über Frauen, die kämpfen wollen.~
 @883  = ~In meinem auch! Wir erwarten, dass sie gut kämpfen! Immerhin sind es Zwerge!~
-@884  = ~*Seufz* Ich wünsche, ich wäre ein Zwerg.~
+@884  = ~(seufzt) Ich wünsche, ich wäre ein Zwerg.~
 @885  = ~Wenn ich behilflich sein kann...~
 @886  = ~Diese Kelche, die Ihr Paladine so hoch ehrt. Wieso sind sie so wichtig?~
 @887  = ~Der Kelch ist das Symbol der Verbindung zwischen einem Paladin und dem Orden, wieso?~

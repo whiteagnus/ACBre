@@ -250,6 +250,15 @@ INTERJECT %tutu_var%JARED 3 ACJARED3
 END
 IF ~~ THEN EXTERN %tutu_var%JARED ACBRE1
 
+
+APPEND %tutu_var%JARED
+IF ~~ THEN BEGIN ACBRE1
+SAY @376
+IF ~~ THEN DO ~AddexperienceParty(150)
+SetGlobal("HelpJared","GLOBAL",1)GiveItem("%tutu_var%BOOT03",LastTalkedToBy)EraseJournalEntry(%journalentry_JARED_0%)EscapeAreaDestroy(90)~ EXIT
+END
+END
+
 INTERJECT_COPY_TRANS %tutu_var%JOIA 4 ACJOIA4
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @141
@@ -315,11 +324,18 @@ COPY_TRANS %tutu_var%MENDA1 13
 IF ~~ THEN DO ~SetGlobal("ReadyToSail","GLOBAL",1)ActionOverride("MENDA1",EscapeAreaDestroy(90))~ EXIT
 */
 
+
+INTERJECT %tutu_var%MULAHE 0 ACMULAHE0
+==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+@399
+END
+IF ~~ THEN DO ~%EET_MULAHE_0_1%~ EXTERN %tutu_var%MULAHE 2
+
 INTERJECT %tutu_var%MULAHE 3 ACMULAHE3
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @181
 END
-IF ~~ THEN EXTERN %tutu_var%MULAHE 4
+IF ~~ THEN DO ~%EET_MULAHE_3_1%~ EXTERN %tutu_var%MULAHE 4
 
 INTERJECT %tutu_var%NEIRA 0 ACNEIRA0
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -460,7 +476,7 @@ INTERJECT %tutu_var%RIELTA 8 ACRIELTA8
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @298
 END
-IF ~~ THEN EXTERN %tutu_var%RIELTA 5
+IF ~~ THEN DO ~%EraseJournalEntry_KOVERA_6%~ EXTERN %tutu_var%RIELTA 5
 
 INTERJECT_COPY_TRANS %tutu_var%TAEROM 14 ACTAEROM
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -554,7 +570,7 @@ INTERJECT %tutu_var%VITIAR 0 ACVITIAR
 ==%tutu_var%VITIAR IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @326
 END
-IF ~~ THEN DO ~GiveGoldForce(120)EscapeAreaDestroy(10)~ EXIT
+IF ~~ THEN DO ~GiveGoldForce(120) ActionOverride("Vitiare",EscapeAreaDestroy(10))~ EXIT
 
 INTERJECT_COPY_TRANS %tutu_var%ZHALIM 0 ACZAHLIM
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -741,13 +757,6 @@ INTERJECT %tutu_var%OGRECO 0 ACOGRECO
 END
 IF ~~ THEN EXTERN %tutu_var%OGRECO 1
 
-APPEND %tutu_var%JARED
-IF ~~ THEN BEGIN ACBRE1
-SAY @376
-IF ~~ THEN DO ~AddexperienceParty(150)
-SetGlobal("HelpJared","GLOBAL",1)GiveItem("%tutu_var%BOOT03",LastTalkedToBy)EraseJournalEntry(74615)EscapeAreaDestroy(90)~ EXIT
-END
-END
 
 INTERJECT_COPY_TRANS2 %tutu_var%LARYSS 1 ACLARYSS1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -837,12 +846,6 @@ INTERJECT_COPY_TRANS %tutu_var%CORAN 0 ACCORAN0
 ==%tutu_var%CORAN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @398
 END
-
-INTERJECT %tutu_var%MULAHE 0 ACMULAHE0
-==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
-@399
-END
-IF ~~ THEN EXTERN %tutu_var%MULAHE 2
 
 INTERJECT_COPY_TRANS %tutu_var%FFHUNT 0 ACFFHUNT0
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
