@@ -1,13 +1,17 @@
 /*
 
+Changes: Aktualisierung der fl#add_kit_ee.tpa (löst die probleme mit dem Kit in der EE(T))
 
 
+ToDo:
+der Aufnahmedialog in der Schmiede.
+Wenn ich ihn da beim ersten Gespräch nur was schmieden lasse, dann beginnt das nächste Gespräch so, als hätten wir schon über das Eisen in Nashkell gesprochen. Und ich kann nicht nur das Eisen besorgen und ihn in der Schmiede lassen. Er will immer mit.
 
+Wird nicht erkannt, wenn der HC weiblich ist (bg1 acfriend.d)
+@46   = ~Sucht Euch eine Frau. Heiratet und macht Ihr ein paar Kinder. Dann übt ihr einen vernünftigen Beruf aus und gut.~ ~Sucht Euch einen anständigen Mann. Heiratet und gebärt ihm ein paar Kinder. Dann übt Ihr einen vernünftigen Beruf aus und gut.~
 
-----
-Known issues:
+Was ich auch etwas schade finde, ist, dass man mit Breagar nichts mehr schmieden kann, wenn man aus Nashkell zurückkommt. 
 
-Klasse ist Fighter, er hat auch Feuerresistenz von 5%+1%/Stufe und erhöhtes Lore, soweit meine ich passt das zu seinem Schmiededingsbums. Aber wie gesagt konnte ich auf Stufe 3 keinen Punkt mehr in Äxte setzen und er hat mit der Axt+1 (und auch mit den Wurfäxten) nur 1 Angriff/Runde (also in der Anzeige). Gefühlt auch im Spiel, weil er kämpft grottig, wenn man seine Bilanz mit dem anderen Kämpfer-Zwerg in der Gruppe vergleicht.
 
 ----
 
@@ -57,7 +61,7 @@ Hinweis zur englischen Übersetzung:
 BACKUP ~ACBre/backup~
 AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
 //MODDER
-VERSION ~7.00_20171102~
+VERSION ~7.00_20171106~
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -66,7 +70,7 @@ ALWAYS
 INCLUDE ~ACBre/lib/g3_tutu_cpmvars.tpa~
 INCLUDE ~ACBre/lib/g3_bgt_cpmvars.tpa~
 INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
-INCLUDE ~NTotSC/lib/read_journal_strref.tpa~
+INCLUDE ~ACBre/lib/read_journal_strref.tpa~
 
 
 
