@@ -58,4 +58,10 @@
 @57 = ~We must seal the door in the basement, come with me.~
 @58 = ~Berronar herself has sealed this entrance and and no one will be able to come through anymore. This tower is forever safe from the danger of the Underdark.~
 @59 = ~Our work here is done. Let us return to Reggik and Forres.~
-@60 = ~Our work here is done. Let us return to the herald.~
+@60 = ~Our work here is done. Let us return to the Silver Lady in the Pocket Plane.~
+
+
+/* new for v7.0 */
+@61   = ~Our work here is done. Let us return to Forres und Graschek.~
+@62   = ~Our work here is done. Let us return to Reggik und Graschek.~
+@63   = ~Our work here is done. Let us return to Graschek und Hargek.~

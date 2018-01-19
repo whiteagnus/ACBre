@@ -50,7 +50,7 @@
 @49   = ~Pah. Ihr habt einfach keine Ahnung wovon Ihr da redet.~
 @50   = ~Ja, das fühlt sich gut an! Und es gereicht den Göttern zur Ehre, wie selten ein Schmiedewerk den Göttern zur Ehre gereicht hat! Ich bin ganz versessen darauf, zu sehen, wie sich das Erz im Kampf bewährt, <CHARNAME>. Führt uns an!~
 @51   = ~Oh, eine interssante Schmiede... beim genaueren Hinschauen... Ja, mehr als interessant! Entschuldigt mich für einen Moment, <CHARNAME>!~
-@52   = ~Hee heeee, nicht so hastig! Das sind äußerst empfindliche Werkzeuge! Hab t Ihr überhaupt schon einmal einen Schmiedehammer in der Hand gehabt?~
+@52   = ~Hee heeee, nicht so hastig! Das sind äußerst empfindliche Werkzeuge! Habt Ihr überhaupt schon einmal einen Schmiedehammer in der Hand gehabt?~
 @53   = ~Ob ich...? Pah! Hör zu, Meister, Breagar von Clan Bardormar wird Euch jetzt eine Lektion erteilen!~
 @54   = ~Das Meteoritenerz, das ich untersucht habe ist perfekt. Seht nur genau hin!~
 @55   = ~Das wird diesen schwarzen Teufeln eine Lehre sein.~
@@ -58,4 +58,10 @@
 @57   = ~Wir müssen das Tor im Keller versiegeln, kommt mit mir.~
 @58   = ~Berronar selbst hat diesen Zugang versiegelt und nichts und niemand kommt hindurch. Dieser Turm ist für alle Zeit sicher vor der Gefahr aus dem Unterreich.~
 @59   = ~Unsere Arbeit hier ist getan. Lasst uns zu Reggik und Forres zurückkehren.~
-@60   = ~Unsere Arbeit hier ist getan. Lasst uns zur Botin zurückkehren.~
+@60   = ~Unsere Arbeit hier ist getan. Lasst uns zur Botin in das Einsprengsel zurückkehren.~
+
+/* new for v7.0 */
+@61   = ~Unsere Arbeit hier ist getan. Lasst uns zu Forres und Graschek zurückkehren.~
+@62   = ~Unsere Arbeit hier ist getan. Lasst uns zu Reggik und Graschek zurückkehren.~
+@63   = ~Unsere Arbeit hier ist getan. Lasst uns zu Graschek und Hargek zurückkehren.~
+

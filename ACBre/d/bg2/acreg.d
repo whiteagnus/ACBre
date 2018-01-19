@@ -87,7 +87,7 @@ EXIT
 
 CHAIN
 IF ~GlobalGT("AC25PLOT","GLOBAL",6)See("ACBRE")See(PLAYER1)Global("ACARAC07BANTER","LOCALS",3)~ THEN ACREG AR07.4
-@41 DO ~SetGlobal("ACARAC07BANTER","LOCALS",4)~
+@41 DO ~SetGlobal("ACARAC07BANTER","LOCALS",4) EraseJournalEntry(@10055)~
 ==ACBRE25J IF ~Global("AC25PLOT","GLOBAL",8)Global("ACBREBIO","GLOBAL",2)~ THEN @42
 ==ACBRE25J IF ~Global("AC25PLOT","GLOBAL",8)Global("ACBREBIO","GLOBAL",3)~ THEN @43
 ==ACREG IF ~Global("AC25PLOT","GLOBAL",8)Global("ACBRBIO","GLOBAL",3)~ THEN @44
@@ -110,7 +110,25 @@ IF ~GlobalGT("AC25PLOT","GLOBAL",6)See("ACBRE")See(PLAYER1)Global("ACARAC07BANTE
 ==ACBRE25J IF ~Global("AC25PLOT","GLOBAL",9)~ THEN @61
 ==ACREG IF ~Global("AC25PLOT","GLOBAL",9)~ THEN @62 DO ~EscapeAreaMove("ARAC07",3906,3664,7)~
 ==ACFORRES IF ~Global("AC25PLOT","GLOBAL",9)~ THEN @63 DO ~EscapeAreaMove("ARAC07",3849,3711,7)~
-EXIT
+END
+/* Duergar können bleiben */
+/* Forres und Reggik */
+IF ~Global("ACBREBIO","GLOBAL",2)!Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",9)~ THEN UNSOLVED_JOURNAL @10056 EXIT
+/* Forres und Graschek */
+IF ~Global("ACBREBIO","GLOBAL",3)!Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",9)~ THEN UNSOLVED_JOURNAL @10057 EXIT
+/* Reggik und Graschek */
+IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",9)~ THEN UNSOLVED_JOURNAL @10058 EXIT
+/* Graschek und Hargek */
+IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",9)~ THEN UNSOLVED_JOURNAL @10059 EXIT
+/* Duergar müssen gehen */
+/* Forres und Reggik */
+IF ~Global("ACBREBIO","GLOBAL",2)!Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",8)~ THEN UNSOLVED_JOURNAL @10060 EXIT
+/* Forres und Graschek */
+IF ~Global("ACBREBIO","GLOBAL",3)!Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",8)~ THEN UNSOLVED_JOURNAL @10061 EXIT
+/* Reggik und Graschek */
+IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",8)~ THEN UNSOLVED_JOURNAL @10062 EXIT
+/* Graschek und Hargek */
+IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",1) Global("AC25PLOT","GLOBAL",8)~ THEN UNSOLVED_JOURNAL @10063 EXIT
 
 CHAIN
 IF ~Global("ARAC06PREP","GLOBAL",4)See("ACBRE")~ THEN ACREG 25FINAL
@@ -125,7 +143,10 @@ IF ~Global("ARAC06PREP","GLOBAL",4)See("ACBRE")~ THEN ACREG 25FINAL
 ==ACREG IF ~Global("ACBREBIO","GLOBAL",3)~ THEN @72
 ==ACREG IF ~!Global("ACFORRESDEAD","GLOBAL",1)~ THEN @73
 ==ACREG IF ~Global("ACFORRESDEAD","GLOBAL",1)~ THEN @74
-==ACREG IF ~Global("ACBREBIO","GLOBAL",2)~ THEN @75 DO ~EscapeAreaDestroy(90)~
-==ACREG IF ~Global("ACBREBIO","GLOBAL",3)~ THEN @76 DO ~EscapeAreaDestroy(90)~
+==ACREG IF ~Global("ACBREBIO","GLOBAL",2)~ THEN @75 
+==ACREG IF ~Global("ACBREBIO","GLOBAL",3)~ THEN @76 
 ==ACFORRES @77 DO ~EscapeAreaDestroy(90)~
-EXIT
+==ACBRE25J @78 DO ~ActionOverride("ACREG",EscapeAreaDestroy(90))~
+END
+IF ~Global("ACBREBIO","GLOBAL",2)~ THEN DO ~EraseJournalEntry(@10056) EraseJournalEntry(@10057) EraseJournalEntry(@10058) EraseJournalEntry(@10059) EraseJournalEntry(@10066) EraseJournalEntry(@10067) EraseJournalEntry(@10068) EraseJournalEntry(@10069)~ UNSOLVED_JOURNAL @10070 EXIT
+IF ~Global("ACBREBIO","GLOBAL",3)~ THEN DO ~EraseJournalEntry(@10056) EraseJournalEntry(@10057) EraseJournalEntry(@10058) EraseJournalEntry(@10059) EraseJournalEntry(@10066) EraseJournalEntry(@10067) EraseJournalEntry(@10068) EraseJournalEntry(@10069)~ UNSOLVED_JOURNAL @10071 EXIT

@@ -397,7 +397,7 @@ EIGENSCHAFTEN:
 @102  = ~Breagars Hand aus Meteoritenerz~
 @103  = ~Durch Berronars mächtige Magie wurde der silberne Arm des Wächtergolems mit Breagars Armstumpf verbunden. Breagar kann die Hand verwenden, als ob es seine eigene wäre. Der Segen der Zwergengöttin verstärkt das Metall genug, dass Breagar damit Waffen blocken und sogar magischen Angriffen ein wenig trotzen kann. Leider sind die Finger der neuen Hand zu dick, als dass er einen Ring über sie streifen könnte.
 
-Durch das Meteoreisen, mit dem Breagar den Arm versehen hat, ist dieser jetzt noch widerstandsfähiger.
+Mit Hilfe des Meteoritenerzes, welches Breagar erfolgreich in den Golemarm implementierten konnte, ist es ihm gelungen, dessen Widerstandsfähigkeit noch einmal zu verbessern.
 
 EIGENSCHAFTEN:
 
@@ -677,11 +677,12 @@ Und als Moradins Hammer mit der Wucht von tausend Lawinen auf den schurkischen R
 @206  = ~Bringe Virginie, dem unsichtbaren Wunderbunny, ein paar neue Tricks bei~
 @207  = ~Installiere Virginie, das unsichtbare Wunderbunny~
 @208  = ~Die Mod muss vor BP-BGT Worldmap installiert werden.~ /* ~This mod should be installed BEFORE BP-BGT Worldmap~ */
+@209  = ~Installiere Crossmodinhalt für: Weimers Solaufein~
 
 @4000    = ~Alle Zutaten sind bereit. Ihr wisst, dass Ihr nur einen Versuch habt und solltet Ihr zwischendurch abbrechen ist der Trank verloren. Wollt Ihr beginnen?~
 @4001    = ~Ja, ich bin bereit.~
 @4002    = ~Nein, ich muss mich noch vorbereiten.~
-@4003    = ~Ihr wendet Euch ab.~
+@4003    = ~(Ihr wendet Euch ab.)~
 @4004    = ~Wie wollt Ihr beginnen?~
 @4005    = ~(Den Explosionstrank vorsichtig schütteln)~
 @4006    = ~(Den Explosionstrank kräftig schütteln)~
@@ -718,6 +719,23 @@ Und als Moradins Hammer mit der Wucht von tausend Lawinen auf den schurkischen R
 @5018 = ~Die Bar ist geschlossen!~
 @5019 = ~Das werde ich Euch nie vergessen!~
 
+/* new for v7.0 */
+@5020 = ~Bei Moradins Hammer, wir haben es geschafft!~
+@5021 = ~Ich werde auch weiterhin an Eurer Seite bleiben. Sofern Ihr das wollt, natürlich.~
+/* Avernus, inside the elevator */
+@5022 = ~Hrmpf. So tief unter der Erde, aber *hier* fühle ich mich nicht wohl.~
+/* after PC's murder accusation, low rep */
+@5023 = ~Das kann doch nicht sein - nach allem, was wir erreicht haben, solltet Ihr nun so eine Tat begehen?~
+/* after PC's murder accusation, high rep */
+@5024 = ~Das geht nicht mit rechten Dingen zu! Nach allem, was <CHARNAME> erreicht hat, würde <PRO_HESHE> doch nicht in so einer Freudennacht die Tochter des Herzogs ermorden!~
+@5025 = ~Buzzurk. Wir können hier nicht rumstehen und warten, bis die Viecher alle rauskommen. Uns bleibt nichts anderes übrig, als auch da rein zu springen, <CHARNAME>.~
+@5026 = ~Buzzurk. Heißer als ein Schmiedeofen...~
+@5027 = ~Hier schienen die Mistkerle herzukommen. Um den Eingang müssen wir uns gleich mal kümmern, <CHARNAME>. Aber erst sollten wir sicherstellen, dass wir alle Drow im Turm erwischt haben!~
+@5028 = ~Von Osten höre ich Kampfeslärm, <CHARNAME>. Lasst uns erst dort nachsehen, bevor wir in den Turm gehen!~
+
+///////////////////////////////////////////
+///// Tagebucheinträge
+///////////////////////////////////////////
 @10000 = ~Finde das Buch des Zwergen
 
 Ein Zwerg bei Puffguts wartet auf Adam, der ihm eigentlich ein Buch bringen sollte. Scheint so, als sei der Tagträumer mal wieder abgelenkt...~
@@ -864,6 +882,119 @@ Die Elfe Elasia kann jetzt ihren Weg forsetzen, nachdem Bork tot ist.~
 
 Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars bedürfen. Wir sollten uns einmal umschauen.~
 
+@10048 = ~Breagars Textfragmente
+
+Breagar hat Textfragmente des Buches über Berronars Axt gefunden und möchte es restaurieren, weiß aber nicht, wie. Ein Besuch im Tempel Oghmas, Gott der Weisheit, würde sich hier wohl anbieten.~
+
+@10049 = ~Breagars Textfragmente
+
+Wir waren im Tempel von Oghma und haben den Mönch Wallisek gefunden, der Breagar das Buch restaurieren könnte.~
+
+@10050 = ~Breagars Textfragmente
+
+Wir waren im Tempel von Oghma und haben den Mönch Wallisek gefunden, der Breagar das Buch restaurieren könnte. Allerdings haben wir noch nicht alle Fragmente beisammen. Diese müssten wir erstmal finden, bevor das Buch restauriert werden kann.~
+
+@10051 = ~Breagars Textfragmente
+
+Der Mönch Wallisek schätzt, dass es drei Textfragmente gibt.~
+
+@10052 = ~Breagars Textfragmente
+
+Der Mönch Wallisek vermutet, dass wir die Textfragmente bei Zwergen oder bei gebildeten Leuten, die sich mit der Herstellung von Waffen beschäftigen, finden sollten.~
+
+@10053 = ~Breagars Textfragmente
+
+Der Mönch Wallisek arbeitet nun an der Restauration des Buches über Berronars Axt. Wir sollen in ein paar Tagen wieder zu ihm kommen, dann sollte es fertig sein.~
+
+@10054 = ~Breagars Textfragmente
+
+Das Buch über Berronars Axt ist fertig restauriert!~
+
+@10055 = ~Die Belagerung in Anstinus Turm
+
+Die silberne Zwergin ist uns erneut erschienen und informierte Breagar darüber, dass Anstinus Turm in Gefahr sei. Ohne zu zögern stimmten wir ihm zu, dem auf den Grund zu gehen. Die Zwergin zeigte sich wohlwollend und teleportierte uns sogleich zum Ort des Geschehens. Nun bleibt die Frage, was zuerst? Das Gelände sichern oder uns ersteinmal drinnen umsehen?~
+
+/* Forres und Reggik, Duergar können bleiben */
+@10056 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Forres und Reggik, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Breagar überließ es uns zu entscheiden, was zu tun sei. Wir rieten ihm gut zu und Breagar sagte ihnen Hilfe zu, die Brut aus dem Turm zu vertreiben.~
+
+/* Forres und Graschek, Duergar können bleiben */
+@10057 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Forres und Graschek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Breagar überließ es uns zu entscheiden, was zu tun sei. Wir rieten ihm gut zu und Breagar sagte ihnen Hilfe zu, die Brut aus dem Turm zu vertreiben.~
+
+/* Reggik und Graschek, Duergar können bleiben */
+@10058 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Reggik und Graschek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Breagar überließ es uns zu entscheiden, was zu tun sei. Wir rieten ihm gut zu und Breagar sagte ihnen Hilfe zu, die Brut aus dem Turm zu vertreiben.~
+
+/* Graschek und Hargek, Duergar können bleiben */
+@10059 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Graschek und Hargek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Breagar überließ es uns zu entscheiden, was zu tun sei. Wir rieten ihm gut zu und Breagar sagte ihnen Hilfe zu, die Brut aus dem Turm zu vertreiben.~
+
+/* Forres und Reggik, Duergar müssen gehen */
+@10060 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Forres und Reggik, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Wir werden uns um die Drow kümmern. Die Duergar allerdings müssen den Turm verlassen!~
+
+/* Forres und Graschek, Duergar müssen gehen */
+@10061 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Forres und Graschek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Wir werden uns um die Drow kümmern. Die Duergar allerdings müssen den Turm verlassen!~
+
+/* Reggik und Graschek, Duergar müssen gehen */
+@10062 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Reggik und Graschek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Wir werden uns um die Drow kümmern. Die Duergar allerdings müssen den Turm verlassen!~
+
+/* Graschek und Hargek, Duergar müssen gehen */
+@10063 = ~Die Belagerung in Anstinus Turm
+
+Wir folgten dem Kampfeslärm und stießen dabei auf Graschek und Hargek, die es mit Spinnen zu tun hatten. Nachdem wir diese erledigt hatten, informierten uns beide, dass Drow und anderes Gewürm aus den Gängen unterhalb des Turms durchgebrochen waren. Wir werden uns um die Drow kümmern. Die Duergar allerdings müssen den Turm verlassen!~
+
+@10064 = ~Die Belagerung in Anstinus Turm
+
+Breagar zeigte sich zufrieden darüber, dass wir die Drow aus allen Stockwerken vertrieben haben. Nun ist der Keller an der Reihe.~
+
+@10065 = ~Die Belagerung in Anstinus Turm
+
+Breagar zeigte sich zufrieden darüber, dass wir die Drow aus dem Keller vertrieben haben. Nun ist der restliche Turm an der Reihe.~
+
+/* Forres und Reggik */
+@10066 = ~Die Belagerung in Anstinus Turm
+
+Drow und Betrachter stellten sich uns im Keller und den Wohnhöhlen der Duergar in den Weg, doch wir konnten sie erledigen. Als letztes bat Breagar Berronar um Hilfe an und es gelang ihm, ein Siegel um die unterirdischen Eingänge des Turms zu legen, der die Duergar vor Übergriffen der Drow schützen wird. Nun bleibt nur noch, Reggik und Forres darüber in Kenntnis zu setzen.~
+
+/* Forres und Graschek */
+@10067 = ~Die Belagerung in Anstinus Turm
+
+Drow und Betrachter stellten sich uns im Keller und den Wohnhöhlen der Duergar in den Weg, doch wir konnten sie erledigen. Als letztes bat Breagar Berronar um Hilfe an und es gelang ihm, ein Siegel um die unterirdischen Eingänge des Turms zu legen, der die Duergar vor Übergriffen der Drow schützen wird. Nun bleibt nur noch, Forres und Graschek darüber in Kenntnis zu setzen.~
+
+/* Reggik und Graschek */
+@10068 = ~Die Belagerung in Anstinus Turm
+
+Drow und Betrachter stellten sich uns im Keller und den Wohnhöhlen der Duergar in den Weg, doch wir konnten sie erledigen. Als letztes bat Breagar Berronar um Hilfe an und es gelang ihm, ein Siegel um die unterirdischen Eingänge des Turms zu legen, der die Duergar vor Übergriffen der Drow schützen wird. Nun bleibt nur noch, Reggik und Graschek darüber in Kenntnis zu setzen.~
+
+/* Graschek und Hargek */
+@10069 = ~Die Belagerung in Anstinus Turm
+
+Drow und Betrachter stellten sich uns im Keller und den Wohnhöhlen der Duergar in den Weg, doch wir konnten sie erledigen. Als letztes bat Breagar Berronar um Hilfe an und es gelang ihm, ein Siegel um die unterirdischen Eingänge des Turms zu legen, der die Duergar vor Übergriffen der Drow schützen wird. Nun bleibt nur noch, Graschek und Hargek darüber in Kenntnis zu setzen.~
+
+/* Reggik am Leben */
+@10070 = ~Die Belagerung in Anstinus Turm
+
+Reggik und die Duergar waren glücklich und dankbar für das, was Breagar und die Gruppe geleistet hatten. Nun heißt es, ins Einsprengsel zurück zu kehren, um das Urteil der silbernen Zwergin abzuwarten.~
+
+/* Reggik nicht mehr am Leben */
+@10071 = ~Die Belagerung in Anstinus Turm
+
+Die Duergar waren glücklich und dankbar für das, was Breagar und die Gruppe geleistet hatten. Nun heißt es, ins Einsprengsel zurück zu kehren, um das Urteil der silbernen Zwergin abzuwarten.~
+
+@10072 = ~Die Belagerung in Anstinus Turm
+
+Die silberne Zwergin war hoch erfreut über unsere Leistung und zum Dank segntete sie Berronars Axt und verbesserte sie noch einmal. Bevor sie verschwand sagte sie zu Breagar, dass noch eine letzte Prüfung auf ihn als Träger von Berronars Axt warten würde.~
 //ungelöste Aufgaben:	AddJournalEntry(@10037,QUEST)
 //erledigte Aufgaben:	AddJournalEntry(@10036,QUEST_DONE)
 //Tagebucheinträge:	AddJournalEntry(%Text%,INFO)
@@ -903,3 +1034,5 @@ Breagar meint, dass es in Saradush Zwerge gäbe, die der Unterstützung Berronars 
 @60008 = ~Berronars Axt wurde gestohlen~
 @60009 = ~Bork und Ellie~
 @60010 = ~Breagar in Saradush~
+@60011 = ~Breagars Textfragmente~
+@60012 = ~Die Belagerung in Anstinus Turm~

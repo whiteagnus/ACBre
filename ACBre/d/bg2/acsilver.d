@@ -15,10 +15,10 @@ END
 
 IF ~~ THEN BEGIN 25PLOT.4
 SAY @14
-IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",0)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT_15")~ EXIT
-IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",1)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15X")~ EXIT
-IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",0)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15Y")~ EXIT
-IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",1)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15Z")~ EXIT
+IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",0)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT_15")~ UNSOLVED_JOURNAL @10055 EXIT
+IF ~Global("ACBREBIO","GLOBAL",2)Global("ACFORRESDEAD","GLOBAL",1)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15X")~ UNSOLVED_JOURNAL @10055 EXIT
+IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",0)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15Y")~ UNSOLVED_JOURNAL @10055 EXIT
+IF ~Global("ACBREBIO","GLOBAL",3)Global("ACFORRESDEAD","GLOBAL",1)~ THEN DO ~SetGlobal("AC25PLOT","GLOBAL",5)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT15Z")~ UNSOLVED_JOURNAL @10055 EXIT
 END
 
 IF ~~ THEN BEGIN 25PLOT.4a
@@ -136,7 +136,8 @@ IF ~Global("ACLASTPLOT","GLOBAL",0)Global("AC25PLOT","GLOBAL",10)
 InParty("ACBRE") 
 See("ACBRE") 
 !StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN ACSILVER 25PLOT.END
-@107 DO ~SetGlobal("AC25PLOT","GLOBAL",11)~
+@107 DO ~SetGlobal("AC25PLOT","GLOBAL",11) EraseJournalEntry(@10055) EraseJournalEntry(@10056)
+EraseJournalEntry(@10057) EraseJournalEntry(@10058) EraseJournalEntry(@10059) EraseJournalEntry(@10060) EraseJournalEntry(@10061) EraseJournalEntry(@10062) EraseJournalEntry(@10063) EraseJournalEntry(@10064) EraseJournalEntry(@10065) EraseJournalEntry(@10066) EraseJournalEntry(@10067) EraseJournalEntry(@10068) EraseJournalEntry(@10069) EraseJournalEntry(@10070) EraseJournalEntry(@10071) AddJournalEntry(@10072,QUEST_DONE)~
 ==ACBRE25J @75
 ==ACSILVER @108
 ==ACSILVER IF ~PartyHasItem("ACAXE2")~ THEN @109

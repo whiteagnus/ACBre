@@ -10,6 +10,7 @@ SAY @1
 IF ~~ THEN DO ~SetGlobal("ACBREINPARTY","GLOBAL",2)JoinParty()~ EXIT
 END
 
+/* In Candlceep Inn after dialogue with Winthrop */
 IF ~%BGT_VAR%NumTimesTalkedTo(1)~ THEN BEGIN 1
 SAY @2   
 ++ @3 + 2

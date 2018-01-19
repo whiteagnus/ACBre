@@ -395,10 +395,11 @@ END
 IF
 	InParty(Myself) 
 	See(Player1)
-OR(4)
+OR(5)
 	Global("ACCOMPON01","LOCALS",1)
 	Global("ACCOMPON08","LOCALS",1)
 	Global("ACCOMPON09","LOCALS",1)
+	Global("ACCOMPON19","LOCALS",1)
 	Global("ACHGHEART","LOCALS",1)
 //	Global("ACDRAGONSCALES","LOCALS",1)
 //	Global("ACDRAGONSCALES","LOCALS",3)

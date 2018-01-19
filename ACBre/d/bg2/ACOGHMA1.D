@@ -4,7 +4,7 @@ SAY @0
 ++ @1 + 2
 IF ~OR(3)PartyHasItem("ACTEXT1")PartyHasItem("ACTEXT2")PartyHasItem("ACTEXT3")Global("ACBOOKWORK","GLOBAL",0)~ THEN REPLY @2 + 3
 IF ~OR(3)!PartyHasItem("ACTEXT1")!PartyHasItem("ACTEXT2")!PartyHasItem("ACTEXT3")GlobalGT("ACTEXTCOMPLETE","LOCALS",0)~ THEN REPLY @3 + 3a
-IF ~PartyHasItem("ACTEXT1")PartyHasItem("ACTEXT2")PartyHasItem("ACTEXT3")Global("ACBOOKWORK","GLOBAL",1)~ THEN REPLY @3 + 3b
+IF ~PartyHasItem("ACTEXT1")PartyHasItem("ACTEXT2")PartyHasItem("ACTEXT3")Global("ACBOOKWORK","GLOBAL",1)~ THEN REPLY @3 DO ~EraseJournalEntry(@10050) AddJournalEntry(@10049,QUEST)~ + 3b
 ++ @4 + 4
 END
 
@@ -17,7 +17,7 @@ END
 
 IF ~Global("ACBOOKWORK","GLOBAL",5)~ THEN BEGIN WORKDONE
 SAY @6
-IF ~~ THEN DO ~SetGlobal("ACBOOKWORK","GLOBAL",6)AddexperienceParty(15000)GiveItemCreate("ACBOOK02",LastTalkedToBy(),0,0,0)~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACBOOKWORK","GLOBAL",6)AddexperienceParty(15000)GiveItemCreate("ACBOOK02",LastTalkedToBy(),0,0,0) EraseJournalEntry(@10053) AddJournalEntry(@10054,QUEST_DONE)~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
@@ -50,16 +50,16 @@ END
 
 IF ~~ THEN BEGIN 5
 SAY @19
-++ @11 + 6
-++ @12 + 7
-++ @20 + 4
+++ @11 DO ~AddJournalEntry(@10052,QUEST)~ + 6
+++ @12 DO ~AddJournalEntry(@10052,QUEST)~ + 7
+++ @20 DO ~AddJournalEntry(@10052,QUEST)~ + 4
 END
 
 IF ~~ THEN BEGIN 6
 SAY @21
-++ @10 + 5
-++ @12 + 7
-++ @20 + 4
+++ @10 DO ~AddJournalEntry(@10051,QUEST)~ + 5
+++ @12 DO ~AddJournalEntry(@10051,QUEST)~ + 7
+++ @20 DO ~AddJournalEntry(@10051,QUEST)~ + 4
 END
 
 
@@ -98,7 +98,8 @@ END
 
 IF ~~ THEN BEGIN 12
 SAY @32
-IF ~~ THEN DO ~TakePartyGold(5000)SetGlobal("ACBOOKWORK","GLOBAL",2)SetGlobalTimer("ACBOOKWORKTIMER","GLOBAL",ONE_DAY)AddexperienceParty(15000)TakePartyItem("ACTEXT1")TakePartyItem("ACTEXT2")TakePartyItem("ACTEXT3")EscapeAreaDestroy(10)~ EXIT
+IF ~~ THEN DO ~TakePartyGold(5000)SetGlobal("ACBOOKWORK","GLOBAL",2)SetGlobalTimer("ACBOOKWORKTIMER","GLOBAL",ONE_DAY)AddexperienceParty(15000)TakePartyItem("ACTEXT1")TakePartyItem("ACTEXT2")TakePartyItem("ACTEXT3")EscapeAreaDestroy(10)
+EraseJournalEntry(@10048)EraseJournalEntry(@10049)EraseJournalEntry(@10050)EraseJournalEntry(@10051) EraseJournalEntry(@10052) AddJournalEntry(@10053,QUEST)~ EXIT
 END
 
 IF ~~ THEN BEGIN 13
@@ -136,9 +137,10 @@ END
 
 CHAIN
 IF ~~ THEN ACOGHMA1 3
-@40 = @41 = @42
-==ACOGHMA1 IF ~OR(3)!PartyHasItem("ACTEXT1")!PartyHasItem("ACTEXT2")!PartyHasItem("ACTEXT3")~ THEN @43
-==ACOGHMA1 IF ~PartyHasItem("ACTEXT1")PartyHasItem("ACTEXT2")PartyHasItem("ACTEXT3")~ THEN @44
+@40 DO ~EraseJournalEntry(@10048)~
+= @41 = @42
+==ACOGHMA1 IF ~OR(3)!PartyHasItem("ACTEXT1")!PartyHasItem("ACTEXT2")!PartyHasItem("ACTEXT3")~ THEN @43 DO ~AddJournalEntry(@10049,QUEST)~
+==ACOGHMA1 IF ~PartyHasItem("ACTEXT1")PartyHasItem("ACTEXT2")PartyHasItem("ACTEXT3")~ THEN @44 DO ~AddJournalEntry(@10050,QUEST)~
 END
 IF ~OR(3)!PartyHasItem("ACTEXT1")!PartyHasItem("ACTEXT2")!PartyHasItem("ACTEXT3")~ THEN REPLY @10 DO ~SetGlobal("ACTEXTCOMPLETE","LOCALS",1)~ + 5
 IF ~OR(3)!PartyHasItem("ACTEXT1")!PartyHasItem("ACTEXT2")!PartyHasItem("ACTEXT3")~ THEN REPLY @11 DO ~SetGlobal("ACTEXTCOMPLETE","LOCALS",1)~ + 6

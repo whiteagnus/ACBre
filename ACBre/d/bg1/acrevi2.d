@@ -167,7 +167,7 @@ IF ~Global("ACTAEREVCHOICE","LOCALS",4)~ THEN DO ~GiveItemCreate("halb07",LastTa
 IF ~Global("ACTAEREVCHOICE","LOCALS",5)~ THEN DO ~GiveItemCreate("blun15",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
 IF ~Global("ACTAEREVCHOICE","LOCALS",6)~ THEN DO ~GiveItemCreate("%tutu_var%ax1h05",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
 IF ~Global("ACTAEREVCHOICE","LOCALS",7)~ THEN DO ~GiveItemCreate("sw1h42",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
-IF ~Global("ACTAEREVCHOICE","LOCALS",8)~ THEN DO ~GiveItemCreate("sw2h12",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
+IF ~Global("ACTAEREVCHOICE","LOCALS",8)~ THEN DO ~GiveItemCreate("sw2h11",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
 IF ~Global("ACTAEREVCHOICE","LOCALS",9)~ THEN DO ~GiveItemCreate("blun13",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
 IF ~Global("ACTAEREVCHOICE","LOCALS",10)~ THEN DO ~GiveItemCreate("blun21",LastTalkedToBy(),1,1,0)~ + GOODJOB.7
 IF ~Global("ACTAEREVCHOICE","LOCALS",11)~ THEN DO ~GiveItemCreate("chan08",LastTalkedToBy(),1,1,0)~ + GOODJOB.7

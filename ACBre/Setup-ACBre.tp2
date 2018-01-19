@@ -1,48 +1,48 @@
 /*
 
-Changes: Aktualisierung der fl#add_kit_ee.tpa (löst die probleme mit dem Kit in der EE(T))
+Known Issues:
+-Breagar will only smithy for the PC if he is in Taerom's smithy before joining the group.
+-(TdB) Berronars Axt wird verdoppelt, wenn die Silberne Zwergin sie segnet (ich habe keine Ahnung, warum).
 
 
-ToDo:
-der Aufnahmedialog in der Schmiede.
-Wenn ich ihn da beim ersten Gespräch nur was schmieden lasse, dann beginnt das nächste Gespräch so, als hätten wir schon über das Eisen in Nashkell gesprochen. Und ich kann nicht nur das Eisen besorgen und ihn in der Schmiede lassen. Er will immer mit.
-
-Wird nicht erkannt, wenn der HC weiblich ist (bg1 acfriend.d)
-@46   = ~Sucht Euch eine Frau. Heiratet und macht Ihr ein paar Kinder. Dann übt ihr einen vernünftigen Beruf aus und gut.~ ~Sucht Euch einen anständigen Mann. Heiratet und gebärt ihm ein paar Kinder. Dann übt Ihr einen vernünftigen Beruf aus und gut.~
-
-Was ich auch etwas schade finde, ist, dass man mit Breagar nichts mehr schmieden kann, wenn man aus Nashkell zurückkommt. 
+Hinweis:
+-die SoD-Inhalte sind noch nicht mit Ascalon abgesprochen
 
 
-----
+
+Changes since last version: 
+-Breagar kann nun in der Schmiede stehen gelassen werden, bis der HC das Eisen in der Nashkell Mine gefunden hat, dann kann es ihm abgekauft werden.
+-Breagars Meckerdialog, wenn ihm Beronars Axt weggenommen wird: müsste korrekt ausgelöst werden, Followups falls die Axt nicht geholt wird wurden aktiviert.
+-Zu Breagars Textfragmenten-Quest (BGII) existieren nun Tagebucheinträge
+-Breagar sollte nun seine Bemerkung in Handelstreff wie geplant starten, nach welcher der verhüllte Zwerg erscheint
+-Breagars Kommentar zu den Eicheln der Dryaden kommt nun erst, wenn man den Dryaden versprochen hat, sie zu befreien.
+-Anstinus' Turm sollte nun (nach dem Freischalten auf der Karte) von so gut wie allen Gebieten in BGII erreichbar sein (die Reisezeiten müssen uU noch angepasst werden).
+-Breagar lässt nun nicht mehr das gesamte Inventory fallen, wenn er von der Silbernen Zwergin seinen Silberarm bekommt
+-Breagar lässt nicht mehr sein gesamtes Inventory fallen, wenn er in TdB seinen Silberarm verstärkt
+-während Breagar seinen Silberarm in TdB verstärkt, weden keine Randomtexte mehr angezeigt
+-wenn die blauen Drachenschuppen von Abazigal eingesammelt werden, fängt Breagar nun den entsprechenden Dialog von sich aus an
+-In Saradush setzt Breagar keinen Questeintrag wegen der Zwerge mehr
+-Tagebucheintrag "Das Böse auf dem Friedhof - Tobin zeigt uns den Weg" ist nun ein Journaleintrag, so dass er stehen bleiben kann, ohne im Tagebuch zu irritieren.
+-Stutterbug bei Runenhammer +4 behoben
+-Beschreibung von Breagars Hand aus Meteoritenerz überarbeitet
+-nach Revianels Rettung kann sich der HC einen Zweihänder aussuchen, diesen habe ich zu "sw2h11" geändert (Zweihänder +2), war vorher das Unikat "Flamme des Nordens".
+-Breagar begrüßt den HC nun nicht mehr mit seinem BG1-Dialog in TdB.
+-(crossmod) einen Banter mit Weimers Solaufein eingefügt.
+-(TdB) Queste in Anstinus Turm überarbeitet: Tagebucheinträge eingefügt, Breagar bezieht sich auf die richtigen Duergar bzw. Reggik je nachdem, wer in SvA überlebt hat, Breagar weist darauf hin, wenn die Queste zu Ende ist, die Silberne Zwergin teleportiert die Gruppe nach Questende nicht mehr ungewollt weiter; Breagar hat ein paar Kommentare (als DisplayStringHead) bzgl. der Reihenfolge, in dem der Quest idealwerweise erledigt werden sollte.
+-(SoD,EET) Inhalte für Breagar in SoD eingefügt: Breagar schläft nun nicht mehr im selben Zimmer wie der HC sondern kommt nach der Anfangsszene zu ihm, Breagar reagiert auf die wichtigsten Stellen, Gruppenmanagement
+-(EET) Breagar kommt nun mit beim Übergang von SoD zu BGII
+-(NGII:EE, EET) (TdB) Die Modareas von Anstinus' Turm stürzen nicht mehr ab
+-(EET) mod areas are added to worldmap without the need of BP-Worldmap mod.
+-(BG:EE, BGII:EE, EET) kit now works (Aktualisierung der fl#add_kit_ee.tpa) 
+-(compatibility) Breagar folgt dem HC nun alleine zur Waukeens Promenade, falls ein "Skip ID" Mod installiert ist und Breagar daher nicht in ID angesprochen wurde.
+-German version: finished missing line in acbrep.tra
 
 
-Breagar Unfinished Business 
+Not a bug, no action:
 
-1. Schmieden in BGII: Verbesserungen seines Arms. Es existieren itm Dateien (nicht auf Funktionsfähigkeit geprüft)
-
--Bei Cromwell wäre es sicher besser, aber da die Zellen ja verschwinden, sobald man ID verlässt ...
-Soweit ich weiss, sollte man mit den Zellen Breagars Golemarm verbessern können - das steht zumindest in der Item-Beschreibung ACHAND4:
-
-Breagars Silberne Hand
-
-Durch Berronars mächtige Magie wurde der silberne Arm des Wächtergolems mit Breagars Armstumpf verbunden. Breagar kann die Hand verwenden, als ob es seine eigene wäre. Der Segen der Zwergengöttin verstärkt das Metall genug, dass Breagar damit Waffen blocken und sogar magischen Angriffen ein wenig trotzen kann. Leider sind die Finger der neuen Hand zu dick, als dass er einen Ring über sie streifen könnte.
-
-Dank der Energiezellen aus Irencus' Kerker ist der silberne Arm jetzt um einiges stärker.
-
-EIGENSCHAFTEN:
-
-Stärkebonus: +1
-RK-Bonus: -2
-RW-Bonus: +2
-
-
-2. Befreie den Turm von Anstinus in TdB (?)
-
--ARAC06-12 areas für eine Rückkehr zum Turm in TdB (unvollständig mit cres besetzt / Reste vom ersten Quest noch enthalten)
--Dialog für Silberne Dame, um die Gruppe zurück zu schicken
--Dialog von Forres / Reggik / anderer Clansführer
--teilweide cre dateien vorbereitet (Drow und Duergar etc.)
-
+-Was ich auch etwas schade finde, ist, dass man mit Breagar nichts mehr schmieden kann, wenn man aus Nashkell zurückkommt. --[Ist so ein bisschen Moddesign, denke ich. Nach Nashkell hat er das Eisen, aus dem er was ganz besonderes schmieden möchte, und danach - nunja...]
+-ich habe gerade festgestellt, dass Breagar für TdB die Beschwerde-Mechanik für die Äxte gar nicht mehr hat, zumindest reagiert er darauf nicht mehr.--[Das zieht einen ziemlichen Rattenschwanz an anderen Skripten hinter sich her, das fasse ich nicht an...]
+-V6.09: Nach der Friedhofsquest in der ich die Klerikerin Revianel gerettet und den Leichnahm getötet habe ist Taerom Fuiruim nicht mehr in seiner Schmiede anzutreffen gewesen und blieb auch verschwunden --[zumindest in der 7.0 wird hier eine Mod-cre für Taerom verwendet, daran kann es also nicht liegen?]
 
 
 ------
@@ -59,9 +59,9 @@ Hinweis zur englischen Übersetzung:
 
 
 BACKUP ~ACBre/backup~
-AUTHOR ~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
+AUTHOR ~jastey@web.de~ //~whiteagnus@gmx.de~ //Original von Ascalon (geheimer.herrscher@gmx.de)
 //MODDER
-VERSION ~7.00_20171106~
+VERSION ~7.00_20180119~
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -71,6 +71,7 @@ INCLUDE ~ACBre/lib/g3_tutu_cpmvars.tpa~
 INCLUDE ~ACBre/lib/g3_bgt_cpmvars.tpa~
 INCLUDE ~ACBre/lib/liam_bgee_vars.tpa~
 INCLUDE ~ACBre/lib/read_journal_strref.tpa~
+INCLUDE ~ACBre/lib/extra_regexp_vars.tph~
 
 
 
@@ -83,6 +84,8 @@ ACTION_IF GAME_IS "eet" BEGIN
   OUTER_SPRINT ~EET_ILYICH_0~ ~ActionOverride("DuegarClanChief",SetGlobal("duergarleader","LOCALS",9))~
   OUTER_SPRINT ~journalentry_JARED_0~ ~227184~
   OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(231460)~
+
+  OUTER_SPRINT ~SoD_VAR~ ~Global("ENDOFBG1","GLOBAL",1)~
 END 
 
 ACTION_IF GAME_IS "bgee" BEGIN
@@ -92,6 +95,8 @@ SetGlobal("TalkedToMulahey","GLOBAL",1)~
   OUTER_SPRINT ~EET_ILYICH_0~ ~ActionOverride("DuegarClanChief",SetGlobal("duergarleader","LOCALS",9))~
   OUTER_SPRINT ~journalentry_JARED_0~ ~27184~
   OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(31460)~
+
+  OUTER_SPRINT ~SoD_VAR~ ~Global("ENDOFBG1","GLOBAL",2)~
 END
 
 ACTION_IF NOT GAME_IS "bgee eet" BEGIN
@@ -393,6 +398,21 @@ UNLESS ~ACBre~
 
 END
 
+/* SoD */
+ACTION_IF (GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~bd0103.are~) THEN BEGIN
+
+APPEND ~bddialog.2da~
+~ACBre ACBreP ACBreJ ACBreD~
+UNLESS ~ACBre~
+
+/*
+APPEND ~bdbanter.2da~
+~ACBre ACBreB ACBre25B~
+UNLESS ~ACBre~
+*/
+
+END
+
 ACTION_IF GAME_IS ~bg2ee bgt tob eet~ THEN BEGIN
 
 APPEND ~pdialog.2da~
@@ -630,7 +650,7 @@ ADD_CRE_ITEM ~%tutu_var%AROW01~ #10 #0 #0 ~NONE~ ~QUIVER1~
 COPY ~ACBre/cre/ACBRE.CRE~ ~override~
 SAY NAME1 @29
 SAY NAME2 @29
-SAY INITIAL_MEETING @30   
+SAY INITIAL_MEETING ~~//@30   
 SAY MORALE @31   
 SAY HAPPY @32        
 SAY UNHAPPY_ANNOYED @33   
@@ -761,7 +781,7 @@ SAY NAME2 @50008
 COPY ~ACBre/CRE/ACBre07.cre~ ~override~
 SAY NAME1 @29
 SAY NAME2 @29
-SAY INITIAL_MEETING @30   
+SAY INITIAL_MEETING ~~ //@30   
 SAY MORALE @31   
 SAY HAPPY @32        
 SAY UNHAPPY_ANNOYED @33   
@@ -804,7 +824,7 @@ WRITE_SHORT 0x246 0x4000 + ~%ACSMITH1%~
 COPY ~ACBre/CRE/ACBre25.cre~ ~override~
 SAY NAME1 @29
 SAY NAME2 @29
-SAY INITIAL_MEETING @30   
+SAY INITIAL_MEETING ~~//@30   
 SAY MORALE @31   
 SAY HAPPY @32        
 SAY UNHAPPY_ANNOYED @33   
@@ -1023,6 +1043,14 @@ COMPILE ~ACBre/d/bgtonly~
 EVALUATE_BUFFER
 END
 
+/* SoD */
+ACTION_IF (GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~bd0103.are~) THEN BEGIN
+  COMPILE EVALUATE_BUFFER ~ACBre/d/sod/ACBreJ_SoD.d~
+  COMPILE EVALUATE_BUFFER ~ACBre/d/sod/ACBreS.d~
+  COMPILE EVALUATE_BUFFER ~ACBre/d/sod/ACBREP_sod.d~ USING ~ACBre/tra/autotra/%LANGUAGE%/ACBREP.tra~
+END
+
+
 ACTION_IF GAME_IS ~bgt bgee tutu_totsc eet~ THEN BEGIN
 //Journal Titles for BG:EE
 ADD_JOURNAL TITLE (@60001) @10000 @10001 @10002 @10003 @10004
@@ -1030,7 +1058,7 @@ ADD_JOURNAL TITLE (@60002) @10005 @10006 @10007
 ADD_JOURNAL TITLE (@60003) @10008 @10009 @10010 @10011 @10012 @10013
 ADD_JOURNAL TITLE (@60004) @10014 @10015 @10016
 ADD_JOURNAL TITLE (@60005) @10017
-ADD_JOURNAL TITLE (@60006) @10018 @10019 @10020 @10021 @10022 @10023
+ADD_JOURNAL TITLE (@60006) @10018 @10019 @10020 @10022 @10023 //@10021
 ADD_JOURNAL TITLE (@60007) @10024 @10025
 
 //Tilesets and Areas for BG1 Part
@@ -1169,11 +1197,234 @@ EVALUATE_BUFFER
 
 END //END of BG1
 
+
+
+/* SoD */
+
+ACTION_IF (GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~bd0103.are~) THEN BEGIN
+EXTEND_BOTTOM ~ACBre.bcs~ ~ACBre/baf/sod/acbre_sod.baf~
+  EVALUATE_BUFFER
+END
+
+//Extend existing Scripts for SoD
+ACTION_IF (GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~bd0103.are~) THEN BEGIN
+
+/* after Korlasz is defeated: DisplayStringHead */
+EXTEND_BOTTOM ~bd0120.bcs~ ~ACBre/baf/sod/ac_bd0120.baf~
+  EVALUATE_BUFFER
+
+EXTEND_BOTTOM ~bd0130.bcs~ ~ACBre/baf/sod/ac_bd0120.baf~
+  EVALUATE_BUFFER
+
+/* after Korlasz is defeated: move to Ducal Palace */
+EXTEND_TOP ~bd0103.bcs~ ~ACBre/baf/sod/ac_bd0103.baf~
+  EVALUATE_BUFFER
+
+/* Change camps if not in party */
+EXTEND_BOTTOM ~bd1000.bcs~ ~ACBre/baf/sod/ac_bd1000.baf~
+  EVALUATE_BUFFER
+EXTEND_BOTTOM ~bd3000.bcs~ ~ACBre/baf/sod/ac_bd3000.baf~
+  EVALUATE_BUFFER
+EXTEND_BOTTOM ~bd7100.bcs~ ~ACBre/baf/sod/ac_bd7100.baf~
+  EVALUATE_BUFFER
+
+/* portal to Avernus */
+EXTEND_TOP ~bd4300.bcs~ ~ACBre/baf/sod/ac_bd4300.baf~
+  EVALUATE_BUFFER
+
+/* inside Avernus */
+EXTEND_TOP ~bd4400.bcs~ ~ACBre/baf/sod/ac_bd4400.baf~
+  EVALUATE_BUFFER
+
+/* Breagar comments on murder accusation */
+EXTEND_BOTTOM ~bd4100.bcs~ ~ACBre/baf/sod/ac_bd4100.baf~
+  EVALUATE_BUFFER
+
+
+/* bdcut60a.bcs, bdcut60b.bcs: group is handled as one, no action needed */
+
+/* after PC gets arrested for murder: Breagar leaves party */
+EXTEND_TOP ~bdcut61.bcs~ ~ACBre/baf/sod/ac_bdcut61.baf~
+  EVALUATE_BUFFER
+
+
+/* move to SoD end area */
+EXTEND_TOP ~bd6200.bcs~ ~ACBre/baf/sod/ac_bd6200.baf~
+  EVALUATE_BUFFER
+
+
+/* this was my first attempt - will remain here until the other works 
+/* group moves inside area - Breager should, too */
+COPY_EXISTING ~bd6200.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\(ActionOverride("khalid",MoveToPoint(\[1410\.1410\]))\)~
+
+~\1 ActionOverride("ACBre",MoveToPoint([1410.1410]))~
+
+*/
+
+/* Breagar is kicked in hell dimension - teleport to other areas */
+EXTEND_TOP ~bdcut59b.bcs~ ~ACBre/baf/sod/ac_bdcut59b.baf~
+  EVALUATE_BUFFER
+
+EXTEND_TOP ~bdcut58.bcs~ ~ACBre/baf/sod/ac_bdcut58.baf~
+  EVALUATE_BUFFER
+
+/* my first attempt - will stay here until it's clear the EXTEND_TOP works as intended
+COPY_EXISTING ~bdcut59b.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\(ActionOverride("voghiln",Face(NW))[%tab% %lnl%%mnl%%wnl%]+END\)~
+
+~\1
+IF
+	Global("ACBreagar_kicked_bd4700","global",1)
+	!Dead("ACBre")  
+	!InParty("ACBre")  
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveGlobal("bd4300","ACBre",[600.320])  
+		ActionOverride("ACBre",Face(N))
+END
+
+IF
+	Global("ACBreagar_kicked_bd4700","global",0)
+	!Dead("ACBre")  
+	!InParty("ACBre")  
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveGlobal("bd4300","ACBre",[690.1254])  
+		ActionOverride("ACBre",Face(NW))
+END~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~bdcut58.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+   REPLACE_TEXTUALLY ~\(ActionOverride("voghiln",Face(NE))\)[%tab% %lnl%%mnl%%wnl%]+\(END\)~
+~\1 \2
+
+IF
+	Global("ACBreagar_kicked_bd4700","global",1)
+	!Dead("ACBre")  
+	!InParty("ACBre")  
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveGlobal("bd4400","ACBre",[1170.1240])  
+		ActionOverride("ACBre",Face(NE))
+END~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+*/
+
+/* Hell elevator - Breagar comments */
+EXTEND_BOTTOM ~bd4601.bcs~ ~ACBre/baf/sod/ac_bd4601.baf~
+  EVALUATE_BUFFER
+
+/* End of SoD - Breagar follows to abduction site */
+EXTEND_TOP ~bdcut65.bcs~ ~ACBre/baf/sod/ac_bdcut65.baf~
+  EVALUATE_BUFFER
+
+
+/* my first attempt - will stay here until it's clear the EXTEND_TOP works as intended
+COPY_EXISTING ~bdcut65.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\(DisableAI(Player6,TRUE)\)~
+~\1 DisableAI("ACBre",TRUE)~
+
+    REPLACE_TEXTUALLY ~\(ActionOverride(Player6,LeaveAreaLUA("bd6100","",\[470\.270\],SE))\)~
+~\1 ActionOverride("ACBre",LeaveAreaLUA("bd6100","",[480.260],SE))~
+
+    REPLACE_TEXTUALLY ~\(ActionOverride(Player6,MoveToPoint(\[780\.765\]))\)~
+~\1 ActionOverride("ACBre",MoveToPoint([770.790]))~
+
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+*/
+
+/* End of SoD - Abduction */
+EXTEND_TOP ~bd6100.bcs~ ~ACBre/baf/sod/ac_bd6100.baf~
+  EVALUATE_BUFFER
+
+
+/* my first attempt - will stay here until it's clear the EXTEND_TOP works as intended
+COPY_EXISTING ~bd6100.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\(ActionOverride(Player6,JumpToPoint(\[795\.825\]))\)~
+~\1 ActionOverride("ACBre",JumpToPoint([760.800]))~
+
+    REPLACE_TEXTUALLY ~\(ActionOverride(Player6,Face(SW))\)~
+~\1 ActionOverride("ACBre",Face(SW))~
+
+    REPLACE_TEXTUALLY ~\(ActionOverride(Player6,SetSequence(SEQ_SLEEP))\)~
+~\1 ActionOverride("ACBre",SetSequence(SEQ_SLEEP))~
+
+    REPLACE_TEXTUALLY ~\(ApplySpellRES("bdfinal",Player6)\)[%tab% %lnl%%mnl%%wnl%]+\(Continue()\)[%tab% %lnl%%mnl%%wnl%]+\(END\)~
+~\1 \2 \3 
+IF
+	Global("ACBreSoD_sleep","bd6100",0)
+	StateCheck("ACBre",STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("ACBreSoD_sleep","bd6100",1)
+		ActionOverride("ACBre",MakeUnselectable(3600000))
+		ApplySpellRES("bdfinal","ACBre")  // No such index
+		Continue()
+END
+
+IF
+	Global("ACBre_SoD_down","bd6100",0)
+	OR(2)
+		StateCheck("ACBre",STATE_REALLY_DEAD)
+		TriggerOverride("ACBre",Global("bd_final","locals",1))
+THEN
+	RESPONSE #100
+		SetGlobal("ACBre_SoD_down","bd6100",1)
+		SetGlobalTimer("bd_sleep_timer","bd6100",THREE_MINUTES)
+		Continue()
+END
+~
+
+   REPLACE_TEXTUALLY ~\(ApplySpellRES("bdsleep",Player6)\)[%tab% %lnl%%mnl%%wnl%]+\(END\)~
+~\1 \2 
+
+IF
+	Global("bd_finale","bd6100",4)
+	Global("ACBre_SoD_down","bd6100",0)
+	!GlobalTimerNotExpired("bd_sleep_timer","bd6100")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sleep_timer","bd6100",THREE_MINUTES)
+		ApplySpellRES("bdsleep","ACBre")  // No such index
+END
+~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+*/
+
+
+END //SoD
+
+
+
+/* Move from SoD to BGII for EET! (canon party member) */
+
+ACTION_IF GAME_IS ~eet~ THEN BEGIN
+EXTEND_TOP ~K#TELBGT.bcs~ ~ACBre/baf/sod/ac_K#TELBGT.baf~
+  EVALUATE_BUFFER
+END
+
+
 ACTION_IF GAME_IS ~bgt bg2ee tob eet~ THEN BEGIN
-//Journal Titles for BG:EE
+//Journal Titles for BGII:EE
 ADD_JOURNAL TITLE (@60008) @10026 @10027 @10028 @10029 @10030 @10031 @10032 @10033 @10034 @10035 @10036 @10037
 ADD_JOURNAL TITLE (@60009) @10038 @10039 @10040 @10041 @10042 @10043 @10044 @10045 @10046
 ADD_JOURNAL TITLE (@60010) @10047
+ADD_JOURNAL TITLE (@60011) @10048 @10049 @10050 @10051 @10052 @10053 @10054
+ADD_JOURNAL TITLE (@60012) @10055 @10056 @10057 @10058 @10059 @10060 @10061 @10062 @10063 @10064 @10065 @10066 @10067 @10068 @10069 @10070 @10071 @10072
 
 //Tilesets and Areas for BG2 Part
 LAF HANDLE_TILESETS
@@ -1213,8 +1464,10 @@ COPY_EXISTING ~ARAC05.ARE~ ~OVERRIDE~
 SAY 0x354 @196
 
 
+
 //Extend existing Scripts for BG2
 EXTEND_TOP ~AR0300.bcs~ ~ACBre/baf/bg2/AR0300.baf~
+EXTEND_TOP ~AR0700.bcs~ ~ACBre/baf/bg2/AR0700.baf~
 EXTEND_TOP ~AR0905.bcs~ ~ACBre/baf/bg2/AR0905.baf~
 EXTEND_TOP ~AR2000.bcs~ ~ACBre/baf/bg2/AR2000.baf~
 EXTEND_TOP ~AR2010.bcs~ ~ACBre/baf/bg2/AR2010.baf~
@@ -1273,19 +1526,41 @@ APPEND ~mastarea.2da~
 UNLESS ~ARAC07~
 
 //Worldmap
-ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
-COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
-APPEND_FILE ~ACBre/Worldmap/areas.tbl~
-COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
-APPEND_FILE ~ACBre/Worldmap/links.tbl~
-COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
-APPEND_FILE_EVALUATE ~ACBre/TRA/%LANGUAGE%/worldmap.tra~
-END
-ELSE BEGIN
 MKDIR ~Worldmap~
-COPY ~ACBre/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
-COPY ~ACBre/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
-COPY ~ACBre/TRA/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+  APPEND_FILE ~ACBre/Worldmap/areas.tbl~
+END ELSE BEGIN
+  COPY ~ACBre/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+END
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_links.tbl~ BEGIN
+  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+  APPEND_FILE ~ACBre/Worldmap/links.tbl~
+END ELSE BEGIN
+  COPY ~ACBre/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+END
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_trans.tra~ BEGIN
+  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+  APPEND_FILE_EVALUATE ~ACBre/TRA/%LANGUAGE%/worldmap.tra~
+END ELSE BEGIN
+  COPY ~ACBre/TRA/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+END
+
+/* For eet. the BP-Worldmap mod is not necessary */
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+	INCLUDE ~ACBre/lib/add_worldmap_tbl.tpa~
+	LAF ADD_WORLDMAP_TBL
+		INT_VAR
+		verbose = 1
+		inclSv = 0
+		STR_VAR
+		path_to_areas = EVAL ~ACBre/Worldmap/areas.tbl~
+		path_to_areas_bp = EVAL ~ACBre/Worldmap/areas.tbl~
+		path_to_links = EVAL ~ACBre/Worldmap/links.tbl~
+		path_to_trans = EVAL ~ACBre/TRA/%LANGUAGE%/worldmap.tra~
+	END
 END
 
 //Patch Existing Areas
@@ -1423,6 +1698,11 @@ THEN BEGIN
 PRINT @205
 // EXTEND_BOTTOM ~ACBRE.bcs~ ~ACBre/CROSS/ACACQ.baf~
 COMPILE ~ACBre/CROSS/ACACQ.D~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~sola5.cre~ THEN BEGIN
+PRINT @209
+COMPILE ~ACBre/CROSS/ACSOLA.D~
 END
 
 COMPILE ~ACBre/pid~

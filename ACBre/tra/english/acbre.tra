@@ -122,3 +122,5 @@
 @121 = ~You don't have to find it alone, Breagar. We stay together.~
 @122 = ~To be honest I would prefer if you would find your way alone. I'll see you then.~
 @123 = ~I do not care! Jeez, you bolshy little madams have only nonsense in your head. Come on, apologize and then make yourself useful once in your life at least!~
+/* new for v7.0 */
+@124  = ~Look for me where hammer and anvil clang.~

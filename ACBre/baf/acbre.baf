@@ -98,7 +98,6 @@ IF
 	Global("ACBREMYAXE","GLOBAL",1)
 THEN
 	RESPONSE #100
-		IncrementGlobal("ACBREMYAXE","GLOBAL",1)
 		SetGlobalTimer("ACBREMYAXETIMER","GLOBAL",ONE_HOUR)
 END
 
@@ -108,7 +107,26 @@ IF
 	!PartyHasItem("ACAXE")
 	!PartyHasItem("ACAXE2")
 	!PartyHasItem("ACAXE3")
+	CombatCounter(0)
+	!See([ENEMY])
+	!StateCheck("ACBRE",CD_STATE_NOTVALID)
+	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
+	OR(3)
+		Global("ACBREMYAXE","GLOBAL",1)
+		Global("ACBREMYAXE","GLOBAL",3)
+		Global("ACBREMYAXE","GLOBAL",5)
 	GlobalTimerExpired("ACBREMYAXETIMER","GLOBAL")
+THEN
+	RESPONSE #100
+		IncrementGlobal("ACBREMYAXE","GLOBAL",1)
+END
+
+IF
+	InParty(Myself)
+	See(Player1)
+	!PartyHasItem("ACAXE")
+	!PartyHasItem("ACAXE2")
+	!PartyHasItem("ACAXE3")
 OR(3)
 	Global("ACBREMYAXE","GLOBAL",2)
 	Global("ACBREMYAXE","GLOBAL",4)
@@ -1031,7 +1049,6 @@ IF
 	InParty(Myself) 
 	See(Player1)
 	Global("ACAUDINTM","GLOBAL",2)
-	InMyArea("ACAUD001")
 	%BGT_VAR2%
 	GlobalGT("ACAUDQUEST","GLOBAL",10)
 THEN
@@ -2614,6 +2631,7 @@ THEN
 		Continue()
 END
 
+/* taken out - no dialogue for runehammer
 IF
 	InParty(Myself) 
 	See(Player1)
@@ -2628,6 +2646,7 @@ THEN
 		SetGlobal("ACHAMM10","LOCALS",1)
 		Continue()
 END
+*/
 
 IF
 	InParty(Myself) 
@@ -2708,6 +2727,7 @@ IF
 	InParty(Myself) 
 	See(Player1)
 	PartyHasItem("MISC4N")
+	GlobalGT("Acorns","AR0602",0) //PC promised the Dryad's to get the acorns
 	CombatCounter(0)
 	!See([ENEMY])
 	!StateCheck("ACBre",CD_STATE_NOTVALID)
@@ -3050,7 +3070,7 @@ END
 IF
 	InParty(Myself) 
 	See(Player1)
-OR(36)
+OR(35)
 	Global("ACBGMISC83","LOCALS",1)
 	Global("ACBLUN14","LOCALS",1)
 	Global("ACBLUN14A","LOCALS",1)
@@ -3059,7 +3079,7 @@ OR(36)
 	Global("ACDWDUST","LOCALS",1)
 	Global("ACHAMM06","LOCALS",1)
 	Global("ACHAMM09","LOCALS",1)
-	Global("ACHAMM10","LOCALS",1)
+//////	Global("ACHAMM10","LOCALS",1)
 		Global("ACLEAT22","LOCALS",1)
 	Global("ACMISC04","LOCALS",1)
 	Global("ACMISC49","LOCALS",1)

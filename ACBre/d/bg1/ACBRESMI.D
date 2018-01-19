@@ -49,7 +49,7 @@ IF ~Global("ACSTORY","GLOBAL",1)~ THEN REPLY @8 + IRONDEAL
 ++ @4 + REMEET.3
 END
 
-/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, einmal angesprochen */
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, einmal angesprochen, Player1 nicht in der Nähe */
 
 IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(1)
 OR(3) 
@@ -61,7 +61,7 @@ SAY @9
 IF ~~ THEN DO ~SetNumTimesTalkedTo(1)~ EXIT
 END
 
-/* Breagar das Stück Eisen nicht gerade genommen, mehr als einmal angesprochen */
+/* Breagar das Stück Eisen nicht gerade genommen, mehr als einmal angesprochen, Player1 nicht in der Nähe */
 
 IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)NumTimesTalkedToGT(1)
 OR(3) 
@@ -202,7 +202,7 @@ END
 
 IF ~~ THEN BEGIN REMEET.10
 SAY @45 = @46
-IF ~~ THEN DO ~SetGlobal("ACBREINPARTY","GLOBAL",3)~ EXIT
+IF ~~ THEN EXIT //DO ~SetGlobal("ACBREINPARTY","GLOBAL",3)~ ##
 END
 
 IF ~~ THEN BEGIN 1forg
