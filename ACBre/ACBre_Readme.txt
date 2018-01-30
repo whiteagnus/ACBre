@@ -143,6 +143,10 @@ White Agnus' changes (he did a lot more than jastey although it doesn't look lik
 -(compatibility) bgqe v9: correction of Breagar's interjection point
 -(internal) internal restructuring and update [TP2 moved inside mod folder; libs/iconv/autotra folders added; ALWAYS blocks / libs added; change to HANDLE_CHARSET, HANDLE_AUDIO, HANDLE_TILESET]
 jastey's changes:
+-(new SoD, EET) some content for SoD added: group management (he will wait
+in camp and move camps automatically), Breagar joins at the beginning of
+SoD instead of just remaining in group, reactions to most important
+events.
 -(install bug) 'Virginie the Wonderbunny' will be installed correctly
 -(bug) Breagar and the ore: fixed several dialogue triggers, Breagar should now react correctly to the PC having the ore / wanting to sell the ore and also his quest should trigger correctly if he wasn't in the party when collecting the ore etc [habe das "Global("ACBREINPARTY","GLOBAL",3)" aus dem Dialogtrigger entfernt in acbresmi.d; Vereinheitlichung der Questvariablen "IRONDEALING" auf "GLOBAL", war vorher ein Mix aus "GLOBAL" und "LOCALS", so dass die Trigger nicht richtig funktionierten]
 -(bug) Breagar's BG1 quests won't happen simultaneously: kidnapping of priestess should only happen after Breagar's smithy-quest is fully completed (including meeting the Silver Dwarv) [in acbre.baf die Questvariable ~Global("ACSTORY","GLOBAL",3)~ in den Spawnblock, der ~SetGlobal("ACSILVERAPPEARS","GLOBAL",1)~ setzt eingefügt]
@@ -158,9 +162,15 @@ jastey's changes:
 -(bug) ARAC02.baf: fixed activation of info point above stairs with force field (wrong trigger name)
 -(bug) all areas in Anstinus' Tower: text of info points corrected
 -(bug) Forres is no longer invincible if attacked.
+-(bug) Stutter bug for rune hammer +4 removed
+-(bug, BG:EE) if the PC choses a two-handed sword for reward after Revianel's rescue it will now be a "sw2h11" (two-handed sword +2) and no longer the unique weapon "flame of the north".
 -(bug BGII(:EE)) defined %IMOEN_DV% and %IMOEN_BANTER% so it installs correctly for BGII (although it's only for the BG1 part)
 -(bug BGII(:EE)) fixed doubled Breagar in ID (BGII:EE) [moved "acbresmi.baf" into folder ACBre/baf so it gets installed for BGII, too (needed for cutscene Breagar "ACBRESMI.cre")]
 -(bug BGII(:EE)) fixed stutter bug in BGII/BGII:EE after cutscene in ID (changed OUTER_SPRINT ~BGT_VAR~ to ~False()~ for ~tob bg2ee~
+-(bug ToB) while enforcing his silver arm in ToB, no random texts will be displayed.
+-(bug ToB) Breagar's greeting line does no longer have the BG1 sound attached.
+-(bug ToB, BGII:EE+EET) Quest in Anstinu's Tower fixed
+-(bug BG:EE, BGII:EE, EET) kit now works (updated fl#add_kit_ee.tpa)
 -(bug, EET) all interjections should work now [eet-specific BG1-dlgs should be considered (in BG1-files, only): 
 --changed %tutu_var%EDWIN -> %tutu_var%EDWIN%eet_var% 
 --changed %tutu_scriptbg%NEB -> %tutu_scriptbg%NEB%eet_var%
@@ -168,6 +178,9 @@ jastey's changes:
 --changed %tutu_scriptbg%SENDAI -> %tutu_scriptbg%SENDAI%eet_var%
 --changed %tutu_scriptbg%VICONI _> %tutu_scriptbg%VICONI%eet_var%]
 -(bug, EET) fixed chapter triggers in cutscenes [added EET journal system]
+-(bug, EET) Breagar will now appear in Irenicus' Dungeon for a continuous game
+-(improvement) Breagar can be left waiting by Taerom until after the PC brings the ore
+from Nashkel mines, then it can be sold to him.
 -(improvement) all quest characters / Breagar will react to the PC / Breagar being in the group and standing nearby instead of having to talk to them with the PC / Breagar directly. No more 'he doesn't talk to me' bug reports. [Change of ~Name("ACBRE",LastTalkedToBy()) into ~InParty("ACBRE") 
 See("ACBRE") 
 !StateCheck("ACBRE",CD_STATE_NOTVALID)~ and of ~!Name("ACBRE",LastTalkedToBy())~ 
@@ -175,18 +188,35 @@ in ~OR(3)
 !InParty("ACBRE") 
 !See("ACBRE") 
 StateCheck("ACBRE",CD_STATE_NOTVALID)~ and the same for ~!InPartySlot(LastTalkedToBy(),0)~ / ~~InPartySlot(LastTalkedToBy(),0)~ for "Player1"]
+-(improvement) Breagar will keep his inventory if he gets the silver arm from the
+silver dwarf
 -(improvement) the cutscene in the Thunderhammer smithy will now be centred above the action so it's better to watch [MoveViewPoint([815.490],INSTANT) in der accut_03.baf eingefügt]
 -(improvement) For his BGII quest, the second text fragment can now be collected out of Pimlicos house without Korgan having to join the party: the door to Pimlico's house will be unlocked if Breagar is in the party [Ausführen von "Unlock("Door0905")" über die ACBre.baf]
 -(improvement) the hooded dwarf should now spawn near the group and no longer get stuck behind walls or closed doors
 -(improvement) Ralph should now spawn near the group and no longer get stuck behind walls or closed doors
 -(improvement) Forres and his Duergar. If for some reason Forres turned hostile before his dialogue, all durgar will become neutral for peaceful resolution. 
 -(improvement) acforres.d added new dialogue state after peaceful resolution
+-(improvement) Added Journal entries to his quest in SoA ("text fragments")
+-(improvement) Breagar's comment about the acorns + helping the dryads will start after
+the PC promised the dryads to help them
+-(improvement) Journal entry about the evil at the cemetary "Tobin will show us
+the way ("Das Böse auf dem Friedhof - Tobin zeigt uns den Weg") is now
+in the "info" section
+-(improvement, SoA) Anstinus' Tower is now reachable from almost every area in SoA (travel
+times might need adjustment)
+-(improvement, ToB) Breagar Breagar will keep his inventory after enforcing his
+silver arm in ToB
+-(improvement, ToB) Quest in Anstinu's Tower improved: added journal entries, quest solvable independent of order etc.
 -(improvement, EET) in ToB, the existing Breagar from SoA will be spawned if called by the fate spirit (for continued game and Breagar was not in party upon transition to ToB)
+-(improvement, EET) mod areas are added to worldmap without the need of BP-Worldmap mod.
+-(improvement, German version) description of Breagar's arm from meteor ore improved, finished missing line in acbrep.tra.
 -(portrait, BG(II):EE, EET) changed default (Nix's) portrait choice to a "Head only" portrait for BG(II):EE+EET's "small" portrait
 -(portraits) removed all quest NPC portraits with unclear copyright status
 -(crossmod) with Amber should trigger correctly [AreaCheck("M#ARE01") corrected to AreaCheck("M#AR01") in acamber.baf]
 -(crossmod) Breagar's dialogue about the cutscene events in the Promenade should really only happen after the cutscene and not 'in any other area than Irenicus Dungeon'
 -(crossmod) DSotSC: Breagar's Einmischdialog in Jet'Layas Aufnahmedialog (DSotSC) hoffentlich gefixt
+-(crossmod) added 1 banter with Weimer's Solaufein.
+-(crossmod) Breagar follows PC to Waukeen's Promenade if a "skip ID" mod is installed.
 -(install) upon deinstalling main component, the crossmod and PID will be deinstalled automatically [changed to REQUIRE_COMPONENT ~Setup-ACBre.tp2~ 0]
 -(install) in setup.tra: Error Message @2 changed to not BGT-specific [~Ihr habt kein Spiel installiert, für das die Mod kompatibel ist. Installation wird abgebrochen.~]
 -(install) added check for BP-BGT Worldmap because Breagar needs to be installed first
@@ -222,7 +252,7 @@ IX. Danksagungen
 - Philips und Douwe Egberts für die Senseo
 - Und nicht zuletzt meiner Lieblingsschweizerin Revianêl, die sich treu und geduldig meine ganzen Schwärmereien angehört hat (auch wenn sie wahrscheinlich nur die Hälfte begriffen hat).
 
-- Special Thanks to "AstralChilledkroete", der in seinem langen "Let's Play" auf Youtube Breagar nur schon seit einer gefühlten Ewigkeit mit sich schleppt und ich dadurch immer mal wieder auf kleine Ungereimtheiten stieß.
+- Special Thanks to "AstralChilledkroete", der in seinem langen "Let's Play" auf Youtube Breagar nun schon seit einer gefühlten Ewigkeit mit sich schleppt und ich dadurch immer mal wieder auf kleine Ungereimtheiten stieß.
 
 ***************************************************************************************************************
 

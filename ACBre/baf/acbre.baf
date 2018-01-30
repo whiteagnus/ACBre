@@ -163,6 +163,7 @@ THEN
 		Continue()
 END
 
+/*
 IF
 	ReputationGT(PLAYER1,8)
 	ReputationLT(PLAYER1,13)
@@ -174,6 +175,7 @@ THEN
 		SetGlobal("ACBREBOUTREP","LOCALS",2)
 		Continue()
 END
+*/
 
 IF
 	ReputationGT(PLAYER1,12)
