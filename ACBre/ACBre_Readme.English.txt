@@ -2,7 +2,7 @@
                A Modification for BGT, EET, BG:EE, Tutu, BGII, BGII:EE, and EET
                             by Ascalon (geheimer.herrscher@gmx.de)
 
-                         		Version: 9.0.0
+                         		Version: 10.0.0
 
 ***************************************************************************************************************
 
@@ -324,6 +324,14 @@ silver arm in ToB
 	-Breagars stats in all cres unified to INT 10, WIS 12.
 	-added folder libiconv-1.9.2-1-src.7z with iconv licence info
 
+10.0.0: (2020-xx-xx) by jastey
+	-English version completed by Eimerian, newly translated files proof read by Brokenkatana
+	-crossmod with bgqe should be installed component-wise
+	-crossmod with bgqe: I_C_T2 changed to I_C_T for better compatibility
+	-second friendship dialogue in BG1 should be triggered
+	-typo corrections
+	-SoD content improvements
+	-compatibility with the Transitions Mod
 
 ***************************************************************************************************************
 

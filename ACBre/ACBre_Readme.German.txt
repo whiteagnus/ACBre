@@ -324,6 +324,12 @@ silver arm in ToB
 	-Breagars stats in allen cres vereinheitlicht auf INT 10, WIS 12.
 	-added folder libiconv-1.9.2-1-src.7z with iconv licence info
 
+10.0.0: (2020-xx-xx) by jastey
+	-English version completed and revised by Eimerian, proof read by Brokenkatana
+	-crossmod with bgqe should be installed component-wise
+	-crossmod with bgqe: I_C_T2 changed to I_C_T for better compatibility
+	-second friendship dialogue in BG1 should be triggered
+	-typo corrections
 
 ***************************************************************************************************************
 

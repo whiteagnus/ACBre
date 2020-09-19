@@ -1,5 +1,5 @@
 @0   = ~Well, I guess I have to congratulate you for finding me. You surely want a reward now, right? Well, let's see.~ 
-@1   = ~Hiya, venerable guests. Welcome to Mithrest. My name is Ascalon and I'm the bartender. What can I do for you?~
+@1   = ~Hiya, valued guests. Welcome to Mithrest Inn. My name is Ascalon and I'm the bartender. What can I do for you?~
 @2   = ~Ascalon? Don't we know you from Baldur's Gate?~ 
 @3   = ~What do you have to offer?~
 @4   = ~Nothing, farewell.~ 
@@ -45,7 +45,7 @@
 @44  = ~We don't need anything right now.~
 @45  = ~As you wish. Have a good journey and always remember: Ascalon has something for everyone!~
 @46  = ~Oh, the lovely Jaheira. Sweet to look at, but harsh to handle.~
-@47  = ~A "White Lady" would be the most appropriate drink: 4cl Gin, 2cl Triple Sec and 2cl lemon juice are ideal!~
+@47  = ~A 'White Lady' would be the most appropriate drink: 4cl Gin, 2cl Triple Sec and 2cl lemon juice are ideal!~
 @48  = ~Sweet and tart, right? You've lost your mind.~
 @49  = ~Khalid! Needless to say, for the good, loyal Khalid something down-to-earth only.~
 @50  = ~We take 4cl vodka, 4cl lime juice, a dash of lemon juice and serve Khalid a Gimlet!~
@@ -105,8 +105,8 @@
 @104 = ~Oh, what a treat! I will praise you along all the Sword Coast!~
 @105 = ~Faldorn, the druid from the depths of Cloakwood.~
 @106 = ~5cl Cachaca, 3cl each Charleston Follies and lemon juice, 1.5cl blackberry syrup and 0.5cl passion fruit syrup result in the Blackberry Frostbite; on the back of your tongue the forest comes alive!~
-@107 = ~Don’t you have something more neutral?~
-@108 = ~I’m going to offer something really special to our good gnome Quayle.~
+@107 = ~Don't you have something more neutral?~
+@108 = ~I'm going to offer something really special to our good gnome Quayle.~
 @109 = ~1 egg yolk, 2cl cream, 2.5cl each Cognac and creme de cacao which together with a pinch of nutmeg and a spoonful of sugar results in a beautiful Butterfly Flip.~
 @110 = ~Thank you... I think.~
 @111 = ~Seductive Safana.~
