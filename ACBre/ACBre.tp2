@@ -46,7 +46,6 @@ ACTION_IF GAME_IS "eet" BEGIN
   OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(231460)~
 
   OUTER_SPRINT ~SoD_VAR~ ~Global("ENDOFBG1","GLOBAL",1)~
-  OUTER_SPRINT ~NO_LONGER_BG1~ ~GlobalGT("ENDOFBG1","GLOBAL",0)~
 END 
 
 ACTION_IF GAME_IS "bgee" BEGIN
@@ -58,7 +57,6 @@ SetGlobal("TalkedToMulahey","GLOBAL",1)~
   OUTER_SPRINT ~EraseJournalEntry_KOVERA_6~ ~EraseJournalEntry(31460)~
 
   OUTER_SPRINT ~SoD_VAR~ ~GlobalGT("bd_plot","global",0)~
-  OUTER_SPRINT ~NO_LONGER_BG1~ ~GlobalGT("bd_plot","global",0)~
 END
 
 ACTION_IF NOT GAME_IS "bgee eet" BEGIN
