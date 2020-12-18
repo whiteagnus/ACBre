@@ -682,7 +682,7 @@ And as Moradin's hammer came down with the force of a thousand avalanches, Abbat
 @206  = ~Teach Virginie, the invisible wonder bunny some new tricks~
 @207  = ~Installing Virginie, the invisible wonder bunny~
 @208  = ~This mod should be installed BEFORE BP-BGT Worldmap~
-@209  = ~ Installing cross-mod content for Weimer's Solaufein~
+@209  = ~Installing cross-mod content for Weimer's Solaufein~
 
 
 /* new for v9.0.0 */
@@ -691,6 +691,7 @@ And as Moradin's hammer came down with the force of a thousand avalanches, Abbat
 
 /* new for v10.0.0 */
 @212 = ~Transitions Mod detected~
+@213 = ~Installing cross-mod content for Balduran's Seatower~
 
 
 @4000    = ~All ingredients are ready. As you know, we only have one attempt, and if we stop in the middle of it, the potion is lost. Shall we start?~
@@ -761,8 +762,8 @@ G.~
 @5032 = ~Buzzurk!~
 @5033 = ~That Caelar is a strong leader. The crusaders won't give up on following her easily.~
 @5034 = ~I'd prefer this narrow canyon to be a real cave. As it is now, it gives too much possibility for attackers to hide above us.~
-@5035 = ~I saw a lot of vermin while travelling with you... This one tops them by far!~
-@5036 = ~Hrmph. I don't mind a good fight, but if all enemy units get activated we might have a problem.~
+@5035 = ~I've seen a lot of vermin while travelling with you... This one tops them all by far!~
+@5036 = ~Hrmph. I don't mind a good fight, but if all the enemy units get activated we might have a problem.~
 @5037 = ~Mages can't be trusted, I told you so often enough!~
 @5038 = ~They should have listened, the fools.~
 @5039 = ~<CHARNAME>, if you drag me to hell again anytime soon, I'll split your head in half.~
