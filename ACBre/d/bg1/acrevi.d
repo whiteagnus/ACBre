@@ -18,15 +18,22 @@ END
 
 IF ~~ THEN BEGIN 4
 SAY @7   
-IF ~~ THEN DO ~EraseJournalEntry(@10008)SetGlobal("ACREVIQUEST","GLOBAL",5)EscapeAreaMove("AC6701",696,438,1)~ UNSOLVED_JOURNAL @10011 EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@10008)EscapeAreaMove("AC6701",696,438,1)~ UNSOLVED_JOURNAL @10011 EXIT
 END
 
-IF ~NumTimesTalkedTo(1)!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN 5
+IF ~NumTimesTalkedTo(1)
+OR(3) 
+!InParty(Player1) 
+!See(Player1) 
+StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN 5
 SAY @8   
 IF ~~ THEN DO ~SetNumTimesTalkedTo(1)~ EXIT
 END
 
-IF ~NumTimesTalkedTo(1)InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN 6
+IF ~NumTimesTalkedTo(1)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN 6
 SAY @9   
 IF ~~ THEN DO ~ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT_03")~ EXIT
 END

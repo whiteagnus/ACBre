@@ -1,5 +1,5 @@
 IF
-	HPLT(myself,10)
+	HPLT(Myself,10)
 	Global("ACNECROGIVEUP","LOCALS",0)
 THEN
 	RESPONSE #100

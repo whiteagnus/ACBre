@@ -6,7 +6,7 @@ THEN
 		Wait(3)
 		ActionOverride("ACBRE",DisplayStringHead(Myself,@5015)
 		Wait(3)
-		ActionOverride("ACBRE",CreateVisualEffectObject("SPHLYBLS",myself))
+		ActionOverride("ACBRE",CreateVisualEffectObject("SPHLYBLS",Myself))
 		CreateCreature("CUTSPY",[1514.356],0)
 		Wait(3)
 		ActionOverride("ACBRE",DisplayStringHead(Myself,@5016)

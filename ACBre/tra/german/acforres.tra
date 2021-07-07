@@ -10,15 +10,15 @@
 @9    = ~Merk dir diesen Namen gut, Duergar! Denn Breagar wird es sein, der dir den Kopf von den Schultern hauen wird!~
 @10   = ~Haltet ein! Wenn ich schon sterben muss dann sollt Ihr wenigstens auch meine Geschichte kennen lernen!~
 @11   = ~Pah! Seit wann verstehen sich Duergar aufs Geschichten erzählen? Das ist doch ein fauler Zauber!~
-@12   = ~Einst waren unsere Völker verwandt, Breagar. vergesst das nicht. Ihr dort, <PRO_RACE>. Ich bitte Euch, lasst mich erzählen, bevor wir sterben müssen.~
-@13   = ~Lasst Ihn seine Geschichte vortragen, Breagar. Sein Kopf rollt früh genug.~
+@12   = ~Einst waren unsere Völker verwandt, Breagar. Vergesst das nicht. Ihr dort, <PRO_RACE>. Ich bitte Euch, lasst mich erzählen, bevor wir sterben müssen.~
+@13   = ~Lasst ihn seine Geschichte vortragen, Breagar. Sein Kopf rollt früh genug.~
 @14   = ~Damit Eure Leute uns in den Rücken fallen können? Niemals!~
 @15   = ~Euer Ruf eilt Euch voraus, <CHARNAME> von Kerzenburg, und ich finde ihn bestätigt.~
 @16   = ~Ihr überrascht mich ein ums andere Mal, <CHARNAME>. Ihr gewährt einem Duergar einen letzten Wunsch. Aber gut. Wenn Ihr Langmut üben wollt, dann sei es so.~
 @17   = ~Euer Clansgründer hat unter Duergar zu leiden gehabt, Breagar. Aber auch ich kenne das Leid, das unverschudlet über einen kommt. Meine ganze Sippe ist von Drow versklavt worden und es hat viele tüchtige Leben gekostet uns zu befreien.~
 @18   = ~Ihr habt heute teures Blut vergossen, aber ich trage Euch das nicht nach. Ihr habt Euch ja in erster Linie selbst verteidigt.~
 @19   = ~Pah, salbungsvolle Reden. Was verdammt nochmal wollt Ihr?~
-@20   = ~Meine Sippe und ich sind müde, Breagar. Wir haben uns unter der sengenden Sonne durch halb Faerûn gekämpft, immer auf der Suche nach Schatten und einem Platz zum übernachten. Viele sind gestorben und nur noch eine Handvoll ist übrig.~
+@20   = ~Meine Sippe und ich sind müde, Breagar. Wir haben uns unter der sengenden Sonne durch halb Faerûn gekämpft, immer auf der Suche nach Schatten und einem Platz zum übernachten. Viele sind gestorben, und nur noch eine Handvoll ist übrig.~
 @21   = ~Wir wollen nur in Frieden leben. Anstinus' Turm soll unsere Heimat werden.~
 @22   = ~Ha! Ein guter Witz, ein Duergar, der Frieden sucht! Ha! Was sagt Ihr, <CHARNAME>?~
 @23   = ~Wahrlich ein guter Witz. Ich bin der Worte müde, wehrt Euch!~
@@ -37,7 +37,7 @@
 @36   = ~Ich bin des Kämpfens müde.~
 @37   = ~<CHARNAME>? Was... was sollen wir machen?~
 @38   = ~Lassen wir diese Scharade doch endlich sein. Ihr sterbt jetzt, Duergar!~
-@39   = ~Gehen wir, Breagar. Ihr habt das bekommen was Ihr wolltet.~
+@39   = ~Gehen wir, Breagar. Ihr habt das bekommen, was Ihr wolltet.~
 @40   = ~Ich will nicht mehr kämpfen, ich habe genug Tod gesehen. Ich will nur Ruhe und Frieden für meine Sippe.~
 @41   = ~Reggik hat seine Tagebücher hier gelassen, weil er dachte, sie seien sicher. Ihr könnt sie haben, wenn Ihr mir nicht glaubt.~
 @42   = ~Ihr seid gutherzig, <CHARNAME>. Das werden wir Euch nie vergessen. Kommt, Leute, wir haben noch einen Haufen Arbeit vor uns.~

@@ -1,5 +1,13 @@
 BEGIN ACGROTHI
+
+/* Ich mache die Bedingung etwas entspannter, damit man den Quest weiterspielen kann, wenn Breagar in der Gruppe ist
 IF ~!Name("ACBRE",LastTalkedToBy())~ THEN BEGIN 0
+*/
+
+IF ~OR(3)
+!InParty("ACBRE") 
+!See("ACBRE") 
+StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN BEGIN 0
 SAY @0
 IF ~~ THEN EXIT
 END
@@ -32,11 +40,13 @@ SAY @10 = @8
 IF ~~ THEN DO ~AddJournalEntry(@10024,QUEST)SetGlobal("ACGROTHIQUEST","GLOBAL",2)EscapeAreaMove("%NEBaldursGate_SplurgingSturgeon_L1%",450,449,1)~ EXIT
 END
 
-IF ~Global("ACGROTHIQUEST","GLOBAL",2)~ THEN BEGIN 8
+IF ~Global("ACGROTHIQUEST","GLOBAL",2)
+InParty("ACBRE") See("ACBRE") !StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN BEGIN 8
 SAY @11
 IF ~PartyHasItem("ACCONT01")~ THEN REPLY @12 DO ~SetGlobal("ACGROTHIQUEST","GLOBAL",3)TakePartyItem("ACCONT01")AddexperienceParty(600)~ + 9
 ++ @13 + 10
 END
+
 
 IF ~~ THEN BEGIN 9
 SAY @14

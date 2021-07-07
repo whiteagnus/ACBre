@@ -1,4 +1,13 @@
 IF
+	Dead("ACFORRES")
+	Global("ACAUDQUEST","GLOBAL",11)
+THEN
+	RESPONSE #100
+		SetGlobal("ACAUDQUEST","GLOBAL",12)
+		Continue()
+END
+
+IF
 	Global("ACDROWITEMCHECKDONE","GLOBAL",0)
 	HasItem("DWCHAN01",Player1) // Drow-Kettenhemd +3
 THEN

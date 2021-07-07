@@ -1,4 +1,4 @@
-@0 = ~ We need your help, Cromwell. Do you know a place that is in the troll mountains and anything to do with blacksmithing has? ~
-@1 = ~ No, never heard of. ~
-@2 = ~ Or maybe ... wait, since I have an idea. Aw, magician should be wide at the top have made a few hundred years time. Ansitus or Anstitus or so. Pah. Said he wanted to wrest the secret of the metals! ~
-@3 = ~ It has magic to do so at the least, it is above all ... but you probably do not care. Well, whatever. I'm going to mark the area on the map. Be careful just beautiful. ~
+@0    = ~We need your help, Cromwell. Do you know of a place in the Troll Mountains that has something to do with smithing?~
+@1    = ~Nope, never heard of a place like that.~
+@2    = ~Or maybe... wait! I just remembered something. They say, that some mage went up there a few hundred years ago. Ansitus or Anstitus or something. Pah! Said, he wanted to uncover the secrets of metals!~
+@3    = ~Needles to say, metalworking has nothing to do with magic. It is more about... but I doubt you are interested in this. I'll mark the location of the tower on your map. Just be careful.~

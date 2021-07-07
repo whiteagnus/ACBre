@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ACAR01LOCKED","ARAC08",1)
-		TriggerActivation("Nodoor",FALSE)
+		TriggerActivation("Info Point 3",FALSE)
 		TriggerActivation("Doordown",TRUE)
 		Continue()
 END
