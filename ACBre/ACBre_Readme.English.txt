@@ -2,7 +2,7 @@
                A Modification for BGT, EET, BG:EE, Tutu, BGII, BGII:EE, and EET
                             by Ascalon (geheimer.herrscher@gmx.de)
 
-                         		Version: 10.0.0
+                         		Version: 11.0.0
 
 ***************************************************************************************************************
 
@@ -338,6 +338,23 @@ silver arm in ToB
 	-typo corrections
 	-SoD content improvements
 	-compatibility with the Transitions Mod
+
+11.0.0: (2020-xx-xx) by jastey
+	-corrected interjection into Saemon's dialogue in ToB (should use Breagar's ToB Banter file).
+	-removed unknown innate spell from ACBre07.cre
+	-ambient sounds of "ACCEM1.ARE"are should get installed (corrected path in tp2)
+	-Berronar's axe will no longer be doubled after cutscene (ToB)
+	-Breagar should not comment on the mines being flooded before it happened.
+	-Saving Revianel should only give XP once.
+	-Breagar's Axe should not be on table with Duergar in ID if Tweak to transfer BG1 items into BG2 is installed.
+	-removed invalid spawn references in ARAC06.ARE.  
+	-typo corrections.
+	-streamlined dialogue syntax in acsilver.de.
+	-streamlined triggering of dialogues with Imoen about Breagar's hand.
+	-Breagar should not complain that the axe is his before he received it from the Silver Lady.
+	-Added check so the mod can't be installed after EET_End.
+	-Changed check for Crossmod with EET_DSotSC to exclude BG:EE-DSotSC (fix install error).
+	-Fixed install error with Imoen4Ever crossmod (for non-english versions).
 
 ***************************************************************************************************************
 
