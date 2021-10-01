@@ -1,9 +1,10 @@
 /*
 Known Issues:
 -Breagar will only smithy for the PC if he is in Taerom's smithy *before* joining the group.
--(TdB) Berronar's Axt will be doubled after the Silver Dwarf blessed it in ToB.
 -Anstinus Turm, outside area: in the southwest corner, the wall can be left to the lower ground although there is no stairs.
 - Picture of Audhild is too small for EE.
+
+- installing Breagar after the Worldmapmod will shift the icon on the Worldmap
 
 
 Note:
@@ -20,7 +21,7 @@ Note:
 BACKUP ~ACBre/backup~
 //AUTHOR Original von Ascalon 
 SUPPORT ~https://www.baldurs-gate.de/index.php?threads/ascalons-breagar.44520/~
-VERSION ~10.0.0~ 
+VERSION ~11.0.0pre~ 
 
 AUTO_TRA "ACBre/TRA/autotra/%s"//%"
 
@@ -149,6 +150,8 @@ BEGIN @1 DESIGNATED 0
 REQUIRE_PREDICATE GAME_IS ~bgt bgee tob bg2ee tutu_totsc eet~ @2
 //FORBID_COMPONENT ~setup-bp-bgt-worldmap.tp2~ ~0~ @208
 //REQUIRE_PREDICATE ((NOT MOD_IS_INSTALLED ~setup-bp-bgt-worldmap.tp2~ ~0~) OR (GAME_IS ~eet~)) @208
+FORBID_COMPONENT ~EET_end.tp2~ ~0~ @5
+FORBID_COMPONENT ~EET_end.tp2~ ~1~ @5
 
 //For all engines
 
@@ -1073,7 +1076,7 @@ LAF HANDLE_AUDIO
   INT_VAR
     music = 1
   STR_VAR
-    audio_path = ~ACBRE/area/ambient~
+    audio_path = ~ACBRE/areas/ambient~
     oggdec_path = ~ACBre/tools/oggdec~
     sox_path = ~ACBre/tools/sox~
 END
@@ -1470,7 +1473,8 @@ EXTEND_TOP ~AR2000.bcs~ ~ACBre/baf/bg2/AR2000.baf~
 EXTEND_TOP ~AR2010.bcs~ ~ACBre/baf/bg2/AR2010.baf~
 //EXTEND_TOP ~AR4000.bcs~ ~ACBre/baf/bg2/AR4000.baf~
 EXTEND_BOTTOM ~AR4000.bcs~ ~ACBre/baf/bg2/AR4000.baf~
-EXTEND_TOP ~AR0602.bcs~ ~ACBre/baf/bg2/AR0602.baf~
+EXTEND_BOTTOM ~AR0602.bcs~ ~ACBre/baf/bg2/AR0602.baf~
+EXTEND_TOP ~AR0603.bcs~ ~ACBre/baf/bg2/acbre_bg2_ar0603.baf~
 EXTEND_TOP ~AR6200.bcs~ ~ACBre/baf/bg2/AR6200.baf~
 
 ACTION_IF GAME_IS ~bgt tob bg2ee~ THEN BEGIN
@@ -1695,14 +1699,18 @@ BEGIN @197 DESIGNATED 2
 REQUIRE_PREDICATE GAME_IS ~bgt eet tob bg2ee bgee tutu_totsc~ @2
 //REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~acbre.cre~ @198
 REQUIRE_COMPONENT ~Setup-ACBre.tp2~ 0 @198
+FORBID_COMPONENT ~EET_end.tp2~ ~0~ @5
+FORBID_COMPONENT ~EET_end.tp2~ ~1~ @5
 
-ACTION_IF FILE_EXISTS_IN_GAME ~JETLA.DLG~
+/* DSotSC */
+ACTION_IF FILE_EXISTS_IN_GAME ~DSOTHO.DLG~
 THEN BEGIN
 PRINT @199
 EXTEND_BOTTOM ~ACBRE.bcs~ ~ACBre/CROSS/ACDSOTSC.baf~ EVALUATE_BUFFER
 COMPILE EVALUATE_BUFFER ~ACBre/CROSS/ACDSOTSC.D~
 END
 
+/* Amber */
 ACTION_IF FILE_EXISTS_IN_GAME ~M#VAMBER.CRE~
 THEN BEGIN
 PRINT @200
@@ -1752,7 +1760,7 @@ EXTEND_BOTTOM ~ACBRE.bcs~ ~ACBre/CROSS/ACTOD.baf~
 COMPILE EVALUATE_BUFFER ~ACBre/CROSS/ACTOD.D~
 END
 
-/* Ascalon's Questpack */
+/* Ascalon's Questpack: Der Lohn für die Mühe */
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ACQ11001.CRE~
 THEN BEGIN
@@ -1778,7 +1786,7 @@ END
 /* Imoen 4 Ever */
 ACTION_IF FILE_EXISTS_IN_GAME ~C#IMMET.dlg~ THEN BEGIN
   PRINT @211
-  OUTER_SET i4e_imoenreturn = STATE_WHICH_SAYS 27 IN ~imoen_forever/tra/%s/C#IMMET.tra~ FROM ~C#IMMET~
+  OUTER_SET i4e_imoenreturn = STATE_WHICH_SAYS 27 IN ~imoen_forever/tra/autotra/%s/C#IMMET.tra~ FROM ~C#IMMET~
   COMPILE EVALUATE_BUFFER ~ACBre/CROSS/aci4e.D~ USING ~ACBre/tra/autotra/%LANGUAGE%/ACBREB.tra~
 END
 
