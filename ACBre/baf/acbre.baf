@@ -2902,10 +2902,10 @@ IF
 	!StateCheck("ACBre",CD_STATE_NOTVALID)
 	!StateCheck(PLAYER1,CD_STATE_NOTVALID)
 	GlobalGT("FLOODED","GLOBAL",0)
-	!AreaCheck(%CloakwoodMines_L1%)
-	!AreaCheck(%CloakwoodMines_L2%)
-	!AreaCheck(%CloakwoodMines_L3%)
-	!AreaCheck(%CloakwoodMines_L4%)
+	!AreaCheck("%CloakwoodMines_L1%")
+	!AreaCheck("%CloakwoodMines_L2%")
+	!AreaCheck("%CloakwoodMines_L3%")
+	!AreaCheck("%CloakwoodMines_L4%")
 	Global("ACBGMISC83","LOCALS",0)
 THEN
 	RESPONSE #100
@@ -3227,7 +3227,7 @@ IF
 	See(Player1)
 	OR(2)
 		PartyHasItem("MISC7R")
-		PartyHasItem("AMISC7R")
+		PartyHasItem("ACMISC7R")
 	CombatCounter(0)
 	!See([ENEMY])
 	!StateCheck("ACBre",CD_STATE_NOTVALID)
