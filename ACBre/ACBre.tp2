@@ -1850,9 +1850,7 @@ I_C_T c#afhblt %belt_interjection% ACBre_c#afhblt_77
 END
 >>>>>>>>
 COMPILE EVALUATE_BUFFER ~.../add_acbre_afh_interjection.d~ USING ~ACBre/tra/autotra/%s/game-acbre.tra~
-
-
-END //
+END //Another Fine Hell
 
 
 COMPILE ~ACBre/pid~
