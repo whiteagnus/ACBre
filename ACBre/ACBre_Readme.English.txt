@@ -374,7 +374,8 @@ silver arm in ToB
 	-added crossmod with "Another fine Hell" (SoD content).
 
 11.2.0: (2021-11-12) by jastey
-	-Improved crossmod with EndlessBG1.
+	-Improved crossmod and compatibility with EndlessBG1.
+	-Improved compatibility with Transitions.
 	-Improved scripting: BG1 banter should not trigger in SoD.
 
 ***************************************************************************************************************
