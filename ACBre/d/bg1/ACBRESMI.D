@@ -1,5 +1,20 @@
+/* !InPartySlot(LastTalkedToBy(),0) ersetzt mit "OR(3) 
+!InParty(Player1) 
+!See(Player1) 
+StateCheck(Player1,CD_STATE_NOTVALID)" */
+/* InPartySlot(LastTalkedToBy(),0) ersetzt mit "InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)" */
+
+
 APPEND ACBRESMI
-IF ~Global("ACSTORY","GLOBAL",5)%BGT_VAR%InPartySlot(LastTalkedToBy(),0)Global("ACBREINPARTY","GLOBAL",3)~ THEN BEGIN ReJoin2.START
+
+/* Breagar war in der Gruppe, wurde aber entlassen (Armquest abgeschlossen: hat Silberarm) */
+IF ~Global("ACSTORY","GLOBAL",5)%BG1_BEFORE_TRANSITION%
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("ACBREINPARTY","GLOBAL",3)~ THEN BEGIN ReJoin2.START
 SAY @0
 ++ @1 + ReJoin.3a
 ++ @2 + ReJoin.2a
@@ -12,12 +27,20 @@ SAY @5
 IF ~~ THEN EXIT
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)Global("ACFORG01","LOCALS",1)~ THEN BEGIN Forge
+/* Nachdem Breagar was geschmiedet hat */
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)Global("ACFORG01","LOCALS",1)~ THEN BEGIN Forge
 SAY @6
 IF ~~ THEN DO ~SetGlobal("ACFORG01","LOCALS",2)~ EXIT
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","LOCALS",1)InPartySlot(LastTalkedToBy(),0)Global("ACBREINPARTY","GLOBAL",3)~ THEN BEGIN ReJoin
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, noch wartet Breagar darauf, dass er dem HC das Eisen abkaufen kann, HC in der Nähe + Breagar war in der Gruppe */
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("ACBREINPARTY","GLOBAL",3)~ THEN BEGIN ReJoin
 SAY @0
 IF ~Global("ACSTORY","GLOBAL",0)~ THEN REPLY @7 + REMEET.8
 IF ~Global("ACSTORY","GLOBAL",1)~ THEN REPLY @8 + IRONDEAL
@@ -26,17 +49,36 @@ IF ~Global("ACSTORY","GLOBAL",1)~ THEN REPLY @8 + IRONDEAL
 ++ @4 + REMEET.3
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(1)!InPartySlot(LastTalkedToBy(),0)Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN NoStart
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, einmal angesprochen, Player1 nicht in der Nähe */
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(1)
+OR(3) 
+	!InParty(Player1) 
+	!See(Player1) 
+	StateCheck(Player1,CD_STATE_NOTVALID)
+Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN NoStart
 SAY @9
 IF ~~ THEN DO ~SetNumTimesTalkedTo(1)~ EXIT
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)NumTimesTalkedToGT(1)!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN NoStart.A
+/* Breagar das Stück Eisen nicht gerade genommen, mehr als einmal angesprochen, Player1 nicht in der Nähe */
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)NumTimesTalkedToGT(1)
+OR(3) 
+	!InParty(Player1) 
+	!See(Player1) 
+	StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN NoStart.A
 SAY @10
 IF ~~ THEN EXIT
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)NumTimesTalkedTo(1)InPartySlot(LastTalkedToBy(),0)Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN Start.1
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, noch wartet Breagar darauf, dass er dem HC das Eisen abkaufen kann, HC in der Nähe, einmal angesprochen + Breagar war NICHT in der Gruppe (erstes Ansprechen nach Breagars Wutausbruch unten) */
+
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)NumTimesTalkedTo(1)InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN Start.1
 SAY @11 
 ++ @12 + REMEET.1
 ++ @13 + REMEET.2
@@ -45,7 +87,13 @@ SAY @11
 ++ @4 + REMEET.3
 END
 
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)NumTimesTalkedToGT(1)InPartySlot(LastTalkedToBy(),0)Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN Start.2
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, noch wartet Breagar darauf, dass er dem HC das Eisen abkaufen kann, HC in der Nähe, MEHR ALS einmal angesprochen + Breagar war NICHT in der Gruppe */
+
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)!Global("IRONDEALING","GLOBAL",1)NumTimesTalkedToGT(1)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("ACBREINPARTY","GLOBAL",0)~ THEN BEGIN Start.2
 SAY @15
 IF ~Global("ACSTORY","GLOBAL",0)~ THEN REPLY @16 + REMEET.8
 IF ~Global("ACSTORY","GLOBAL",1)~ THEN REPLY @8 + IRONDEAL
@@ -56,12 +104,24 @@ IF ~Global("ACSTORY","GLOBAL",1)~ THEN REPLY @8 + IRONDEAL
 ++ @4 + REMEET.3
 END
 
-IF ~%BGT_VAR%Global("ACSTORY","GLOBAL",2)!InPartySlot(LastTalkedToBy(),0)~ THEN BEGIN WORK.NOSTART
+/* Breagar hat gerade das gute Stück Eisen bekommen, entweder war er vorher in der Gruppe und ist nun zur Schmiede gegangen, oder er war in der Schmiede und hat es dem HC abgekauft + HC ist NICHT in der Nähe */
+
+IF ~%BG1_BEFORE_TRANSITION%Global("ACSTORY","GLOBAL",2)
+OR(3) 
+	!InParty(Player1) 
+	!See(Player1) 
+	StateCheck(Player1,CD_STATE_NOTVALID)~ THEN BEGIN WORK.NOSTART
 SAY @18
 IF ~~ THEN EXIT
 END
 
-IF ~%BGT_VAR%Global("ACSTORY","GLOBAL",2)InPartySlot(LastTalkedToBy(),0)NumTimesTalkedTo(0)~ THEN BEGIN WORK.START
+/* Breagar hat gerade das gute Stück Eisen bekommen, entweder war er vorher in der Gruppe und ist nun zur Schmiede gegangen, oder er war in der Schmiede und hat es dem HC abgekauft + HC IST in der Nähe */
+
+IF ~%BG1_BEFORE_TRANSITION%Global("ACSTORY","GLOBAL",2) 
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+NumTimesTalkedTo(0)~ THEN BEGIN WORK.START
 SAY @19
 ++ @20 + WORK.1
 ++ @21 + WORK.2
@@ -142,7 +202,7 @@ END
 
 IF ~~ THEN BEGIN REMEET.10
 SAY @45 = @46
-IF ~~ THEN DO ~SetGlobal("ACBREINPARTY","GLOBAL",3)~ EXIT
+IF ~~ THEN EXIT //DO ~SetGlobal("ACBREINPARTY","GLOBAL",3)~ ##
 END
 
 IF ~~ THEN BEGIN 1forg
@@ -244,7 +304,16 @@ IF ~PartyHasItem("ACIRON")~ THEN REPLY @83 + IRONDEAL.1
 ++ @84 + IRONDEAL.2
 END
 
-IF ~!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)InPartySlot(LastTalkedToBy(),0)Global("IRONDEALING","GLOBAL",1)%BGT_VAR%Global("ACBREINPARTY","GLOBAL",3)~ THEN BEGIN IRONDEAL.1
+
+/* Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, Breagar WARTET darauf, dass er dem HC das Eisen abkaufen kann, HC in der Nähe [--+ Breagar war in der Gruppe--] */
+
+/* Habe das "Global("ACBREINPARTY","GLOBAL",3)" entfernt - dieser Dialog sollte auch triggern, wenn Breagar nicht in der Gruppe war */
+
+IF ~!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("IRONDEALING","GLOBAL",1)%BG1_BEFORE_TRANSITION%~ THEN BEGIN IRONDEAL.1
 SAY @85
 IF ~PartyHasItem("ACIRON")~ THEN REPLY @86 + IRONDEAL.4
 IF ~PartyHasItem("ACIRON")~ THEN REPLY @87 + IRONDEAL.5
@@ -266,7 +335,7 @@ END
 
 IF ~~ THEN BEGIN IRONDEAL.4
 SAY @92 = @93
-IF ~~ THEN DO ~EraseJournalEntry(@10005)AddJournalEntry(@10006,QUEST)SetNumTimesTalkedTo(0)SetGlobal("IRONDEALING","LOCALS",2)SetGlobal("ACSTORY","GLOBAL",2)TakePartyItem("ACIRON")DestroyItem("ACIRON")TakePartyItem("ACBOOK")DestroyItem("ACBOOK")AddexperienceParty(300)~ EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@10005)AddJournalEntry(@10006,QUEST)SetNumTimesTalkedTo(0)SetGlobal("IRONDEALING","GLOBAL",2)SetGlobal("ACSTORY","GLOBAL",2)TakePartyItem("ACIRON")DestroyItem("ACIRON")TakePartyItem("ACBOOK")DestroyItem("ACBOOK")AddexperienceParty(300)~ EXIT
 END
 
 IF ~~ THEN BEGIN IRONDEAL.5
@@ -337,7 +406,7 @@ END
 
 IF ~~ THEN BEGIN IRONDEAL.6
 SAY @105
-IF ~~ THEN DO ~SetGlobal("IRONDEALING","LOCALS",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("IRONDEALING","GLOBAL",1)~ EXIT
 END
 
 IF ~~ THEN BEGIN IRONDEAL.7
@@ -406,8 +475,11 @@ END
 
 END
 
+/* 
+Weder hat Breagar das Stück Eisen gerade genommen, noch ist der Armquest komplett abgeschlossen, noch nie mit ihm geredet (Wutausbruch nachdem der HC gerade zur Tür hereinkam ) */
+
 CHAIN
-IF ~%BGT_VAR%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(0)~ THEN ACBRESMI START
+IF ~%BG1_BEFORE_TRANSITION%!Global("ACSTORY","GLOBAL",2)!Global("ACSTORY","GLOBAL",5)NumTimesTalkedTo(0)~ THEN ACBRESMI START
 @120
 ==ACBRESMI IF ~InMyArea("TAEROM")~ THEN @121  = @122  = @123
 ==%tutu_var%TAEROM IF ~IsActive("TAEROM")InMyArea("TAEROM")~ THEN @124
@@ -502,8 +574,14 @@ IF ~~ THEN ACBRESMI WORK.5
 ==ACBRESMI IF ~!IsActive("TAEROM")~ THEN @176 DO ~SetGlobal("AC6701TELEPORT","GLOBAL",1)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT_01")~
 EXIT
 
+/* Breagar hat das Stück Eisen erhalten, HC in der Nähe, bereits mit ihm gesprochen */
+
 CHAIN
-IF ~%BGT_VAR%Global("ACSTORY","GLOBAL",2)InPartySlot(LastTalkedToBy(),0)NumTimesTalkedToGT(0)~ THEN ACBRESMI Letithappen
+IF ~%BG1_BEFORE_TRANSITION%Global("ACSTORY","GLOBAL",2)
+InParty(Player1) 
+See(Player1) 
+!StateCheck(Player1,CD_STATE_NOTVALID)
+NumTimesTalkedToGT(0)~ THEN ACBRESMI Letithappen
 @177
 ==ACBRESMI IF ~IsActive("TAEROM")~ THEN @178
 ==ACBRESMI IF ~!IsActive("TAEROM")~ THEN @179 DO ~SetGlobal("AC6701TELEPORT","GLOBAL",1)ClearAllActions()StartCutSceneMode()StartCutScene("ACCUT_01")~

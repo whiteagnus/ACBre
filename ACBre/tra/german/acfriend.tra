@@ -44,7 +44,7 @@
 @43   = ~Das Leben als Abenteurer gefällt mir eben.~
 @44   = ~Hört zu, ich habe genug von Eurem Geschwätz. Also seid einfach still.~
 @45   = ~Ihr reist kreuz und Quer über das Land, auf der Suche nach Abenteuern, erledigt Botengänge und stochtert mit Eurer Waffe in den Eingeweiden von irgendwelchem Geschmeiß herum.~
-@46   = ~Sucht Euch eine Frau. Heiratet und macht Ihr ein paar Kinder. Dann übt ihr einen vernünftigen Beruf aus und gut.~ ~Sucht Euch einen anständigen Mann. Heiratet und gebärt ihm ein paar Kinder. Dann übt Ihr einen vernünftigen Beruf aus und gut.~
+@46   = ~Sucht Euch jemanden zum Heiraten, kriegt ein paar Kinder. Dann übt Ihr einen vernünftigen Beruf aus und gut.~
 @47   = ~Pah. Ihr sied eben nichts anderes als ein närrischer <PRO_RACE>, der keine Ahnung vom Leben hat.~
 @48   = ~Gibt es nicht bereits genug versprengte Seelen, die auf der Suche nach Gold, einem guten Gewissen oder was auch immer die Reiche durchkämmen?~
 @49   = ~Es gibt noch jede Menge Reichtum, den ich mir schnappen kann. Und das habe ich auch vor.~
@@ -219,5 +219,5 @@
 @218  = ~Euer Wort in Moradins Ohr, <CHARNAME>. Aber wer einmal mit Euch gereist ist, der neigt dazu, so etwas zu glauben.~
 @219  = ~Pah. Das weiß ich selbst, aber müsst Ihr mir es noch in den Bart reiben? Närrischer <PRO_RACE>.~
 @220  = ~Ich versuche es, <CHARNAME>. Dann treibt diesen Haufen mal ein bisschen an, damit es etwas anderes zu sehen gibt als Eure Visage!~
-@221  = ~Ich habe versagt. Nicht nur dass ich meine Hand und das Werkstück verloren habe... ich habe es auch geschafft das uralte Buch der Schmiedekunst zu ruinieren.~ [ACBRE_50]
-@222  = ~Es ist alles hin.~ [ACBRE_52]
+@221  = ~Ich habe versagt. Nicht nur dass ich meine Hand und das Werkstück verloren habe... ich habe es auch geschafft das uralte Buch der Schmiedekunst zu ruinieren.~ [acbre_50]
+@222  = ~Es ist alles hin.~ [acbre_52]

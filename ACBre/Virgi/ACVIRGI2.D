@@ -41,7 +41,7 @@ SAY @4012
 END
 
 IF ~~ THEN BEGIN 28
-SAY @0014
+SAY @4014
 ++ @4005 DO ~SetGlobal("ACANSTIQUEST","GLOBAL",3)~ + 25
 ++ @4006 DO ~SetGlobal("ACANSTIQUEST","GLOBAL",3)~ + 25
 ++ @4013 + 29
@@ -64,6 +64,6 @@ END
 
 IF ~~ THEN BEGIN 31
 SAY @4017
-IF ~~ THEN DO ~ActionOverride(LastTalkedToBy(),CreateItem("ACPOTN48",0,0,0)DestroySelf()~ EXIT
+IF ~~ THEN DO ~GiveItemCreate("ACPOTN48",LastTalkedToBy,0,0,0) DestroySelf()~ EXIT
 END
 END

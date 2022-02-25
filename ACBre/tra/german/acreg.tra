@@ -5,7 +5,7 @@
 @4    = ~Wir halten Wache.~
 @5    = ~Arrrrrgh... seht... Euch das gut an, <CHARNAME>. So stirbt ein wahrer Krieger!~
 @6    = ~Mögen die Gotter ein Einsehen mit mir und mit Forres haben... Zwerge getötet von Zwergen.~
-@7    = ~Nur ein letzter Wunsch noch... verschont Forres. er ist ein guter Mann.~
+@7    = ~Nur ein letzter Wunsch noch... verschont Forres. Er ist ein guter Mann.~
 @8    = ~Haltet nur das Gesetz aufrecht, Breagar. Dem Clan zur Ehre.~
 @9    = ~<GABBER>! Seid Ihr in Ordnung?~
 @10   = ~(keucht) Wenn das *alles* ist, was diese verdammte Brut uns entgegenschleudern kann, dann werden wir es noch eine ganze Weile aushalten!~
@@ -23,7 +23,7 @@
 @22   = ~Nach Eurem ach-so-gnädigem Richtspruch musste ich irgendwo unterkommen. Und Anstinus' Turm erschien mir für's erste der beste Platz. Hier leben noch ein paar versprengte aus Forres' Sippe, die versuchen, irgendwie Fuß zu fassen.~
 @23   = ~Hat die Göttin mich etwa hergeschickt um Grauzwergen die Betten zu machen?~
 @24   = ~Und wenn dem so wäre, wäre das eine so schlimme Aufgabe? Pah.~
-@25   = ~Aber Ihr seht selbst, dass Eure Frage überflüssig ist. Nicht die Duergar sind das Problem sondern die Drow.~
+@25   = ~Aber Ihr seht selbst, dass Eure Frage überflüssig ist. Nicht die Duergar sind das Problem, sondern die Drow.~
 @26   = ~Was ist passiert?~
 @27   = ~Die Duergar haben Tag und Nacht geschuftet um ein paar gemütliche Wohnhöhlen unter dem Turm zu errichten. Dabei sind sie wohl auf so etwas wie einen alten Schacht gestoßen...~
 @28   = ~Das wird sich erst noch zeigen. Gebt Euch zu erkennen.~
@@ -41,7 +41,7 @@
 @40   = ~Ich... ich verstehe. Ich muss darüber nachdenken. Und mit <CHARNAME> reden.~
 @41   = ~Wofür habt Ihr Euch entschieden, Breagar?~
 @42   = ~Wir werden uns um die Drow kümmern. Aber danach will ich keinen von Euren Duergarfreunden hier jemals wiedersehen!~
-@43   = ~Wir werden uns um die Drow kümmern. Aber danach will ich keinen von euch Duergar hier jemals wiedersehen!~
+@43   = ~Wir werden uns um die Drow kümmern. Aber danach will ich keinen von Euch Duergar hier jemals wiedersehen!~
 @44   = ~Ihr werdet uns die Ruhe dieses Heimes nicht gönnen? Ihr habt ein hartes Herz. Die Herrin der Herdfeuer ist doch für ihre Milde bekannt.~
 @45   = ~Und Ihr meint, dass Ihr damit im Sinne der Göttin handelt? Wo ist die Vergebung, die Berronar predigt?~
 @46   = ~Ich werde die Waffe nicht gegen Euch und die Sippe erheben, die Forres an das Tageslicht geführt hat. Aber eine Waffenschmiede wie den Turm des Anstinus in den Händen der Duergar zu lassen wäre ein Fehler.~
@@ -76,3 +76,5 @@
 @75   = ~Mögen die Götter Euch segnen. Wenn alles gut geht sehen wir uns in zehn Jahren wieder.~
 @76   = ~Mögen die Götter Euch segnen.~
 @77   = ~Wir werden Euch immer in Erinnerung behalten.~
+/* new for v7.0 */
+@78   = ~Unsere Arbeit hier ist getan, <CHARNAME>. Lasst uns zur Botin in das Einsprengsel zurückkehren.~

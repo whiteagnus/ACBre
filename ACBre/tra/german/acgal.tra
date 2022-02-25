@@ -1,5 +1,5 @@
 @0    = ~Breagar hat mir die Bücher vorgelegt, die ihr in Anstinus' Turm gefunden habt und sie sind eindeutig. Nun gilt es, die genaueren Umstände zu klären und Breagar hat vorgeschlagen, dass Ihr als Zeuge auftretet. Immerhin gehört Ihr nicht zum Clan Bardormar.~
-@1    = ~Na schön. Ich bin bereit-~
+@1    = ~Na schön. Ich bin bereit.~
 @2    = ~Um ehrlich zu sein bin ich nicht sehr erpicht darauf.~
 @3    = ~Ich werde darüber nachdenken.~
 @4    = ~Kommen wir zum nächsten Punkt. Ihr habt die Mine der Orothiar-Zwerge im Mantelwald gesäubert und Breagar hat Euch geholfen.~
@@ -33,7 +33,7 @@
 @32   = ~Telormarvar.~
 @33   = ~Ich glaube, wir haben etwas zu besprechen.~
 @34   = ~Ich weiß nicht was Ihr meint.~
-@35   = ~Ich habe mich lange mit meiner Tochter unterhalten. Und ich glaube jetzt, dass es keinen besseren Bräutigam für Audhild gäbe als Euch. Breagar.~
+@35   = ~Ich habe mich lange mit meiner Tochter unterhalten. Und ich glaube jetzt, dass es keinen besseren Bräutigam für Audhild gäbe als Euch, Breagar.~
 @36   = ~Ich akzeptiere Euch als meinen Schwiegersohn.~
 @37   = ~Aber... Buzzurk.~
 @38   = ~(kichert) Als erstes bringen wir Euch mal eine gepflegte Sprache bei. So etwas braucht man als Großschmied.~
@@ -57,7 +57,7 @@
 @56   = ~Pah! Ist dieses... dieses... dieses Theater noch nicht zu Ende? Ihr habt die verdammten Beweise, nun sprecht schon Euer Urteil und bringt es hinter Euch!~
 @57   = ~Ihr haltet den Mund, Reggik!~
 @58   = ~Zuerst sollte ich mich vorstellen. Ich bin Galthur, der Telormarvar des Clans Bardormar. Breagar kennt Ihr ja schon und das hier ist Reggik.~
-@59   = ~Seit Ihr bereit, <CHARNAME>?~
+@59   = ~Seid Ihr bereit, <CHARNAME>?~
 @60   = ~Was genau erwartet Ihr von mir?~
 @61   = ~Ich bin bereit-~
 @62   = ~Dann lasst uns beginnen. Antwortet nach Eurem eigenen Ermessen.~
@@ -84,7 +84,7 @@
 @83   = ~Ihr seid der eingerufene Zeuge, <CHARNAME>. Wenn Ihr nicht aussagt, dann wird es niemand tun.~ ~Ihr seid die eingerufene Zeugin, <CHARNAME>. Wenn Ihr nicht aussagt, dann wird es niemand tun.~
 @84   = ~Na schön. Ich bin bereit.~
 @85   = ~Ich habe mich entschieden.~
-@86   = ~Ich danke Euch, <CHARNAME>. Ich habe alles gehört was ich wissen muss. Habt Ihr noch etwas hinzuzufügen, Breagar?~
+@86   = ~Ich danke Euch, <CHARNAME>. Ich habe alles gehört, was ich wissen muss. Habt Ihr noch etwas hinzuzufügen, Breagar?~
 @87   = ~Hrmpf. <CHARNAME> hat nicht so geantwortet wie ich geglaubt habe. Aber die Traditionen sind eindeutig. Ich lege meine Zukunft in Eure Hände.~
 @88   = ~Es ist alles gesagt worden.~
 @89   = ~Pah.~

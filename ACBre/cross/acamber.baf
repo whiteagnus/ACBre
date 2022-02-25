@@ -1,7 +1,7 @@
 IF
 	InParty(Myself) 
 	See(Player1)
-	AreaCheck("M#ARE01")
+	AreaCheck("M#AR01")
 	CombatCounter(0)
 	!See([ENEMY])
 	!Global("ACBREFRIEND","GLOBAL",3)

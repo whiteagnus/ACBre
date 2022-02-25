@@ -1,3 +1,5 @@
+/* BGII part!! */
+
 APPEND ACASC
 
 IF ~%BGT_VAR2%Global("ACACSPAWN2","LOCALS",0)~ THEN BEGIN ASCI.2
@@ -16,7 +18,7 @@ END
 IF ~True()~ THEN BEGIN ASCII
 SAY @6
 IF ~InParty("Jaheira")~ THEN REPLY @7 + ASCJA
-IF ~InParty("%IMOEN_DV%")~ THEN REPLY @12 + ASCIM
+IF ~InParty("Imoen2")~ THEN REPLY @12 + ASCIM
 IF ~InParty("Viconia")~ THEN REPLY @14 + ASCVI
 IF ~InParty("ACBre")~ THEN REPLY @18 + ASCBRE
 IF ~InParty("Aerie")~ THEN REPLY @31 + 1

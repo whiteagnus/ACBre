@@ -1,4 +1,4 @@
-@0    = ~Da seid Ihr ja wieder. Hattet Ihr Erfolg?~ [ACBRE_49]
+@0    = ~Da seid Ihr ja wieder. Hattet Ihr Erfolg?~ [acbre_49]
 @1    = ~Dann seid Ihr nicht daran interessiert mich wieder zu begleiten, oder?~
 @2    = ~Habt Ihr viel zu tun?~
 @3    = ~Könntet Ihr mir etwas schmieden?~
@@ -9,7 +9,7 @@
 @8    = ~Wir haben das Rätsel der Minen von Nashkell gelöst.~
 @9    = ~Lasst mich in Ruhe, <RACE>. Wendet Euch an Taerom, mir ist nicht nach neuen Freunden.~
 @10   = ~Schickt <CHARNAME> zu mir, wenn <PRO_HESHE> etwas will.~
-@11   = ~Da soll mich doch ein tollwütiger Kobold in den Arsch beißen! <CHARNAME>, Euch hätte ich hier nicht erwartet.~ [ACBRE_51]
+@11   = ~Da soll mich doch ein tollwütiger Kobold in den Arsch beißen! <CHARNAME>, Euch hätte ich hier nicht erwartet.~ [acbre_51]
 @12   = ~Ihr habt nicht die beste Laune, oder? Was ist denn hier los?~
 @13   = ~Freut mich auch, Euch zu sehen, Breagar.~
 @14   = ~Könnt Ihr mir etwas verkaufen?~
@@ -17,7 +17,7 @@
 @16   = ~Ich will immer noch in die Minen von Nashkell.~
 @17   = ~Könntet Ihr mir noch einmal sagen, was hier los ist?~
 @18   = ~Schickt <CHARNAME> zu mir, wenn <PRO_HESHE> etwas von mir will.~
-@19   = ~Hallo <CHARNAME>. Was macht das Abenteurergeschäft?~
+@19   = ~Hallo, <CHARNAME>. Was macht das Abenteurergeschäft?~
 @20   = ~Läuft gut, was macht das Schmiedegeschäft?~
 @21   = ~Könnt Ihr mir etwas schmieden?~
 @22   = ~Wollte nur nachschauen, wie es Euch geht. Ich hoffe, ich störe nicht.~
@@ -43,7 +43,7 @@
 @42   = ~Ihr lasst Euch von einem Magier und einem Halbling unter die Erde führen? Na, Prost Mahlzeit.~
 @43   = ~Ihr lasst Euch von einem Halbling unter die Erde führen? Na, Prost Mahlzeit.~
 @44   = ~Ihr lasst Euch von einem Magier unter die Erde führen? Na, Prost Mahlzeit.~
-@45   = ~Hrmpf. Klug ist das nicht, närrischer <PRO_RACE>. Wenn Ihr Euch anders entscheidet, ihr könnt mich hier finden.~
+@45   = ~Hrmpf. Klug ist das nicht, närrischer <PRO_RACE>. Wenn Ihr Euch anders entscheidet, Ihr könnt mich hier finden.~
 @46   = ~Ach... falls es Euch doch noch nach Nashkell verschlagen sollte, dann haltet die Augen nach einem guten Stück Eisen offen. Ich zahle gut.~
 @47   = ~Pah. Ein gutes Zwergenwerk braucht Monate, wenn nicht Jahre! Und vor allem besseres Material, als diese Bruchbude hergibt.~
 @48   = ~Aber... Ich schätze, ich kann mir Euren Kram mal anschauen und etwas verstärken, so dass Euch das Zeug nicht gleich unter den Fingern zerbricht.~
@@ -119,11 +119,11 @@
 @118  = ~In einer der nächsten Nächte sollte es so weit sein. Kommt wieder, wenn der Mond am Himmel steht.~
 @119  = ~Jetzt. Jetzt ist es so weit. Das Werkstück ist bereit und der Mond steht am Himmel. Die perfekte Zeit, die Runen zu gravieren. Schaut nur gut hin, <CHARNAME>. Seht einem echten Meister bei der Arbeit zu!~
 @120  = ~(Breagar wühlt in einer Lore voller Roheisen herum)~
-@121  = ~Dieses verfluchte Eisen! Da sollen doch alle Teufel des Abyss dreinfahren!~ [ACBRE_55]
-@122  = ~RANZIGE ELFENSCHEISSE! AN DIE WAND MIT DIR! SO!~ [ACBRE_56]
-@123  = ~ARGASHMEGORLIMBUZZURKARASH!~ [ACBRE_57]
+@121  = ~Dieses verfluchte Eisen! Da sollen doch alle Teufel des Abyss dreinfahren!~ [acbre_55]
+@122  = ~RANZIGE ELFENSCHEISSE! AN DIE WAND MIT DIR! SO!~ [acbre_56]
+@123  = ~ARGASHMEGORLIMBUZZURKARASH!~ [acbre_57]
 @124  = ~Breagar! Ihr verscheucht mir noch die Kunden!~
-@125  = ~Pah, wer sich von eurem Kram hier nicht abschrecken lässt, den werden auch ein paar deutliche Worte nicht davonjagen! Schaut Euch das an, DAS nennt Ihr Handwerk? Dass ich nicht lache! Ha!~
+@125  = ~Pah, wer sich von Eurem Kram hier nicht abschrecken lässt, den werden auch ein paar deutliche Worte nicht davonjagen! Schaut Euch das an, DAS nennt Ihr Handwerk? Dass ich nicht lache! Ha!~
 @126  = ~Jetzt ist es aber genug! Hört zu, ich bin Euch dankbar, dass Ihr mir etwas zur Hand geht, aber irgendwann muss auch mal gut sein!~
 @127  = ~Und woher wollt *Ihr* wissen wann genug ist? Ich habe ja noch nicht mal richtig angefangen, Buzzurk!~
 @128  = ~Wie wäre es, wenn Ihr Euch wieder Eurer Arbeit zuwendet? Das sollte Eure Aufmerksamkeit genug in Anspruch nehmen.~
@@ -133,7 +133,7 @@
 @132  = ~Das würde Euch so passen, was?~
 @133  = ~Ach, macht doch, was Ihr wollt. Anfänger.~
 @134  = ~Wir haben geschlossen. Kommt morgen wieder.~
-@135  = ~Was hier los ist? WAS HIER LOS IST? DIESES VERFLUCHTE EISEN IST LOS! BARASHNARZABULRAH!~ [ACBRE_46]
+@135  = ~Was hier los ist? WAS HIER LOS IST? DIESES VERFLUCHTE EISEN IST LOS! BARASHNARZABULRAH!~ [acbre_46]
 @136  = ~Damit soll man arbeiten! Pah! Dass ich nicht lache!~
 @137  = ~Ich kann auch nicht zaubern, Breagar! Entweder Ihr nehmt das, was ich hier habe...~
 @138  = ~...Verdammtes Dreckzeug, das einem unter den Fingern wegbröckelt...~
@@ -157,7 +157,7 @@
 @156  = ~Pah, ohne mich wärt Ihr doch schon längst aufgeschmissen, Taerom!~
 @157  = ~Willkommen an Bord, Breagar!~
 @158  = ~Ich glaube nicht, dass ich Eure Hilfe bei meinen Reisen benötige.~
-@159  = ~Ha! Bei Clangeddins Axt! Lasst uns diesen Eisenschändern ein Ende bereiten!~ [ACBRE_47]
+@159  = ~Ha! Bei Clangeddins Axt! Lasst uns diesen Eisenschändern ein Ende bereiten!~ [acbre_47]
 @160  = ~Nichts gegen Dich, <CHARNAME>. Aber ich fühle mich doch um einiges sicherer, wenn sich einer unter Tage auskennt.~
 @161  = ~Pah, ich sage Euch, mit dem werdet Ihr noch Eure Freude haben. Ich rieche die Tiefen meilenweit.~
 @162  = ~Hoffen wir, dass seine Talente unter Tage es Wert sind, dass wir uns mit einem sturköpfigen Zwerg herumschlagen müssen.~
@@ -177,6 +177,6 @@
 @176  = ~Das Werkstück ist fertig und der Mond steht am Himmel. Die perfekte Zeit, endlich die Runen zu gravieren. Seht nur gut hin, <CHARNAME>. Seht einem echten Meister bei der Arbeit zu!~
 @177  = ~Grüße, <CHARNAME>.~
 @178  = ~Das Werk ist fast vollendet, ein bisschen Feinschliff muss noch getan werden und dann kann ich die Runen gravieren. Kommt in einer der nächsten Nächte wieder, wenn die Schmiede geschlossen ist. Dann könnt Ihr dabei sein.~
-@179  = ~Das Werkstück ist fertig und der Mond steht am Himmel. Die perfekte Zeit, endlich die Runen zu gravieren. Seht nur gut hin, <CHARNAME>. Seht einem echten Meister bei der Arbeit zu!2~
+@179  = ~Das Werkstück ist fertig und der Mond steht am Himmel. Die perfekte Zeit, endlich die Runen zu gravieren. Seht nur gut hin, <CHARNAME>. Seht einem echten Meister bei der Arbeit zu!~
 @180  = ~In der Zeit, in der ich mit Euch über die Schwertküste gestolpert bin hat es dieser Anfänger geschafft, einen Haufen Aufträge zu verbocken! Jede Menge Arbeit!~
 @181  = ~Ich schaffe in einer Stunde mehr als Ihr an einem ganzen Tag mit Eurem ständigen Gemecker!~

@@ -6,5 +6,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("ACASCGONE","LOCALS",1)
 		DisplayStringHead(Myself,@5018)
-		ReallyForceSpell(myself,DRYAD_TELEPORT)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
 END

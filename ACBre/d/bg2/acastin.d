@@ -131,12 +131,12 @@ END
 
 IF ~~ THEN BEGIN 18
 SAY @62
-IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",1)EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)AddJournalEntry(@10035,QUEST)~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",1)EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)AddJournalEntry(@10035,QUEST)~ EXIT
 END
 
 IF ~~ THEN BEGIN 19
 SAY @63
-IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)EraseJournalEntry(@10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
 END
 
 IF ~RandomNum(3,1)Global("ACANSTIQUEST","GLOBAL",1)~ THEN BEGIN 22a
@@ -156,7 +156,7 @@ END
 
 IF ~Global("ACANSTIQUEST","GLOBAL",3)~ THEN BEGIN 23
 SAY @67
-IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)EraseJournalEntry(@10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
 END
 
 IF ~Global("ACANSTIQUEST","GLOBAL",4)~ THEN BEGIN 24
@@ -169,7 +169,7 @@ END
 
 IF ~~ THEN BEGIN 25a
 SAY @73
-IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)AddJournalEntry(@10036,QUEST_DONE)AddJournalEntry(@10037,QUEST)AddexperienceParty(28800)DropInventory()CreateVisualEffectObject("spholy",Myself)PlaySound("EFF_P15")DestroySelf()~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)EraseJournalEntry(@10035)AddJournalEntry(@10036,QUEST_DONE)AddJournalEntry(@10037,QUEST)AddexperienceParty(28800)DropInventory()CreateVisualEffectObject("spholy",Myself)PlaySound("EFF_P15")DestroySelf()~ EXIT
 END
 
 
@@ -180,7 +180,7 @@ END
 
 IF ~~ THEN BEGIN 25c
 SAY @75
-IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(10032)EraseJournalEntry(10033)EraseJournalEntry(10034)EraseJournalEntry(10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
+IF ~~ THEN DO ~SetGlobal("ACANSTIQUEST","GLOBAL",5)EraseJournalEntry(@10032)EraseJournalEntry(@10033)EraseJournalEntry(@10034)EraseJournalEntry(@10035)AddJournalEntry(@10037,QUEST)CreateCreature("SHADOW01",[933.428],0)CreateCreature("SHADOW01",[1093.501],0)CreateCreature("SHADOW01",[1097.553],0)CreateCreature("SHADOW01",[999.651],0)CreateCreature("SHADOW01",[835.693],0)CreateCreature("SHADOW01",[719.655],0)Enemy()~ EXIT
 END
 
 IF ~~ THEN BEGIN 25d

@@ -71,49 +71,49 @@ INTERJECT_COPY_TRANS %tutu_var%BASSIL 2 ACBASSIL2
 @53
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 1 ACBGSENDAI1
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 1 ACBGSENDAI1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @54
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @55
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 3 ACBGSENDAI3
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 3 ACBGSENDAI3
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @56
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI 2 ACBGSENDAI2
+INTERJECT_COPY_TRANS %tutu_scriptbg%SENDAI%eet_var% 2 ACBGSENDAI2
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @58
-==%tutu_scriptbg%SENDAI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%SENDAI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @59
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 1 ACBGVICONI1
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 1 ACBGVICONI1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @60
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @61
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 3 ACBGVICONI3
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 3 ACBGVICONI3
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @62
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @63
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI 9 ACBGVICONI9
+INTERJECT_COPY_TRANS %tutu_scriptbg%VICONI%eet_var% 9 ACBGVICONI9
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @64 DO ~SetGlobal("ACBREVICBANTER","LOCALS",1)~
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @65
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @66
-==%tutu_scriptbg%VICONI IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%VICONI%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @67
 END
 
@@ -250,6 +250,15 @@ INTERJECT %tutu_var%JARED 3 ACJARED3
 END
 IF ~~ THEN EXTERN %tutu_var%JARED ACBRE1
 
+
+APPEND %tutu_var%JARED
+IF ~~ THEN BEGIN ACBRE1
+SAY @376
+IF ~~ THEN DO ~AddexperienceParty(150)
+SetGlobal("HelpJared","GLOBAL",1)GiveItem("%tutu_var%BOOT03",LastTalkedToBy)EraseJournalEntry(%journalentry_JARED_0%)EscapeAreaDestroy(90)~ EXIT
+END
+END
+
 INTERJECT_COPY_TRANS %tutu_var%JOIA 4 ACJOIA4
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @141
@@ -310,13 +319,23 @@ IF ~~ THEN ACBREB ACMENDA1.6
 @178 = @179
 ==%tutu_var%MENDA1 @180
 END
+COPY_TRANS %tutu_var%MENDA1 13
+/*
 IF ~~ THEN DO ~SetGlobal("ReadyToSail","GLOBAL",1)ActionOverride("MENDA1",EscapeAreaDestroy(90))~ EXIT
+*/
+
+
+INTERJECT %tutu_var%MULAHE 0 ACMULAHE0
+==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+@399
+END
+IF ~~ THEN DO ~%EET_MULAHE_0_1%~ EXTERN %tutu_var%MULAHE 2
 
 INTERJECT %tutu_var%MULAHE 3 ACMULAHE3
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @181
 END
-IF ~~ THEN EXTERN %tutu_var%MULAHE 4
+IF ~~ THEN DO ~%EET_MULAHE_3_1%~ EXTERN %tutu_var%MULAHE 4
 
 INTERJECT %tutu_var%NEIRA 0 ACNEIRA0
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -457,7 +476,7 @@ INTERJECT %tutu_var%RIELTA 8 ACRIELTA8
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @298
 END
-IF ~~ THEN EXTERN %tutu_var%RIELTA 5
+IF ~~ THEN DO ~%EraseJournalEntry_KOVERA_6%~ EXTERN %tutu_var%RIELTA 5
 
 INTERJECT_COPY_TRANS %tutu_var%TAEROM 14 ACTAEROM
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -551,7 +570,7 @@ INTERJECT %tutu_var%VITIAR 0 ACVITIAR
 ==%tutu_var%VITIAR IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @326
 END
-IF ~~ THEN DO ~GiveGoldForce(120)EscapeAreaDestroy(10)~ EXIT
+IF ~~ THEN DO ~GiveGoldForce(120) ActionOverride("Vitiare",EscapeAreaDestroy(10))~ EXIT
 
 INTERJECT_COPY_TRANS %tutu_var%ZHALIM 0 ACZAHLIM
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -695,17 +714,17 @@ END
 ++ @366 EXTERN %tutu_var%TEYNGA 1
 ++ @367 EXTERN %tutu_var%TEYNGA 3
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE 1 ACBGQUAYLE1
+INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE%eet_var% 1 ACBGQUAYLE1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @368
-==%tutu_scriptbg%QUAYLE IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%QUAYLE%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @369
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE 2 ACBGQUAYLE2
+INTERJECT_COPY_TRANS %tutu_scriptbg%QUAYLE%eet_var% 2 ACBGQUAYLE2
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @368
-==%tutu_scriptbg%QUAYLE IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_scriptbg%QUAYLE%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @369
 END
 
@@ -738,13 +757,6 @@ INTERJECT %tutu_var%OGRECO 0 ACOGRECO
 END
 IF ~~ THEN EXTERN %tutu_var%OGRECO 1
 
-APPEND %tutu_var%JARED
-IF ~~ THEN BEGIN ACBRE1
-SAY @376
-IF ~~ THEN DO ~AddexperienceParty(150)
-SetGlobal("HelpJared","GLOBAL",1)GiveItem("%tutu_var%BOOT03",LastTalkedToBy)EraseJournalEntry(74615)EscapeAreaDestroy(90)~ EXIT
-END
-END
 
 INTERJECT_COPY_TRANS2 %tutu_var%LARYSS 1 ACLARYSS1
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
@@ -835,12 +847,6 @@ INTERJECT_COPY_TRANS %tutu_var%CORAN 0 ACCORAN0
 @398
 END
 
-INTERJECT %tutu_var%MULAHE 0 ACMULAHE0
-==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
-@399
-END
-IF ~~ THEN EXTERN %tutu_var%MULAHE 2
-
 INTERJECT_COPY_TRANS %tutu_var%FFHUNT 0 ACFFHUNT0
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @400
@@ -848,69 +854,71 @@ INTERJECT_COPY_TRANS %tutu_var%FFHUNT 0 ACFFHUNT0
 @401
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 8 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 8 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 15 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 15 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_scriptbg%NEB 8 ACBGNEB
+INTERJECT_COPY_TRANS %tutu_scriptbg%NEB%eet_var% 8 ACBGNEB
 ==ACBREB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @402
-==%tutu_scriptbg%NEB IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
+==%tutu_scriptbg%NEB%eet_var% IF ~InParty("ACBRE")InMyArea("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN
 @57
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_0% ACEDWIN74
+/* BGTEDWINState0 is defined in the normal cmpvars.tpas */
+
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %BGTEDWINState0% ACEDWIN74
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_1% ACEDWIN75
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %EDWIN_STATE_1% ACEDWIN75
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
-INTERJECT_COPY_TRANS %tutu_var%EDWIN %EDWIN_STATE_2% ACEDWIN76
+INTERJECT_COPY_TRANS %tutu_var%EDWIN%eet_var% %EDWIN_STATE_2% ACEDWIN76
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @88
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @89
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @90
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @91
 ==ACBREB IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @92
-==%tutu_var%EDWIN IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
+==%tutu_var%EDWIN%eet_var% IF ~InParty("ACBRE")See("ACBRE")!StateCheck("ACBRE",CD_STATE_NOTVALID)~ THEN 
 @93
 END
 
@@ -929,16 +937,19 @@ END
 
 ///////////////////////// IMOEN FRIENDSHIP
 
+/*
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%PartyHasItem("ACHAND1")Global("ACBreImmyHand","GLOBAL",0)~ THEN ACBREJ BREIMMYHAND1a
+IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BG1_BEFORE_TRANSITION%PartyHasItem("ACHAND1")Global("ACBreImmyHand","GLOBAL",0)~ THEN ACBREJ BREIMMYHAND1a
 @437
 ==%IMOEN_JOINED% @438
 END
 IF ~~ THEN EXTERN %IMOEN_JOINED% BREIMMYHAND1
+*/
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%PartyHasItem("ACHAND1")Global("ACBreImmyHand","GLOBAL",0)~ THEN %IMOEN_JOINED% BREIMMYHAND1
-@439 DO ~SetGlobal("ACBreImmyHand","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
+IF WEIGHT #-1
+~Global("ACBreImmyHand","GLOBAL",1)~ THEN %IMOEN_JOINED% BREIMMYHAND1
+@439 DO ~SetGlobal("ACBreImmyHand","GLOBAL",2)~
 ==ACBREJ @440
 ==%IMOEN_JOINED% @441
 ==ACBREJ @442
@@ -950,14 +961,14 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%PartyHasItem("ACHAND1")Global("ACBreImmyHand","GLOBAL",1)~ THEN ACBREJ BREIMMYHAND2a
+IF ~Global("ACBreImmyHand","GLOBAL",3)~ THEN ACBREJ BREIMMYHAND2a
 @447
 END
 IF ~~ THEN EXTERN %IMOEN_JOINED% BREIMMYHAND2
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%PartyHasItem("ACHAND1")Global("ACBreImmyHand","GLOBAL",1)~ THEN %IMOEN_JOINED% BREIMMYHAND2
-@448  DO ~SetGlobal("ACBreImmyHand","GLOBAL",2)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
+IF ~~ THEN %IMOEN_JOINED% BREIMMYHAND2
+@448  DO ~SetGlobal("ACBreImmyHand","GLOBAL",4)~
 ==ACBREJ @449
 ==%IMOEN_JOINED% @450
 ==ACBREJ @451
@@ -976,8 +987,9 @@ END
 IF ~~ THEN EXTERN %IMOEN_JOINED% BREIMMYHAND3
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%PartyHasItem("ACHAND3")Global("ACBreImmyHand2","GLOBAL",0)~ THEN %IMOEN_JOINED% BREIMMYHAND3
-@459 = @460  DO ~SetGlobal("ACBreImmyHand2","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
+IF WEIGHT #-1
+~Global("ACBreImmyHand2","GLOBAL",1)~ THEN %IMOEN_JOINED% BREIMMYHAND3
+@459 = @460  DO ~SetGlobal("ACBreImmyHand2","GLOBAL",2)~
 ==ACBREJ @461
 ==%IMOEN_JOINED% @462
 ==ACBREJ @463
@@ -991,7 +1003,7 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",2)~ THEN ACBREJ BREIMMY1
+IF ~Global("ACBreImmyTalk","GLOBAL",2)~ THEN ACBREJ BREIMMY1
 @485 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==%IMOEN_JOINED% @486
 ==ACBREJ @487
@@ -1003,7 +1015,8 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",4)~ THEN %IMOEN_JOINED% BREIMMY2
+IF WEIGHT #-1
+~Global("ACBreImmyTalk","GLOBAL",4)~ THEN %IMOEN_JOINED% BREIMMY2
 @493 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==ACBREJ @494
 ==%IMOEN_JOINED% @495
@@ -1021,7 +1034,8 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",6)~ THEN %IMOEN_JOINED% BREIMMY3
+IF WEIGHT #-1
+~Global("ACBreImmyTalk","GLOBAL",6)~ THEN %IMOEN_JOINED% BREIMMY3
 @474 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==ACBREJ @508
 ==%IMOEN_JOINED% @509
@@ -1037,7 +1051,7 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",8)~ THEN ACBREJ BREIMMY4
+IF ~Global("ACBreImmyTalk","GLOBAL",8)~ THEN ACBREJ BREIMMY4
 @520 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==%IMOEN_JOINED% @521
 ==ACBREJ @522
@@ -1050,7 +1064,8 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",10)~ THEN %IMOEN_JOINED% BREIMMY5
+IF WEIGHT #-1
+~Global("ACBreImmyTalk","GLOBAL",10)~ THEN %IMOEN_JOINED% BREIMMY5
 @529 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==ACBREJ @330
 ==%IMOEN_JOINED% @530
@@ -1069,7 +1084,7 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",12)~ THEN ACBREJ BREIMMY6
+IF ~Global("ACBreImmyTalk","GLOBAL",12)~ THEN ACBREJ BREIMMY6
 @545 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)SetGlobal("ACIMOENKNOWSDWARVEN","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==%IMOEN_JOINED% @57
 ==ACBREJ @546
@@ -1088,7 +1103,7 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",14)~ THEN ACBREJ BREIMMY7
+IF ~Global("ACBreImmyTalk","GLOBAL",14)~ THEN ACBREJ BREIMMY7
 @560 DO ~IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==%IMOEN_JOINED% @561 = @562
 ==ACBREJ @563
@@ -1099,7 +1114,8 @@ IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_V
 EXIT
 
 CHAIN
-IF ~RealGlobalTimerExpired("ACBreImmyTimer","GLOBAL")InParty("%IMOEN_DV%")%BGT_VAR%Global("ACBreImmyTalk","GLOBAL",16)~ THEN %IMOEN_JOINED% BREIMMY8
+IF WEIGHT #-1
+~Global("ACBreImmyTalk","GLOBAL",16)~ THEN %IMOEN_JOINED% BREIMMY8
 @569 DO ~SetGlobal("ACBreImmyActive","GLOBAL",2)IncrementGlobal("ACBreImmyTalk","GLOBAL",1)RealSetGlobalTimer("ACBreImmyTimer","GLOBAL",ACBRE_TIMER)~
 ==ACBREJ @570
 ==%IMOEN_JOINED% @571
@@ -1121,7 +1137,7 @@ EXIT
 CHAIN
 IF ~Global("ACBRETia","GLOBAL",1)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Tiax")
 See("Tiax")
@@ -1146,7 +1162,7 @@ EXIT
 CHAIN
 IF ~Global("ACBRETia","GLOBAL",2)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 PartyHasItem("ACAXE")
 InParty("ACBRE")
 InParty("Tiax")
@@ -1167,7 +1183,7 @@ EXIT
 CHAIN
 IF ~Global("ACBRETia","GLOBAL",0)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Tiax")
 See("Tiax")
@@ -1188,7 +1204,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAlo","GLOBAL",0)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Alora")
 See("Alora")
@@ -1208,7 +1224,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAja","GLOBAL",0)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Ajantis")
 See("Ajantis")
@@ -1234,7 +1250,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAja","GLOBAL",1)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 AreaType(FOREST)
 InParty("ACBRE")
 InParty("Ajantis")
@@ -1253,7 +1269,7 @@ EXIT
 
 CHAIN
 IF ~Global("ACBREBra","GLOBAL",0)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Branwen")
 See("Branwen")
@@ -1274,7 +1290,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAja","GLOBAL",2)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Ajantis")
 See("Ajantis")
@@ -1292,7 +1308,7 @@ EXIT
 
 CHAIN
 IF ~Global("ACBREAlo","GLOBAL",1)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Alora")
 See("Alora")
@@ -1313,7 +1329,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAja","GLOBAL",3)
 !Global("ACBREFRIENDACTIVE","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 PartyHasItem("ACHAND3")
 InParty("ACBRE")
 InParty("Ajantis")
@@ -1342,11 +1358,11 @@ CombatCounter(0)
 !StateCheck(MYSELF,CD_STATE_NOTVALID)
 !StateCheck("VICONIA",CD_STATE_NOTVALID)~ THEN ACBREB BreVic1
 @702 DO ~SetGlobal("ACBREVIC","LOCALS",1)~
-==%VICONIA_BANTER% @703
+==%VICONIA_JOINED% @703
 ==ACBREB @704
-==%VICONIA_BANTER% @705 = @706 = @707 = @708
+==%VICONIA_JOINED% @705 = @706 = @707 = @708
 ==ACBREB @709
-==%VICONIA_BANTER% @710
+==%VICONIA_JOINED% @710
 ==ACBREB @642
 EXIT
 
@@ -1398,7 +1414,7 @@ CombatCounter(0)
 !StateCheck(MYSELF,CD_STATE_NOTVALID)
 !StateCheck("VICONIA",CD_STATE_NOTVALID)~ THEN ACBREB BreVic3
 @800 DO ~SetGlobal("ACBREVIC","LOCALS",3)~
-==%VICONIA_JOINED% @801 DO ~IncrementGlobal("ACBreVICBANTER","GLOBAL",1)RealSetGlobalTimer("ACBREVICTIMER","GLOBAL",ACBRE_TIMER)~
+==%VICONIA_JOINED% @801 DO ~IncrementGlobal("ACBreVICBANTER","GLOBAL",1)~ //RealSetGlobalTimer("ACBREVICTIMER","GLOBAL",ACBRE_TIMER)
 ==ACBREJ @802
 ==%VICONIA_JOINED% @803
 ==ACBREJ @479
@@ -1416,7 +1432,7 @@ CombatCounter(0)
 !StateCheck(MYSELF,CD_STATE_NOTVALID)
 !StateCheck("VICONIA",CD_STATE_NOTVALID)~ THEN ACBREB BreVic4
 @864 DO ~SetGlobal("ACBREVIC","LOCALS",4)~
-==%VICONIA_JOINED%@865
+==%VICONIA_JOINED% @865
 ==ACBREJ @866
 ==%VICONIA_JOINED% @867 = @868
 ==ACBREJ @869
@@ -1470,7 +1486,7 @@ EXIT
 
 CHAIN
 IF ~Global("ACBREBra","GLOBAL",1)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Branwen")
 See("Branwen")
@@ -1487,7 +1503,7 @@ EXIT
 
 CHAIN
 IF ~Global("ACBREBra","GLOBAL",2)
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Branwen")
 See("Branwen")
@@ -1505,7 +1521,7 @@ EXIT
 CHAIN
 IF ~Global("ACBREAlo","GLOBAL",2)
 PartyHasItem("ACHAND3")
-%BGT_VAR%
+%BG1_BEFORE_TRANSITION%
 InParty("ACBRE")
 InParty("Alora")
 See("Alora")
